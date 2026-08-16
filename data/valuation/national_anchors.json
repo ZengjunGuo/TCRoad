@@ -1,0 +1,92 @@
+{
+  "contract": "methods/ROAD_ASSET_VALUATION_CONTRACT.md",
+  "price_year": 2025,
+  "currency": "USD",
+  "eurusd_2015": 1.1095,
+  "comment_eurusd_2015": "ECB annual average, EUR 1 = USD 1.1095 in 2015.",
+  "giri_bridge_usd_per_km_2023": 9840000.0,
+  "giri_tunnel_usd_per_km_2023": 19800000.0,
+  "giri_source": "Cardona et al. 2023, GIRI background report Table 10.",
+  "terrain_multipliers": {
+    "plain": 1.0,
+    "rolling": 1.573394495412844,
+    "steep": 1.944954128440367
+  },
+  "terrain_source": "GIRI Table 9 highway 1.090 / 1.715 / 2.120 million USD per km.",
+  "lane_step": 0.25,
+  "lane_floor_factor": 0.5,
+  "europe_2015_eur_per_km": {
+    "motorway": {"central": 11400000.0, "low": 3500000.0, "high": 35000000.0, "default_lanes": 4, "source": "ECA 2013 EU-average motorway, used by van Ginkel 2021 Table 1."},
+    "trunk": {"central": 5000000.0, "low": 2500000.0, "high": 7500000.0, "default_lanes": 2, "source": "van Ginkel 2021 Table 1 range midpoint."},
+    "primary": {"central": 2000000.0, "low": 1000000.0, "high": 3000000.0, "default_lanes": 2, "source": "van Ginkel 2021 Table 1 range midpoint."},
+    "secondary": {"central": 1000000.0, "low": 500000.0, "high": 1500000.0, "default_lanes": 2, "source": "van Ginkel 2021 Table 1 range midpoint."},
+    "tertiary": {"central": 400000.0, "low": 200000.0, "high": 600000.0, "default_lanes": 2, "source": "van Ginkel 2021 Table 1 range midpoint."},
+    "local": {"central": 200000.0, "low": 100000.0, "high": 300000.0, "default_lanes": 1, "source": "van Ginkel 2021 'other' range midpoint."}
+  },
+  "national_2025_usd_per_km": {
+    "USA": {
+      "motorway": {"central": 12000000.0, "low": 5000000.0, "high": 25000000.0, "default_lanes": 4, "source": "Brooks & Liscow interstate mean ~11.5 million 2016 USD/mile (~7.15 million/km), raised to 2025 and rounded. Band: rural new 4-lane to urban/constrained."},
+      "trunk": {"central": 6000000.0, "low": 2500000.0, "high": 12000000.0, "default_lanes": 2, "source": "Half of US motorway central, consistent with van Ginkel trunk/motorway ratio."},
+      "primary": {"central": 4000000.0, "low": 1500000.0, "high": 8000000.0, "default_lanes": 2, "source": "US principal arterial new-build, below trunk."},
+      "secondary": {"central": 2500000.0, "low": 800000.0, "high": 5000000.0, "default_lanes": 2, "source": "US minor arterial new-build."},
+      "tertiary": {"central": 1200000.0, "low": 400000.0, "high": 2500000.0, "default_lanes": 2, "source": "US collector new-build."},
+      "local": {"central": 600000.0, "low": 200000.0, "high": 1500000.0, "default_lanes": 1, "source": "US local paved street, reconstruction not resurfacing."}
+    },
+    "CAN": {
+      "note": "Same structure as USA (North American construction market).",
+      "copy_from": "USA",
+      "scale": 0.95
+    },
+    "AUS": {
+      "motorway": {"central": 20000000.0, "low": 10000000.0, "high": 35000000.0, "default_lanes": 4, "source": "BITRE ~AUD 6–6.5 million per lane-km freeway, ~USD 4.5–4.9 million/lane-km at report FX; 4 lanes inflated to 2025 USD."},
+      "trunk": {"central": 10000000.0, "low": 5000000.0, "high": 18000000.0, "default_lanes": 2, "source": "Half of AUS motorway central."},
+      "primary": {"central": 6000000.0, "low": 2500000.0, "high": 12000000.0, "default_lanes": 2, "source": "BITRE rural arterial is lower than freeway; set below trunk."},
+      "secondary": {"central": 3500000.0, "low": 1200000.0, "high": 7000000.0, "default_lanes": 2, "source": "Scaled from primary."},
+      "tertiary": {"central": 1500000.0, "low": 500000.0, "high": 3000000.0, "default_lanes": 2, "source": "Scaled from secondary."},
+      "local": {"central": 800000.0, "low": 250000.0, "high": 1800000.0, "default_lanes": 1, "source": "Scaled from tertiary."}
+    },
+    "NZL": {
+      "copy_from": "AUS",
+      "scale": 0.90
+    },
+    "JPN": {
+      "motorway": {"central": 15000000.0, "low": 8000000.0, "high": 40000000.0, "default_lanes": 4, "source": "Japanese expressways are tunnel- and structure-heavy. Central is above US, below extreme urban/tunnel sections. High band covers mountain expressways."},
+      "trunk": {"central": 8000000.0, "low": 3500000.0, "high": 18000000.0, "default_lanes": 2, "source": "National highways below expressway."},
+      "primary": {"central": 5000000.0, "low": 2000000.0, "high": 10000000.0, "default_lanes": 2, "source": "Scaled from trunk."},
+      "secondary": {"central": 3000000.0, "low": 1000000.0, "high": 6000000.0, "default_lanes": 2, "source": "Scaled from primary."},
+      "tertiary": {"central": 1400000.0, "low": 500000.0, "high": 2800000.0, "default_lanes": 2, "source": "Scaled from secondary."},
+      "local": {"central": 700000.0, "low": 250000.0, "high": 1600000.0, "default_lanes": 1, "source": "Scaled from tertiary."}
+    },
+    "KOR": {
+      "copy_from": "JPN",
+      "scale": 0.90
+    },
+    "SGP": {
+      "copy_from": "JPN",
+      "scale": 1.05
+    },
+    "TWN": {
+      "copy_from": "JPN",
+      "scale": 0.75
+    },
+    "HKG": {
+      "copy_from": "JPN",
+      "scale": 1.10
+    },
+    "CHN": {
+      "motorway": {"central": 11000000.0, "low": 4000000.0, "high": 28000000.0, "default_lanes": 4, "source": "Chinese published expressway costs commonly ~RMB 40–200 million/km; central RMB 80 million/km at 7.27 RMB/USD ≈ 11 million USD/km. High band is mountain/bridge-tunnel corridors."},
+      "trunk": {"central": 5000000.0, "low": 2000000.0, "high": 12000000.0, "default_lanes": 2, "source": "National / provincial trunk below expressway."},
+      "primary": {"central": 2800000.0, "low": 1000000.0, "high": 6000000.0, "default_lanes": 2, "source": "About RMB 20 million/km."},
+      "secondary": {"central": 1600000.0, "low": 600000.0, "high": 3500000.0, "default_lanes": 2, "source": "Scaled from primary."},
+      "tertiary": {"central": 700000.0, "low": 250000.0, "high": 1600000.0, "default_lanes": 2, "source": "County connector."},
+      "local": {"central": 250000.0, "low": 80000.0, "high": 700000.0, "default_lanes": 1, "source": "Village / community paved road, new-build not surface dressing."}
+    }
+  },
+  "income_group_paved_default": {
+    "HIC": 0.90,
+    "UMC": 0.65,
+    "LMC": 0.40,
+    "LIC": 0.20
+  },
+  "hic_gdp_scale_clip": [0.4, 1.3]
+}

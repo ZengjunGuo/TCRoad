@@ -1,0 +1,7 @@
+way_id,iso3,highway,accepted,reason,road_class,is_link,is_bridge,is_tunnel,surface,lanes_used,lanes_source,terrain_class,work_type,price_book,length_km,usd_per_km,replacement_usd,replacement_usd_low,replacement_usd_high
+US-I10,USA,motorway,1,ok,motorway,0,0,0,paved,4.0,osm_tag,unknown,New 4L Expressway,national,2.0,12000000.0,24000000.0,10000000.0,50000000.0
+PH-N1,PHL,primary,1,ok,primary,0,0,0,paved,2.0,class_default,unknown,New 2L Highway,rocks_region,3.2,1528271.7485771505,4890469.595446882,4867263.009682308,4913676.181211455
+CN-G15,CHN,motorway,1,ok,motorway,0,0,0,paved,4.0,osm_tag,unknown,New 4L Expressway,national,10.0,11000000.0,110000000.0,40000000.0,280000000.0
+JP-bridge,JPN,primary,1,ok,primary,0,1,0,structure,,not_used_for_bridge,not_used_for_structure,bridge,giri_structure,0.4,10366749.181177678,4146699.672471071,2073349.8362355356,8293399.344942142
+US-street,USA,residential,1,ok,local,0,0,0,paved,1.0,osm_tag,unknown,New 1L Road,national,5.0,600000.0,3000000.0,1000000.0,7500000.0
+FOOT,USA,footway,0,excluded:footway,,0,0,0,,,,,,,1.0,0.0,0.0,0.0,0.0

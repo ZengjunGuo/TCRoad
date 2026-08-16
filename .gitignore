@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+.venv/
+venv/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+
+# Local secrets
+.env
+*.pem
+
+# Scientific binaries — these stay on the production host
+*.nc
+*.pbf
+*.tif
+*.tiff
+*.h5
+*.hdf5
+*.npz
+*.mat
+*.zip
+*.gpkg
+*.shp
+*.shx
+*.dbf
+*.prj
+*.cpg
+
+# Keep tiny committed zip of Natural Earth as the shapefile source
+!vendor/naturalearth/50m/ne_50m_admin_0_countries.zip
+
+# Generated / scratch
+scratch/
+runs/
+data/osm/raw/
+data/lin/
+*.log

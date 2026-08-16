@@ -1,0 +1,44 @@
+============================================================
+Academic Figure Skill QA Report
+============================================================
+Figure: Combined global TC passage and five-class road hierarchy with three local-network insets
+Target: Nature-family, double column, 183 × 150 mm
+Backend: Python / Matplotlib / Cartopy
+
+Pass 0 — Anti-Pattern Scan:
+  [PASS] AP-0 Required typography, color, and export baseline blocks copied verbatim
+  [PASS] AP-1 Custom semantic colors; no default qualitative palette
+  [PASS] AP-2 No jet/rainbow/hsv colormap
+  [PASS] AP-3 Map boundary only; no default four-sided Cartesian frame
+  [PASS] AP-4 Legends occupy a dedicated strip outside the mapped data region
+  [PASS] AP-5 Vector PDF plus 450 dpi PNG
+  [N/A]  AP-6 No bar/box plot
+  [PASS] AP-7 Arial/Helvetica/Liberation Sans fallback declared
+
+Pass 1 — Code Compliance:
+  [PASS] CL-1 Minimum text size 5.2 pt at final print dimensions
+  [PASS] CL-2 Exact 183 × 150 mm canvas
+  [PASS] CL-3 PDF TrueType embedding requested (pdf.fonttype=42)
+  [PASS] CL-4 Road category semantics identical in global and inset panels
+  [PASS] CL-5 TC frequency is discretized independently from road hierarchy
+  [PASS] CL-6 No user-data downsampling; all positive raster cells and all inset ways rendered
+  [PASS] CL-7 Deterministic fixture seed and explicit input variables
+
+Pass 2 — Visual Logic:
+  [PASS] VI-1 Combined hero makes TC×road co-location the three-second conclusion
+  [PASS] VI-2 Road hierarchy uses color plus redundant line-width encoding in insets
+  [PASS] VI-3 Global view and local network topology are non-redundant evidence
+  [PASS] VI-4 Robinson projection centered at 0°; numbered locator boxes preserve geography without crossing text
+  [PASS] VI-5 Three insets are equal width and include explicit scale bars
+  [PASS] VI-6 Separate legends define both encodings and include units
+
+Pass 3 — Rendered Output Verification:
+  [PASS] VV-1 No legend, label, scale-bar, or locator occlusion detected by inspection
+  [PASS] VV-2 Panel alignment and narrative order a–d are regular
+  [PASS] VV-3 Text remains legible at 183 mm print width
+  [PASS] VV-4 Roads remain interpretable through line-width hierarchy in local panels
+  [PASS] VV-5 All four panels contain visible data; no blank panel
+
+Summary: 25 pass, 0 fail, 1 N/A
+Verdict: READY after rendered-output inspection; input provenance is recorded in the data summary.
+============================================================

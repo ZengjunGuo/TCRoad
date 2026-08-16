@@ -1,0 +1,108 @@
+{
+  "accepted_ways": 5,
+  "by_book_usd": {
+    "giri_structure": 4146699.672471071,
+    "national": 137000000.0,
+    "rocks_region": 4890469.595446882
+  },
+  "by_class_km": {
+    "local": 5.0,
+    "motorway": 12.0,
+    "primary": 3.6
+  },
+  "by_class_usd": {
+    "local": 3000000.0,
+    "motorway": 134000000.0,
+    "primary": 9037169.267917953
+  },
+  "by_country": {
+    "CHN": {
+      "length_km": 10.0,
+      "local_km": 0.0,
+      "replacement_usd": 110000000.0,
+      "unclassified_km": 0.0,
+      "unclassified_share": 0.0,
+      "unclassified_share_flag": false,
+      "ways": 1
+    },
+    "JPN": {
+      "length_km": 0.4,
+      "local_km": 0.0,
+      "replacement_usd": 4146699.672471071,
+      "unclassified_km": 0.0,
+      "unclassified_share": 0.0,
+      "unclassified_share_flag": false,
+      "ways": 1
+    },
+    "PHL": {
+      "length_km": 3.2,
+      "local_km": 0.0,
+      "replacement_usd": 4890469.595446882,
+      "unclassified_km": 0.0,
+      "unclassified_share": 0.0,
+      "unclassified_share_flag": false,
+      "ways": 1
+    },
+    "USA": {
+      "length_km": 7.0,
+      "local_km": 5.0,
+      "replacement_usd": 27000000.0,
+      "unclassified_km": 0.0,
+      "unclassified_share": 0.0,
+      "unclassified_share_flag": false,
+      "ways": 2
+    }
+  },
+  "countries_flagged_unclassified": [],
+  "countries_with_lane_median": {
+    "CHN": {
+      "motorway": 4.0
+    },
+    "JPN": {
+      "primary": 2.0
+    },
+    "USA": {
+      "local": 1.0,
+      "motorway": 4.0
+    }
+  },
+  "length_km": 20.6,
+  "length_km_no_local": 15.6,
+  "rejected_ways": 1,
+  "replacement_usd": 146037169.26791796,
+  "replacement_usd_high": 350707075.5261536,
+  "replacement_usd_low": 57940612.84591785,
+  "replacement_usd_no_local": 143037169.26791796,
+  "unclassified_flag_threshold": 0.6,
+  "unit_cost_meta": {
+    "construction_premium_2018_2025": 1.0,
+    "eu28_2015_ppp_mean": 38917.00813074942,
+    "n_countries": 218,
+    "n_rocks_new_build_rows": 37,
+    "named_national": [
+      "AUS",
+      "CAN",
+      "CHN",
+      "HKG",
+      "JPN",
+      "KOR",
+      "NZL",
+      "SGP",
+      "TWN",
+      "USA"
+    ],
+    "price_year": 2025,
+    "rocks_regions": [
+      "East Asia and Pacific",
+      "Europe and Central Asia",
+      "Latin America and Caribbean",
+      "Middle East and North Africa",
+      "South Asia",
+      "Sub-Saharan Africa"
+    ],
+    "script_version": "1.0.0",
+    "usa_deflator_2018": 97.0709841824513,
+    "usa_deflator_2025": 122.361624831936,
+    "usa_deflator_factor_2018_2025": 1.260537593828752
+  }
+}

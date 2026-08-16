@@ -1,0 +1,31 @@
+{
+  "construction_premium_2018_2025": 1.0,
+  "eu28_2015_ppp_mean": 38917.00813074942,
+  "n_countries": 218,
+  "n_rocks_new_build_rows": 37,
+  "named_national": [
+    "AUS",
+    "CAN",
+    "CHN",
+    "HKG",
+    "JPN",
+    "KOR",
+    "NZL",
+    "SGP",
+    "TWN",
+    "USA"
+  ],
+  "price_year": 2025,
+  "rocks_regions": [
+    "East Asia and Pacific",
+    "Europe and Central Asia",
+    "Latin America and Caribbean",
+    "Middle East and North Africa",
+    "South Asia",
+    "Sub-Saharan Africa"
+  ],
+  "script_version": "1.0.0",
+  "usa_deflator_2018": 97.0709841824513,
+  "usa_deflator_2025": 122.361624831936,
+  "usa_deflator_factor_2018_2025": 1.260537593828752
+}

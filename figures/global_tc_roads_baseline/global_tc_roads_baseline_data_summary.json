@@ -1,0 +1,68 @@
+{
+  "figure_contract": {
+    "core_conclusion": "Current-climate tropical-cyclone activity overlaps a hierarchically structured global road network, with local exposure revealed in three coastal regions.",
+    "archetype": "asymmetric_mixed",
+    "layout": "one combined Robinson hero, one external legend strip, and three equal local insets",
+    "target": "Nature-family double column",
+    "canvas_mm": [
+      183.0,
+      150.0
+    ]
+  },
+  "data": {
+    "tc_cells": 64800,
+    "tc_positive_cells": 28897,
+    "tc_range_positive": [
+      8.080957083606242e-05,
+      1.2136282006656967
+    ],
+    "road_cells_by_class": [
+      189785,
+      210496,
+      294882,
+      479725,
+      720319
+    ],
+    "road_classes": [
+      "Highways",
+      "Primary roads",
+      "Secondary roads",
+      "Tertiary roads",
+      "Local roads"
+    ],
+    "inset_ways": [
+      508920,
+      358021,
+      324562
+    ],
+    "inset_vertices": [
+      4923080,
+      3067766,
+      5642702
+    ],
+    "inputs": {
+      "tc": "runs/figures/global_tc_roads_baseline/tc_track_passage_1deg.nc",
+      "roads": "data/osm/derived/planet-260803/motor_road_length_density_0p1deg.nc",
+      "inset_1": "data/osm/insets/derived/gulf_coast_roads.npz",
+      "inset_2": "data/osm/insets/derived/pearl_river_delta_roads.npz",
+      "inset_3": "data/osm/insets/derived/bengal_delta_chattogram_roads.npz"
+    }
+  },
+  "reproducibility": {
+    "tc_frequency_definition": "input field track_passage_frequency_yr; no resampling or subsampling",
+    "road_global_definition": "road_length_by_class divided by cell_area when cell_area exists; all positive cells rendered",
+    "inset_definition": "all NPZ ways rendered; road_class controls both color and line width",
+    "statistics": "descriptive spatial figure; no inferential test, center, spread, or multiple-comparison correction",
+    "synthetic_fixture_warning": "Fixture mode tests layout only and is not scientific evidence."
+  },
+  "outputs": {
+    "scratch/figure_render_global_tc_roads_unitlabel/global_tc_roads_baseline.pdf": {
+      "sha256": "86822fddc4a69418c34f621e47e13adfcc16fa217bf981ee7cd3e5a65fd35f44",
+      "bytes": 3719014
+    },
+    "scratch/figure_render_global_tc_roads_unitlabel/global_tc_roads_baseline.png": {
+      "sha256": "04e62f4dbba9a97e4bfd4b4719d83f9f3abc0f7f69201773d8c9c4f5d9a59f05",
+      "bytes": 4051240
+    }
+  }
+}

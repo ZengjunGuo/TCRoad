@@ -1,0 +1,26 @@
+{
+  "generated_at_utc": "2026-08-16T02:31:09.361165+00:00",
+  "source": {
+    "path": "vendor/ROCKS/2018-06/ROCKS-Update-June-2018.xlsx",
+    "sha256": "71a69bfc38a99ea289831725b003183a9064cd440659c0389d2d592ca1b43e83",
+    "publisher": "World Bank Transport / Doing Business thematic report, June 2018 update",
+    "url": "https://www.worldbank.org/content/dam/doingBusiness/media/Special-Reports/ROCKS-Update-June-2018.xlsx"
+  },
+  "selection": {
+    "cost_type": "Actual",
+    "work_types": [
+      "Gravel Resurfacing",
+      "New 1L Road",
+      "New 2L Highway",
+      "New 4L Expressway",
+      "New 6L Expressway",
+      "Reconstruction",
+      "Upgrading"
+    ],
+    "unit": "million current USD per km as stored in ROCKS column Unit costs (M USD per KM)",
+    "not_inflated_to_study_year": true,
+    "north_america_high_income_absent": true
+  },
+  "row_count": 301,
+  "note": "These are ROCKS actuals, not Koks Supplementary Table 8. Gravel Resurfacing is resurfacing, not new gravel construction."
+}

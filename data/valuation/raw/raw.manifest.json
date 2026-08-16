@@ -1,0 +1,18 @@
+{
+  "data/valuation/raw/wb_countries.json": {
+    "sha256": "d29d57f8adf954c5e2a1520a02fb2c7b45575d8db3bd327a9dff47d66914231c",
+    "bytes": 113590
+  },
+  "data/valuation/raw/wb_defl_usa.json": {
+    "sha256": "24f5d4d20a46b11c5f17641c0a484f4d5d089cbd3b3b806524828c7288d6bdd6",
+    "bytes": 15781
+  },
+  "data/valuation/raw/wb_gdp_ppp.json": {
+    "sha256": "ace324d889f62663bc72f0036446af742f0dc6478badc23a5fa5a33252bd08c9",
+    "bytes": 706797
+  },
+  "vendor/naturalearth/50m/ne_50m_admin_0_countries.zip": {
+    "sha256": "5fed433373581fa648920435f937d95f2d3c0200e067409c6478dcdf1b853139",
+    "bytes": 799734
+  }
+}

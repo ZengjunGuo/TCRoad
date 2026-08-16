@@ -1,0 +1,25 @@
+region,work_type,n_actual_rows,median_million_usd_per_km,mean_million_usd_per_km,min,max,median_usd_per_km
+East Asia and Pacific,Gravel Resurfacing,28,0.006183,0.007037,0.002453,0.018342,6182.55
+East Asia and Pacific,New 2L Highway,2,1.153557,1.153557,1.148248,1.158867,1153557.41
+East Asia and Pacific,New 4L Expressway,15,5.243212,5.296324,0.417110,12.605287,5243212.01
+East Asia and Pacific,New 6L Expressway,2,17.524900,17.524900,6.924800,28.125000,17524900.00
+East Asia and Pacific,Reconstruction,17,0.178237,0.401496,0.037059,1.099524,178236.61
+East Asia and Pacific,Upgrading,45,0.147253,0.185397,0.037931,0.669903,147252.75
+Europe and Central Asia,New 4L Expressway,5,1.705000,5.449229,1.146667,18.459119,1705000.00
+Europe and Central Asia,Reconstruction,32,0.184020,0.259608,0.104011,1.149194,184020.01
+Europe and Central Asia,Upgrading,2,0.777115,0.777115,0.753125,0.801105,777114.99
+Latin America and Caribbean,Gravel Resurfacing,3,0.007972,0.007585,0.005125,0.009658,7972.32
+Latin America and Caribbean,Reconstruction,40,0.139205,0.172142,0.002716,0.602591,139204.55
+Latin America and Caribbean,Upgrading,9,0.396996,0.499140,0.098606,1.010000,396995.71
+Middle East and North Africa,New 4L Expressway,3,6.275676,7.995340,5.310345,12.400000,6275675.68
+Middle East and North Africa,Reconstruction,17,0.100719,0.141078,0.044601,0.446341,100719.42
+South Asia,New 1L Road,5,0.122222,0.124031,0.097856,0.140321,122222.22
+South Asia,New 2L Highway,1,0.042000,0.042000,0.042000,0.042000,42000.00
+South Asia,New 4L Expressway,1,3.553774,3.553774,3.553774,3.553774,3553773.58
+South Asia,Reconstruction,6,0.200203,0.172043,0.024797,0.290241,200203.39
+South Asia,Upgrading,11,0.049530,0.128364,0.026203,0.459508,49529.88
+Sub-Saharan Africa,Gravel Resurfacing,5,0.030893,0.033238,0.010501,0.069894,30893.36
+Sub-Saharan Africa,New 1L Road,1,0.196263,0.196263,0.196263,0.196263,196262.63
+Sub-Saharan Africa,New 2L Highway,4,0.583210,1.459199,0.338719,4.331655,583210.45
+Sub-Saharan Africa,Reconstruction,16,0.705232,0.845950,0.020000,3.249630,705231.71
+Sub-Saharan Africa,Upgrading,31,0.446667,0.597755,0.000661,3.848000,446666.67

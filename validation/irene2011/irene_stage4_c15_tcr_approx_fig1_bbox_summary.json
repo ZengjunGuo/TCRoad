@@ -1,0 +1,121 @@
+{
+  "decision": "none_descriptive_comparison_only",
+  "domain": {
+    "approximate_published_visual_bbox": {
+      "lat_max": 39.0,
+      "lat_min": 33.0,
+      "lon_max": -73.0,
+      "lon_min": -81.0
+    },
+    "bbox_land_complete_stage4_tcr_centroid_count": 6881,
+    "bbox_land_tcr_centroid_count": 6881,
+    "bbox_tcr_centroid_count": 15275,
+    "common_support_hour_count_range": [
+      1,
+      29
+    ],
+    "complete_stage4_coverage_required": 216,
+    "formal_pairing": "hourly great-circle distance to track center <=300 km before accumulation",
+    "land_mask": "Natural Earth 1:110m land polygons, boundary-inclusive",
+    "nearest_stage4_distance_km": {
+      "maximum": 2.8633300939325506,
+      "median": 1.6220287778241946,
+      "minimum": 0.01586729955837799
+    },
+    "raw_216h_complete_coverage_filter_role": "conservative data-completeness filter for the fixed nearest Stage IV cell; paired physical support is independently defined by the hourly 300-km mask",
+    "stage4_grid_crs_wkt": "PROJCRS[\"unknown\",BASEGEOGCRS[\"unknown\",DATUM[\"unknown\",ELLIPSOID[\"unknown\",6367470,0,LENGTHUNIT[\"metre\",1,ID[\"EPSG\",9001]]]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8901]]],CONVERSION[\"unknown\",METHOD[\"Polar Stereographic (variant B)\",ID[\"EPSG\",9829]],PARAMETER[\"Latitude of standard parallel\",60,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8832]],PARAMETER[\"Longitude of origin\",-105,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8833]],PARAMETER[\"False easting\",0,LENGTHUNIT[\"metre\",1],ID[\"EPSG\",8806]],PARAMETER[\"False northing\",0,LENGTHUNIT[\"metre\",1],ID[\"EPSG\",8807]]],CS[Cartesian,2],AXIS[\"(E)\",south,MERIDIAN[90,ANGLEUNIT[\"degree\",0.0174532925199433,ID[\"EPSG\",9122]]],ORDER[1],LENGTHUNIT[\"metre\",1,ID[\"EPSG\",9001]]],AXIS[\"(N)\",south,MERIDIAN[180,ANGLEUNIT[\"degree\",0.0174532925199433,ID[\"EPSG\",9122]]],ORDER[2],LENGTHUNIT[\"metre\",1,ID[\"EPSG\",9001]]]]",
+    "stage4_grid_shape": [
+      881,
+      1121
+    ],
+    "stage4_to_tcr_mapping": "one fixed spherical-ECEF nearest native Stage IV grid cell per original TCR centroid; no interpolation"
+  },
+  "inputs": {
+    "natural_earth_shapefile_components": [
+      {
+        "bytes": 89504,
+        "path": "/mnt/sdb_test/tang/zengjun/TC_Road_Risk/software/cartopy-data/shapefiles/natural_earth/physical/ne_110m_land.shp",
+        "sha256": "8689e6932b8e370e2ca4587cf3ba21e460b1235db37b6ed3c172c35b4a6088de"
+      },
+      {
+        "bytes": 1116,
+        "path": "/mnt/sdb_test/tang/zengjun/TC_Road_Risk/software/cartopy-data/shapefiles/natural_earth/physical/ne_110m_land.shx",
+        "sha256": "2719254764a70262a34333581d582d503b8af5d6626e6da4eb2b5f86e7316faa"
+      },
+      {
+        "bytes": 3431,
+        "path": "/mnt/sdb_test/tang/zengjun/TC_Road_Risk/software/cartopy-data/shapefiles/natural_earth/physical/ne_110m_land.dbf",
+        "sha256": "db7cf6d2de2811df09bd7fcc6f243ab78a715b83571a0cb7b36b4e2af3297caa"
+      },
+      {
+        "bytes": 147,
+        "path": "/mnt/sdb_test/tang/zengjun/TC_Road_Risk/software/cartopy-data/shapefiles/natural_earth/physical/ne_110m_land.prj",
+        "sha256": "3259f0e55290a82b1350646f604e8a7ee1e2136c0320a40fad838ab40819fff8"
+      },
+      {
+        "bytes": 5,
+        "path": "/mnt/sdb_test/tang/zengjun/TC_Road_Risk/software/cartopy-data/shapefiles/natural_earth/physical/ne_110m_land.cpg",
+        "sha256": "3ad3031f5503a4404af825262ee8232cc04d4ea6683d42c5dd0a2f2a27ac9824"
+      }
+    ],
+    "stage4_month_tar": {
+      "bytes": 54763520,
+      "path": "/mnt/sdb_test/tang/zengjun/TC_Road_Risk/data/observations/stage4/gdex_d507005/2011-08/stage4.201108.tar",
+      "sha256": "fd835839c2de8e3c5bd50212a4d88cf3b8d9fbc73ebffe5d811eb63579b73287"
+    },
+    "tcr_hourly_track": {
+      "bytes": 63863,
+      "path": "/mnt/sdb_test/tang/zengjun/TC_Road_Risk/runs/hazard_validation/irene_c15_climada_full_lifecycle_v1/irene_one_hourly_climada_track.nc",
+      "sha256": "a7f35b17b3928a7fde7b6c2b366e354a76f37a99befc7e859196b19d7db92c1d"
+    },
+    "tcr_rainfall": {
+      "bytes": 7467484,
+      "path": "/mnt/sdb_test/tang/zengjun/TC_Road_Risk/runs/hazard_validation/irene_c15_climada_full_lifecycle_v1/irene_c15_tcr_raw_rainfall.nc",
+      "sha256": "54b59c3f73c4155aba2b53baec157f04c8e33edd6ffdff6cb9da9882c5920643"
+    }
+  },
+  "outputs": {
+    "netcdf": {
+      "bytes": 283842,
+      "final_path": "/mnt/sdb_test/tang/zengjun/TC_Road_Risk/runs/hazard_validation/irene_stage4_c15_tcr_approx_fig1_bbox_v2/irene_stage4_c15_tcr_approx_fig1_bbox_comparison.nc",
+      "relative_path": "irene_stage4_c15_tcr_approx_fig1_bbox_comparison.nc",
+      "sha256": "47a5ed197182cc3e471f7ca09044797d5e8c9e74e97e5e942fb927f93ea63910"
+    }
+  },
+  "software": {
+    "numpy": "2.2.6",
+    "projection_constants": {
+      "central_longitude_deg": -105.0,
+      "dx_m": 4763.0,
+      "dy_m": 4763.0,
+      "earth_radius_m": 6367470.0,
+      "latitude_true_scale_deg": 60.0
+    },
+    "script_sha256": "982caeaae673c579fdea4b57c5e7a20db58db5033a73e28fdf9839be30db8dbc",
+    "shapely": "2.1.1"
+  },
+  "statistics": {
+    "comparison_cell_count": 6881,
+    "mean_absolute_error_mm": 88.14952307307297,
+    "mean_bias_tcr_minus_stage4_mm": 73.30835745411632,
+    "pearson_correlation": 0.7155765206167797,
+    "root_mean_square_error_mm": 130.3262919549661,
+    "stage4_max_mm": 532.0599975585938,
+    "stage4_mean_mm": 101.78454854101692,
+    "stage4_median_mm": 82.27999877929688,
+    "stage4_p95_mm": 264.44000244140625,
+    "tcr_max_mm": 668.0863037109375,
+    "tcr_mean_mm": 175.09290599513324,
+    "tcr_median_mm": 168.00180053710938,
+    "tcr_p95_mm": 494.2162170410156
+  },
+  "status": "complete",
+  "tcr_source_time_coordinate_count": 217,
+  "window": {
+    "definition": "hourly accumulation ending time",
+    "first": "2011-08-21T01:00:00Z",
+    "hour_count": 216,
+    "last": "2011-08-30T00:00:00Z",
+    "tcr_node_slice": "rainfall_rate[1:217]"
+  }
+}

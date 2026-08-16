@@ -1,0 +1,219 @@
+iso3,name,wb_region,rocks_region,income_level,price_book,paved_share,paved_share_source,gdp_pc_ppp_2015,gdp_pc_ppp_latest,eu28_ratio_2015,usa_ratio_latest
+ABW,Aruba,Latin America & Caribbean,Latin America and Caribbean,HIC,hic_gdp_scaled,0.9,income_group_default:HIC,35972.8596619304,51712.1531358934,0.9243480264739888,0.5744102433469755
+AFG,Afghanistan,"Middle East, North Africa, Afghanistan & Pakistan",South Asia,LIC,rocks_region,0.2,income_group_default:LIC,2284.07584789349,2236.19907311431,0.0586909415086505,0.02483933806400151
+AGO,Angola,Sub-Saharan Africa,Sub-Saharan Africa,LMC,rocks_region,0.4,income_group_default:LMC,8067.48584683702,10251.3457063657,0.20729974461892597,0.11387029208304814
+ALB,Albania,Europe & Central Asia,Europe and Central Asia,UMC,rocks_region,0.65,income_group_default:UMC,12386.6003347481,28220.7950617158,0.3182824407552825,0.31347203270083374
+AND,Andorra,Europe & Central Asia,Europe and Central Asia,HIC,europe_gdp_scaled,0.9,income_group_default:HIC,50733.2390023674,79566.7925868466,1.3036263947094548,0.8838150786729814
+ARE,United Arab Emirates,"Middle East, North Africa, Afghanistan & Pakistan",Middle East and North Africa,HIC,hic_gdp_scaled,0.9,income_group_default:HIC,73986.0815808827,79343.7793099888,1.901124601673175,0.8813378832196638
+ARG,Argentina,Latin America & Caribbean,Latin America and Caribbean,UMC,rocks_region,0.65,income_group_default:UMC,19899.1499275245,32586.6312086783,0.5113227065315338,0.36196703535523106
+ARM,Armenia,Europe & Central Asia,Europe and Central Asia,UMC,rocks_region,0.65,income_group_default:UMC,9756.84084836026,24754.2118320452,0.250708914096896,0.27496578618456724
+ASM,American Samoa,East Asia & Pacific,East Asia and Pacific,HIC,hic_gdp_scaled,0.9,income_group_default:HIC,,,,
+ATG,Antigua and Barbuda,Latin America & Caribbean,Latin America and Caribbean,HIC,hic_gdp_scaled,0.9,income_group_default:HIC,20985.4388292177,35832.4795485115,0.5392356667992809,0.3980213943731474
+AUS,Australia,East Asia & Pacific,East Asia and Pacific,HIC,national,0.9,income_group_default:HIC,46464.5867627929,71934.4033931263,1.193940361671326,0.7990357324608298
+AUT,Austria,Europe & Central Asia,Europe and Central Asia,HIC,europe_gdp_scaled,0.9,income_group_default:HIC,49549.3162311441,76777.5421537618,1.2732046632329321,0.8528325354434706
+AZE,Azerbaijan,Europe & Central Asia,Europe and Central Asia,UMC,rocks_region,0.65,income_group_default:UMC,15075.2726347911,26112.5306828203,0.38736977375400306,0.2900537725533837
+BDI,Burundi,Sub-Saharan Africa,Sub-Saharan Africa,LIC,rocks_region,0.2,income_group_default:LIC,722.032898379933,1248.05425025467,0.01855314509157847,0.013863184998603652
+BEL,Belgium,Europe & Central Asia,Europe and Central Asia,HIC,europe_gdp_scaled,0.9,income_group_default:HIC,46071.914889496,74675.607672673,1.1838503806538327,0.8294845867783128
+BEN,Benin,Sub-Saharan Africa,Sub-Saharan Africa,LMC,rocks_region,0.4,income_group_default:LMC,2725.33724817144,4816.87504692826,0.07002946472696792,0.05350506989347457
+BFA,Burkina Faso,Sub-Saharan Africa,Sub-Saharan Africa,LIC,rocks_region,0.2,income_group_default:LIC,1691.57935387408,3071.62546744866,0.043466325782056094,0.0341191194957864
+BGD,Bangladesh,South Asia,South Asia,LMC,rocks_region,0.4,income_group_default:LMC,4212.23578089428,10153.7083791829,0.10823637230134539,0.11278575242523427
+BGR,Bulgaria,Europe & Central Asia,Europe and Central Asia,HIC,europe_gdp_scaled,0.9,income_group_default:HIC,18896.1145714262,44451.1001576913,0.48554900489628977,0.49375563983039167
+BHR,Bahrain,"Middle East, North Africa, Afghanistan & Pakistan",Middle East and North Africa,HIC,hic_gdp_scaled,0.9,income_group_default:HIC,48034.2468880503,70996.7821254802,1.234273886796994,0.788620786885066
+BHS,"Bahamas, The",Latin America & Caribbean,Latin America and Caribbean,HIC,hic_gdp_scaled,0.9,income_group_default:HIC,32137.5784729905,41257.7650774105,0.8257977685493685,0.4582845896164846
+BIH,Bosnia and Herzegovina,Europe & Central Asia,Europe and Central Asia,UMC,rocks_region,0.65,income_group_default:UMC,11845.4600112171,25814.2641520511,0.3043774580877318,0.28674067611218224
+BLR,Belarus,Europe & Central Asia,Europe and Central Asia,UMC,rocks_region,0.65,income_group_default:UMC,18133.5313085883,34715.9778689211,0.46595388956070566,0.38561947407821223
+BLZ,Belize,Latin America & Caribbean,Latin America and Caribbean,UMC,rocks_region,0.65,income_group_default:UMC,9538.38691146009,14965.7521203147,0.24509558595599087,0.16623715695438074
+BMU,Bermuda,North America,North America,HIC,hic_gdp_scaled,0.9,income_group_default:HIC,75943.4642970922,118727.973294368,1.9514209325122076,1.3188111477952467
+BOL,Bolivia,Latin America & Caribbean,Latin America and Caribbean,LMC,rocks_region,0.4,income_group_default:LMC,8757.31777115049,12873.0394876629,0.22502546294742243,0.14299164309194495
+BRA,Brazil,Latin America & Caribbean,Latin America and Caribbean,UMC,rocks_region,0.65,income_group_default:UMC,14821.4383174534,23433.2897595431,0.3808473217585955,0.26029319718765553
+BRB,Barbados,Latin America & Caribbean,Latin America and Caribbean,HIC,hic_gdp_scaled,0.9,income_group_default:HIC,19190.4652295469,25893.8676913012,0.4931125528733534,0.28762489936685454
+BRN,Brunei Darussalam,East Asia & Pacific,East Asia and Pacific,HIC,hic_gdp_scaled,0.9,income_group_default:HIC,62707.8264437741,92429.9262686398,1.611321873282106,1.0266966896735297
+BTN,Bhutan,South Asia,South Asia,LMC,rocks_region,0.4,income_group_default:LMC,10213.8139608922,19594.0028382994,0.26245116085432013,0.21764701827270844
+BWA,Botswana,Sub-Saharan Africa,Sub-Saharan Africa,UMC,rocks_region,0.65,income_group_default:UMC,14143.6940733728,20697.9104661898,0.3634322049077938,0.22990904587582872
+CAF,Central African Republic,Sub-Saharan Africa,Sub-Saharan Africa,LIC,rocks_region,0.2,income_group_default:LIC,768.870887999174,1313.8765680523,0.0197566803032751,0.014594328671628461
+CAN,Canada,North America,North America,HIC,national,0.9,income_group_default:HIC,44668.1361640155,66745.8248561648,1.1477792952105677,0.7414018402458049
+CHE,Switzerland,Europe & Central Asia,Europe and Central Asia,HIC,europe_gdp_scaled,0.9,income_group_default:HIC,66418.7989292294,102513.347221899,1.706677931306596,1.1387017007259777
+CHI,Channel Islands,Europe & Central Asia,Europe and Central Asia,HIC,hic_gdp_scaled,0.9,income_group_default:HIC,,,,
+CHL,Chile,Latin America & Caribbean,Latin America and Caribbean,HIC,hic_gdp_scaled,0.9,income_group_default:HIC,22468.3125745547,37774.0879069903,0.5773391546202098,0.4195884663677616
+CHN,China,East Asia & Pacific,East Asia and Pacific,UMC,national,0.65,income_group_default:UMC,13463.3331511105,29333.3311051433,0.3459498506636933,0.3258299033498883
+CIV,Cote d'Ivoire,Sub-Saharan Africa,Sub-Saharan Africa,LMC,rocks_region,0.4,income_group_default:LMC,4403.64296618998,8208.90898574972,0.11315471506429957,0.09118323492983306
+CMR,Cameroon,Sub-Saharan Africa,Sub-Saharan Africa,LMC,rocks_region,0.4,income_group_default:LMC,3497.66067563959,5787.85440270861,0.0898748604694509,0.06429055172350018
+COD,"Congo, Dem. Rep.",Sub-Saharan Africa,Sub-Saharan Africa,LIC,rocks_region,0.2,income_group_default:LIC,910.393131638657,1919.82250200565,0.02339319427074174,0.021325078220242107
+COG,"Congo, Rep.",Sub-Saharan Africa,Sub-Saharan Africa,LMC,rocks_region,0.4,income_group_default:LMC,4715.13431581624,7248.44439070757,0.12115870521122306,0.0805145493635115
+COL,Colombia,Latin America & Caribbean,Latin America and Caribbean,UMC,rocks_region,0.65,income_group_default:UMC,13332.0555048211,22640.4224606513,0.34257657885799986,0.2514861553129636
+COM,Comoros,Sub-Saharan Africa,Sub-Saharan Africa,LMC,rocks_region,0.4,income_group_default:LMC,2949.47342240993,4238.26133409182,0.07578880196803897,0.04707792224172489
+CPV,Cabo Verde,Sub-Saharan Africa,Sub-Saharan Africa,UMC,rocks_region,0.65,income_group_default:UMC,6773.48679969386,12165.2989335356,0.17404952551688932,0.13513017534654934
+CRI,Costa Rica,Latin America & Caribbean,Latin America and Caribbean,HIC,hic_gdp_scaled,0.9,income_group_default:HIC,17525.1404835991,33814.7696296148,0.45032085777817016,0.37560899853901214
+CUB,Cuba,Latin America & Caribbean,Latin America and Caribbean,UMC,rocks_region,0.65,income_group_default:UMC,,,,
+CUW,Curacao,Latin America & Caribbean,Latin America and Caribbean,HIC,hic_gdp_scaled,0.9,income_group_default:HIC,24037.6486252583,32740.7736763943,0.6176643524214155,0.36367922498613225
+CYM,Cayman Islands,Latin America & Caribbean,Latin America and Caribbean,HIC,hic_gdp_scaled,0.9,income_group_default:HIC,64009.3167970419,92201.086358256,1.6447645867840068,1.0241547729162517
+CYP,Cyprus,Europe & Central Asia,Europe and Central Asia,HIC,europe_gdp_scaled,0.9,income_group_default:HIC,31380.220703125,64574.62109375,0.8063369259449985,0.7172844595935786
+CZE,Czechia,Europe & Central Asia,Europe and Central Asia,HIC,europe_gdp_scaled,0.9,income_group_default:HIC,34093.0280593748,60487.2877495391,0.8760444262527197,0.6718830210822361
+DEU,Germany,Europe & Central Asia,Europe and Central Asia,HIC,europe_gdp_scaled,0.9,income_group_default:HIC,48567.1117562648,75406.6888111618,1.2479662257975725,0.8376053179643106
+DJI,Djibouti,"Middle East, North Africa, Afghanistan & Pakistan",Middle East and North Africa,LMC,rocks_region,0.4,income_group_default:LMC,4263.96288890455,8451.96838146073,0.1095655368619016,0.0938830994330812
+DMA,Dominica,Latin America & Caribbean,Latin America and Caribbean,UMC,rocks_region,0.65,income_group_default:UMC,12092.7315992676,22713.1288027433,0.3107312761207045,0.252293765615791
+DNK,Denmark,Europe & Central Asia,Europe and Central Asia,HIC,europe_gdp_scaled,0.9,income_group_default:HIC,48897.2099776611,83218.071525634,1.2564483326514004,0.9243728952899963
+DOM,Dominican Republic,Latin America & Caribbean,Latin America and Caribbean,UMC,rocks_region,0.65,income_group_default:UMC,14804.0974069659,28721.0964580217,0.38040173482063666,0.3190292997912933
+DZA,Algeria,"Middle East, North Africa, Afghanistan & Pakistan",Middle East and North Africa,UMC,rocks_region,0.65,income_group_default:UMC,13807.3515841478,18586.2607480579,0.3547896471835466,0.20645318192701537
+ECU,Ecuador,Latin America & Caribbean,Latin America and Caribbean,UMC,rocks_region,0.65,income_group_default:UMC,10877.7507461388,16756.6539631307,0.2795114853020776,0.18613020531845
+EGY,"Egypt, Arab Rep.","Middle East, North Africa, Afghanistan & Pakistan",Middle East and North Africa,LMC,rocks_region,0.4,income_group_default:LMC,10903.3368231185,20204.0130500153,0.2801689376142836,0.22442291316215676
+ERI,Eritrea,Sub-Saharan Africa,Sub-Saharan Africa,LIC,rocks_region,0.2,income_group_default:LIC,,,,
+ESP,Spain,Europe & Central Asia,Europe and Central Asia,HIC,europe_gdp_scaled,0.9,income_group_default:HIC,35228.6333036223,59867.6944716701,0.9052246047605897,0.6650006790420271
+EST,Estonia,Europe & Central Asia,Europe and Central Asia,HIC,europe_gdp_scaled,0.9,income_group_default:HIC,29712.6299473728,52105.5093433416,0.763487004128049,0.5787795805557473
+ETH,Ethiopia,Sub-Saharan Africa,Sub-Saharan Africa,LIC,rocks_region,0.2,income_group_default:LIC,1632.61818006837,3621.67487597821,0.041951276793510565,0.04022897946963102
+FIN,Finland,Europe & Central Asia,Europe and Central Asia,HIC,europe_gdp_scaled,0.9,income_group_default:HIC,42257.8593791297,65884.4876972259,1.085845531525857,0.7318342462264702
+FJI,Fiji,East Asia & Pacific,East Asia and Pacific,UMC,rocks_region,0.65,income_group_default:UMC,11519.3012049449,16337.5722970567,0.295996577286813,0.18147511387100582
+FRA,France,Europe & Central Asia,Europe and Central Asia,HIC,europe_gdp_scaled,0.9,income_group_default:HIC,40905.1767750994,63975.353585864,1.0510873969979997,0.7106278929228745
+FRO,Faroe Islands,Europe & Central Asia,Europe and Central Asia,HIC,hic_gdp_scaled,0.9,income_group_default:HIC,53685.4650513354,82089.2832575392,1.3794859273603053,0.9118344975547548
+FSM,"Micronesia, Fed. Sts.",East Asia & Pacific,East Asia and Pacific,UMC,rocks_region,0.65,income_group_default:UMC,3302.59669394506,4604.39540764468,0.08486255374126733,0.051144880384706194
+GAB,Gabon,Sub-Saharan Africa,Sub-Saharan Africa,UMC,rocks_region,0.65,income_group_default:UMC,14306.4340768252,22218.341068445,0.3676139241937585,0.24679774339222366
+GBR,United Kingdom,Europe & Central Asia,Europe and Central Asia,HIC,europe_gdp_scaled,0.9,income_group_default:HIC,42772.4983791214,64606.4955066338,1.099069543974673,0.7176385154228343
+GEO,Georgia,Europe & Central Asia,Europe and Central Asia,UMC,rocks_region,0.65,income_group_default:UMC,12269.6528932768,29414.3813424216,0.31527739367976243,0.3267301962925553
+GHA,Ghana,Sub-Saharan Africa,Sub-Saharan Africa,LMC,rocks_region,0.4,income_group_default:LMC,5191.37053389659,8610.2796922986,0.13339593106579903,0.09564159589993669
+GIB,Gibraltar,Europe & Central Asia,Europe and Central Asia,HIC,hic_gdp_scaled,0.9,income_group_default:HIC,,,,
+GIN,Guinea,Sub-Saharan Africa,Sub-Saharan Africa,LMC,rocks_region,0.4,income_group_default:LMC,1929.68091332187,4934.65125959855,0.049584513455883446,0.054813309038006894
+GMB,"Gambia, The",Sub-Saharan Africa,Sub-Saharan Africa,LIC,rocks_region,0.2,income_group_default:LIC,1990.31625750973,3705.64184038599,0.05114258143439154,0.04116167094607821
+GNB,Guinea-Bissau,Sub-Saharan Africa,Sub-Saharan Africa,LIC,rocks_region,0.2,income_group_default:LIC,1729.94260310123,3293.09532269486,0.044452096556064746,0.036579170871169756
+GNQ,Equatorial Guinea,Sub-Saharan Africa,Sub-Saharan Africa,UMC,rocks_region,0.65,income_group_default:UMC,19478.7010123338,16133.1056143137,0.5005189748115075,0.1792039309890609
+GRC,Greece,Europe & Central Asia,Europe and Central Asia,HIC,europe_gdp_scaled,0.9,income_group_default:HIC,26607.7256796976,45263.6498511586,0.6837042968540558,0.5027813105644943
+GRD,Grenada,Latin America & Caribbean,Latin America and Caribbean,UMC,rocks_region,0.65,income_group_default:UMC,13214.4096644941,21345.9653408221,0.3395535859308009,0.23710753473514007
+GRL,Greenland,Europe & Central Asia,Europe and Central Asia,HIC,hic_gdp_scaled,0.9,income_group_default:HIC,55815.6502896781,78905.5801137274,1.434222541007118,0.8764704373351827
+GTM,Guatemala,Latin America & Caribbean,Latin America and Caribbean,UMC,rocks_region,0.65,income_group_default:UMC,8934.00261178392,15197.0831415082,0.22956550467004977,0.16880674456811384
+GUM,Guam,East Asia & Pacific,East Asia and Pacific,HIC,hic_gdp_scaled,0.9,income_group_default:HIC,,,,
+GUY,Guyana,Latin America & Caribbean,Latin America and Caribbean,HIC,hic_gdp_scaled,0.9,income_group_default:HIC,11408.473901349,97899.0116180627,0.29314879147492445,1.0874464062477343
+HKG,"Hong Kong SAR, China",East Asia & Pacific,East Asia and Pacific,HIC,national,0.9,income_group_default:HIC,56043.042695697,80422.8129947646,1.4400655494227426,0.8933236150808544
+HND,Honduras,Latin America & Caribbean,Latin America and Caribbean,LMC,rocks_region,0.4,income_group_default:LMC,4845.59566521125,7871.09129065536,0.12451100169189545,0.08743081054448333
+HRV,Croatia,Europe & Central Asia,Europe and Central Asia,HIC,europe_gdp_scaled,0.9,income_group_default:HIC,23749.8280957224,50946.1671131832,0.6102686007087219,0.5659017943456527
+HTI,Haiti,Latin America & Caribbean,Latin America and Caribbean,LMC,rocks_region,0.4,income_group_default:LMC,3025.83461728258,3133.72347930529,0.07775095678261514,0.03480889418005055
+HUN,Hungary,Europe & Central Asia,Europe and Central Asia,HIC,europe_gdp_scaled,0.9,income_group_default:HIC,26937.7320818864,49837.6008411067,0.6921840443485208,0.5535880192754801
+IDN,Indonesia,East Asia & Pacific,East Asia and Pacific,UMC,rocks_region,0.65,income_group_default:UMC,10027.5372996025,17659.7921291587,0.25766465052793874,0.19616211817191048
+IMN,Isle of Man,Europe & Central Asia,Europe and Central Asia,HIC,hic_gdp_scaled,0.9,income_group_default:HIC,,,,
+IND,India,South Asia,South Asia,LMC,rocks_region,0.4,income_group_default:LMC,5269.11774528716,11747.9160436011,0.13539370055335478,0.13049395363003893
+IRL,Ireland,Europe & Central Asia,Europe and Central Asia,HIC,europe_gdp_scaled,0.9,income_group_default:HIC,71519.6014840656,155089.413131749,1.8377466542078797,1.722708147607834
+IRN,"Iran, Islamic Rep.","Middle East, North Africa, Afghanistan & Pakistan",Middle East and North Africa,UMC,rocks_region,0.65,income_group_default:UMC,14273.5499061586,19699.2193549189,0.3667689422116873,0.21881574634242748
+IRQ,Iraq,"Middle East, North Africa, Afghanistan & Pakistan",Middle East and North Africa,UMC,rocks_region,0.65,income_group_default:UMC,9334.46604866315,14266.7965348226,0.23985569541476973,0.15847327122144317
+ISL,Iceland,Europe & Central Asia,Europe and Central Asia,HIC,europe_gdp_scaled,0.9,income_group_default:HIC,49715.8375969779,83431.2131434311,1.2774835472949944,0.9267404379491555
+ISR,Israel,"Middle East, North Africa, Afghanistan & Pakistan",Middle East and North Africa,HIC,hic_gdp_scaled,0.9,income_group_default:HIC,35796.5328359923,59716.9735387228,0.9198171841917225,0.663326495266615
+ITA,Italy,Europe & Central Asia,Europe and Central Asia,HIC,europe_gdp_scaled,0.9,income_group_default:HIC,37384.3796455406,62802.5108384276,0.9606180290103584,0.6976001451477569
+JAM,Jamaica,Latin America & Caribbean,Latin America and Caribbean,UMC,rocks_region,0.65,income_group_default:UMC,9476.14929465037,13291.253767787,0.24349634645123192,0.14763709975637698
+JOR,Jordan,"Middle East, North Africa, Afghanistan & Pakistan",Middle East and North Africa,UMC,rocks_region,0.65,income_group_default:UMC,9851.78048494686,12631.6299394746,0.2531484550880131,0.14031010482845938
+JPN,Japan,East Asia & Pacific,East Asia and Pacific,HIC,national,0.9,income_group_default:HIC,41722.3895623635,55421.8797530311,1.0720862565331037,0.6156172873333486
+KAZ,Kazakhstan,Europe & Central Asia,Europe and Central Asia,UMC,rocks_region,0.65,income_group_default:UMC,22484.3651382607,44293.4839632441,0.5777516365780229,0.49200486460411325
+KEN,Kenya,Sub-Saharan Africa,Sub-Saharan Africa,LMC,rocks_region,0.4,income_group_default:LMC,3678.32614146019,7015.93578839722,0.09451718716665275,0.07793188136896124
+KGZ,Kyrgyz Republic,Europe & Central Asia,Europe and Central Asia,LMC,rocks_region,0.4,income_group_default:LMC,4153.3766990372,9219.51443675205,0.10672394663749858,0.1024088770243043
+KHM,Cambodia,East Asia & Pacific,East Asia and Pacific,LMC,rocks_region,0.4,income_group_default:LMC,4433.64393500572,8542.6965378612,0.11392561113922253,0.09489089313796646
+KIR,Kiribati,East Asia & Pacific,East Asia and Pacific,LMC,rocks_region,0.4,income_group_default:LMC,2310.60291495273,3936.61263730517,0.059372573225305515,0.043727257246763566
+KNA,St. Kitts and Nevis,Latin America & Caribbean,Latin America and Caribbean,HIC,hic_gdp_scaled,0.9,income_group_default:HIC,26877.4665031101,36777.262691657,0.6906354777533235,0.4085158929050146
+KOR,"Korea, Rep.",East Asia & Pacific,East Asia and Pacific,HIC,national,0.9,income_group_default:HIC,39794.1961180043,63124.9152183625,1.0225399646423947,0.7011813609182136
+KWT,Kuwait,"Middle East, North Africa, Afghanistan & Pakistan",Middle East and North Africa,HIC,hic_gdp_scaled,0.9,income_group_default:HIC,45267.3085347452,56467.7272075432,1.1631754523025173,0.6272343919097413
+LAO,Lao PDR,East Asia & Pacific,East Asia and Pacific,LMC,rocks_region,0.4,income_group_default:LMC,6086.0673044622,10382.9990718948,0.1563857962568666,0.11533267639979258
+LBN,Lebanon,"Middle East, North Africa, Afghanistan & Pakistan",Middle East and North Africa,LMC,rocks_region,0.4,income_group_default:LMC,17045.898285301,11917.4502960889,0.4380063911396251,0.13237711271976502
+LBR,Liberia,Sub-Saharan Africa,Sub-Saharan Africa,LIC,rocks_region,0.2,income_group_default:LIC,1340.43279741197,1981.09483342188,0.03444336709822399,0.022005681379556392
+LBY,Libya,"Middle East, North Africa, Afghanistan & Pakistan",Middle East and North Africa,UMC,rocks_region,0.65,income_group_default:UMC,17903.2565395803,16521.3998152838,0.46003681679307806,0.1835170402476008
+LCA,St. Lucia,Latin America & Caribbean,Latin America and Caribbean,UMC,rocks_region,0.65,income_group_default:UMC,14353.2224845845,28673.8437920214,0.3688161853645583,0.31850442481065383
+LIE,Liechtenstein,Europe & Central Asia,Europe and Central Asia,HIC,europe_gdp_scaled,0.9,income_group_default:HIC,,,,
+LKA,Sri Lanka,South Asia,South Asia,UMC,rocks_region,0.65,income_group_default:UMC,12227.171484965,17065.0298635432,0.3141858039005822,0.18955559500456112
+LSO,Lesotho,Sub-Saharan Africa,Sub-Saharan Africa,LMC,rocks_region,0.4,income_group_default:LMC,3034.64692924848,3184.11725194709,0.0779773953602235,0.03536866006584301
+LTU,Lithuania,Europe & Central Asia,Europe and Central Asia,HIC,europe_gdp_scaled,0.9,income_group_default:HIC,26948.5919371645,56837.8067003598,0.6924630959971371,0.6313451751325532
+LUX,Luxembourg,Europe & Central Asia,Europe and Central Asia,HIC,europe_gdp_scaled,0.9,income_group_default:HIC,107859.685999308,156542.075847247,2.771530782554814,1.7388440903854925
+LVA,Latvia,Europe & Central Asia,Europe and Central Asia,HIC,europe_gdp_scaled,0.9,income_group_default:HIC,22543.9183164105,46136.689377286,0.5792818975361551,0.5124788925881344
+MAC,"Macao SAR, China",East Asia & Pacific,East Asia and Pacific,HIC,hic_gdp_scaled,0.9,income_group_default:HIC,108656.763904919,137030.679100085,2.792012262090267,1.522114647228782
+MAF,St. Martin (French part),Latin America & Caribbean,Latin America and Caribbean,HIC,hic_gdp_scaled,0.9,income_group_default:HIC,,,,
+MAR,Morocco,"Middle East, North Africa, Afghanistan & Pakistan",Middle East and North Africa,LMC,rocks_region,0.4,income_group_default:LMC,7799.09228515625,11111.7080078125,0.20040318256104506,0.1234270575428409
+MCO,Monaco,Europe & Central Asia,Europe and Central Asia,HIC,europe_gdp_scaled,0.9,income_group_default:HIC,,,,
+MDA,Moldova,Europe & Central Asia,Europe and Central Asia,UMC,rocks_region,0.65,income_group_default:UMC,9197.61838204272,19995.7590923995,0.23633929800413983,0.2221096618427289
+MDG,Madagascar,Sub-Saharan Africa,Sub-Saharan Africa,LIC,rocks_region,0.2,income_group_default:LIC,1496.61172412841,1952.48426903369,0.038456494885224624,0.021687879852141212
+MDV,Maldives,South Asia,South Asia,UMC,rocks_region,0.65,income_group_default:UMC,17875.0989419262,28554.8945669737,0.4593132874416054,0.31718315603412406
+MEX,Mexico,Latin America & Caribbean,Latin America and Caribbean,UMC,rocks_region,0.65,income_group_default:UMC,19071.4444186548,25868.4787520629,0.49005422910673124,0.28734288313117645
+MHL,Marshall Islands,East Asia & Pacific,East Asia and Pacific,UMC,rocks_region,0.65,income_group_default:UMC,4125.16169273671,8964.32212870807,0.10599894213032539,0.09957424209083691
+MKD,North Macedonia,Europe & Central Asia,Europe and Central Asia,UMC,rocks_region,0.65,income_group_default:UMC,15034.1775526118,28028.5664230631,0.3863138066035676,0.3113367880356853
+MLI,Mali,Sub-Saharan Africa,Sub-Saharan Africa,LIC,rocks_region,0.2,income_group_default:LIC,2330.24293947692,3502.76132351788,0.05987723752165136,0.03890810693843911
+MLT,Malta,"Middle East, North Africa, Afghanistan & Pakistan",Middle East and North Africa,HIC,europe_gdp_scaled,0.9,income_group_default:HIC,38368.726998344,72210.3392223985,0.9859115292068866,0.8021007830771496
+MMR,Myanmar,East Asia & Pacific,East Asia and Pacific,LMC,rocks_region,0.4,income_group_default:LMC,4458.69054442659,6011.53492175516,0.11456920145163096,0.06677515879526269
+MNE,Montenegro,Europe & Central Asia,Europe and Central Asia,UMC,rocks_region,0.65,income_group_default:UMC,16091.7231229959,35422.6449824931,0.4134881866800387,0.39346901821932534
+MNG,Mongolia,East Asia & Pacific,East Asia and Pacific,UMC,rocks_region,0.65,income_group_default:UMC,10458.3027240524,20797.7652692242,0.2687334722370141,0.2310182168971866
+MNP,Northern Mariana Islands,East Asia & Pacific,East Asia and Pacific,HIC,hic_gdp_scaled,0.9,income_group_default:HIC,,,,
+MOZ,Mozambique,Sub-Saharan Africa,Sub-Saharan Africa,LIC,rocks_region,0.2,income_group_default:LIC,1317.88785956822,1697.94109338132,0.03386405900321304,0.018860455376417652
+MRT,Mauritania,Sub-Saharan Africa,Sub-Saharan Africa,LMC,rocks_region,0.4,income_group_default:LMC,3977.61171275863,7675.51996658445,0.10220754122195246,0.08525843586969363
+MUS,Mauritius,Sub-Saharan Africa,Sub-Saharan Africa,UMC,rocks_region,0.65,income_group_default:UMC,20269.5235095611,33666.64355884,0.5208397172121148,0.37396363807343275
+MWI,Malawi,Sub-Saharan Africa,Sub-Saharan Africa,LIC,rocks_region,0.2,income_group_default:LIC,1403.08451209235,1899.29166528127,0.03605324714012981,0.02109702500250087
+MYS,Malaysia,East Asia & Pacific,East Asia and Pacific,UMC,rocks_region,0.65,income_group_default:UMC,24526.3942716012,41497.6746089548,0.6302230168670702,0.46094946593740443
+NAM,Namibia,Sub-Saharan Africa,Sub-Saharan Africa,LMC,rocks_region,0.4,income_group_default:LMC,10465.8920558516,11985.7200318677,0.26892848547579395,0.13313544191636378
+NCL,New Caledonia,East Asia & Pacific,East Asia and Pacific,HIC,hic_gdp_scaled,0.9,income_group_default:HIC,,,,
+NER,Niger,Sub-Saharan Africa,Sub-Saharan Africa,LIC,rocks_region,0.2,income_group_default:LIC,1172.19178758955,2177.25014417163,0.03012029556977604,0.02418454288403625
+NGA,Nigeria,Sub-Saharan Africa,Sub-Saharan Africa,LMC,rocks_region,0.4,income_group_default:LMC,7307.83788174977,9531.61073275049,0.18778005383141574,0.10587559226358374
+NIC,Nicaragua,Latin America & Caribbean,Latin America and Caribbean,LMC,rocks_region,0.4,income_group_default:LMC,5448.89226010317,9283.92301511154,0.14001313363546689,0.10312431710802861
+NLD,Netherlands,Europe & Central Asia,Europe and Central Asia,HIC,europe_gdp_scaled,0.9,income_group_default:HIC,50956.6930942185,87320.1477254029,1.3093682053620197,0.9699380950592862
+NOR,Norway,Europe & Central Asia,Europe and Central Asia,HIC,europe_gdp_scaled,0.9,income_group_default:HIC,62695.3563994725,104043.666429243,1.6110014466897093,1.1557002392702735
+NPL,Nepal,South Asia,South Asia,LMC,rocks_region,0.4,income_group_default:LMC,2957.30559145504,6175.15897150244,0.07599005508129979,0.06859266830769326
+NRU,Naoero,East Asia & Pacific,East Asia and Pacific,HIC,hic_gdp_scaled,0.9,income_group_default:HIC,9955.33548658446,14200.486778198,0.2558093739667123,0.1577367131566702
+NZL,New Zealand,East Asia & Pacific,East Asia and Pacific,HIC,national,0.9,income_group_default:HIC,37497.1502090982,57350.3627657521,0.963515748258938,0.6370385651075803
+OMN,Oman,"Middle East, North Africa, Afghanistan & Pakistan",Middle East and North Africa,HIC,hic_gdp_scaled,0.9,income_group_default:HIC,36058.1666084788,42295.1761223734,0.9265400486937286,0.46980798391843964
+PAK,Pakistan,"Middle East, North Africa, Afghanistan & Pakistan",South Asia,LMC,rocks_region,0.4,income_group_default:LMC,4480.26313460985,6573.41613369925,0.11512352438701134,0.0730164445301024
+PAN,Panama,Latin America & Caribbean,Latin America and Caribbean,HIC,hic_gdp_scaled,0.9,income_group_default:HIC,27245.2788533669,43902.1632084954,0.7000866757750487,0.4876581368751164
+PER,Peru,Latin America & Caribbean,Latin America and Caribbean,UMC,rocks_region,0.65,income_group_default:UMC,11600.3873992867,18816.1045522938,0.29808014429868024,0.20900624977503154
+PHL,Philippines,East Asia & Pacific,East Asia and Pacific,UMC,rocks_region,0.65,income_group_default:UMC,6894.26702217935,12576.9867435109,0.17715305860657865,0.13970313703486775
+PLW,Palau,East Asia & Pacific,East Asia and Pacific,HIC,hic_gdp_scaled,0.9,income_group_default:HIC,17756.0262069064,23051.6787122681,0.4562536294478626,0.2560543233207506
+PNG,Papua New Guinea,East Asia & Pacific,East Asia and Pacific,LMC,rocks_region,0.4,income_group_default:LMC,3669.7387159095,5214.768271628,0.09429652720425692,0.05792480355695745
+POL,Poland,Europe & Central Asia,Europe and Central Asia,HIC,europe_gdp_scaled,0.9,income_group_default:HIC,26988.1069013509,54262.4040405236,0.6934784609001544,0.6027380184228831
+PRI,Puerto Rico (US),Latin America & Caribbean,Latin America and Caribbean,HIC,hic_gdp_scaled,0.9,income_group_default:HIC,32323.5456459985,52195.5534213472,0.8305763263558475,0.5797797756283298
+PRK,"Korea, Dem. People's Rep.",East Asia & Pacific,East Asia and Pacific,LIC,rocks_region,0.2,income_group_default:LIC,,,,
+PRT,Portugal,Europe & Central Asia,Europe and Central Asia,HIC,europe_gdp_scaled,0.9,income_group_default:HIC,29608.0071513956,53145.7317498942,0.7607986475199126,0.5903342030080877
+PRY,Paraguay,Latin America & Caribbean,Latin America and Caribbean,UMC,rocks_region,0.65,income_group_default:UMC,12679.0574753215,20181.4242826808,0.3257973334621122,0.22417200078364063
+PSE,West Bank and Gaza,"Middle East, North Africa, Afghanistan & Pakistan",Middle East and North Africa,LMC,rocks_region,0.4,income_group_default:LMC,5769.98236633203,4999.71301859773,0.14826377061018228,0.05553600454676075
+PYF,French Polynesia,East Asia & Pacific,East Asia and Pacific,HIC,hic_gdp_scaled,0.9,income_group_default:HIC,,,,
+QAT,Qatar,"Middle East, North Africa, Afghanistan & Pakistan",Middle East and North Africa,HIC,hic_gdp_scaled,0.9,income_group_default:HIC,102545.939634633,128882.934242572,2.6349903181177123,1.4316108135548247
+ROU,Romania,Europe & Central Asia,Europe and Central Asia,HIC,europe_gdp_scaled,0.9,income_group_default:HIC,21624.5759002018,50895.081617639,0.5556587450800365,0.5653343449136027
+RUS,Russian Federation,Europe & Central Asia,Europe and Central Asia,HIC,hic_gdp_scaled,0.9,income_group_default:HIC,23994.013671875,49568.140625,0.6165431214872003,0.5505948987241189
+RWA,Rwanda,Sub-Saharan Africa,Sub-Saharan Africa,LIC,rocks_region,0.2,income_group_default:LIC,1760.5877311941,4164.436605809,0.045239544758401154,0.04625788908575628
+SAU,Saudi Arabia,"Middle East, North Africa, Afghanistan & Pakistan",Middle East and North Africa,HIC,hic_gdp_scaled,0.9,income_group_default:HIC,53930.8273872622,73783.5613906833,1.3857906858119944,0.8195758807809443
+SDN,Sudan,Sub-Saharan Africa,Sub-Saharan Africa,LIC,rocks_region,0.2,income_group_default:LIC,4217.01025390625,2192.27221679688,0.10835905575624843,0.024351405640061323
+SEN,Senegal,Sub-Saharan Africa,Sub-Saharan Africa,LMC,rocks_region,0.4,income_group_default:LMC,2994.28032714875,5463.21828561328,0.07694014701975214,0.060684546177184724
+SGP,Singapore,East Asia & Pacific,East Asia and Pacific,HIC,national,0.9,income_group_default:HIC,87156.187383315,163353.990260152,2.2395397685890055,1.8145097352735147
+SLB,Solomon Islands,East Asia & Pacific,East Asia and Pacific,LMC,rocks_region,0.4,income_group_default:LMC,2353.78235282563,2787.61656406214,0.06048209936687914,0.030964394476345566
+SLE,Sierra Leone,Sub-Saharan Africa,Sub-Saharan Africa,LIC,rocks_region,0.2,income_group_default:LIC,2560.04985807593,3716.89410482498,0.0657822885427095,0.041286659281752805
+SLV,El Salvador,Latin America & Caribbean,Latin America and Caribbean,UMC,rocks_region,0.65,income_group_default:UMC,7933.73697858999,14101.1774819291,0.2038629730203058,0.15663360153634126
+SMR,San Marino,Europe & Central Asia,Europe and Central Asia,HIC,europe_gdp_scaled,0.9,income_group_default:HIC,52247.2075298399,78810.3378046111,1.3425288849108088,0.8754125011511555
+SOM,"Somalia, Fed. Rep.",Sub-Saharan Africa,Sub-Saharan Africa,LIC,rocks_region,0.2,income_group_default:LIC,1341.38999678728,1642.77032278186,0.034467963011971886,0.018247627368997488
+SRB,Serbia,Europe & Central Asia,Europe and Central Asia,UMC,rocks_region,0.65,income_group_default:UMC,15546.3082680414,33909.7605745332,0.39947336690966817,0.376664142610135
+SSD,South Sudan,Sub-Saharan Africa,Sub-Saharan Africa,LIC,rocks_region,0.2,income_group_default:LIC,1154.88686304107,1154.88686304107,0.029675633315927017,0.012828296711884447
+STP,Sao Tome and Principe,Sub-Saharan Africa,Sub-Saharan Africa,LMC,rocks_region,0.4,income_group_default:LMC,3171.50905832741,6388.47738664299,0.08149416439393531,0.07096217480318329
+SUR,Suriname,Latin America & Caribbean,Latin America and Caribbean,UMC,rocks_region,0.65,income_group_default:UMC,16543.5743051372,22652.3952637959,0.425098821819904,0.2516191472761828
+SVK,Slovak Republic,Europe & Central Asia,Europe and Central Asia,HIC,europe_gdp_scaled,0.9,income_group_default:HIC,30147.9903672541,49308.7048471448,0.7746738974888804,0.5477131280134873
+SVN,Slovenia,Europe & Central Asia,Europe and Central Asia,HIC,europe_gdp_scaled,0.9,income_group_default:HIC,31336.2043858881,59244.7106359661,0.8052058955973157,0.6580806752331047
+SWE,Sweden,Europe & Central Asia,Europe and Central Asia,HIC,europe_gdp_scaled,0.9,income_group_default:HIC,48762.7456496975,72528.8892631159,1.252993176810236,0.8056391854702162
+SWZ,Eswatini,Sub-Saharan Africa,Sub-Saharan Africa,LMC,rocks_region,0.4,income_group_default:LMC,8391.07006084602,12529.2796629252,0.21561446945393523,0.13917321449042075
+SXM,Sint Maarten (Dutch part),Latin America & Caribbean,Latin America and Caribbean,HIC,hic_gdp_scaled,0.9,income_group_default:HIC,44587.5911500766,56490.5015205836,1.1457096342112356,0.6274873652999853
+SYC,Seychelles,Sub-Saharan Africa,Sub-Saharan Africa,HIC,hic_gdp_scaled,0.9,income_group_default:HIC,25435.2289894362,35854.0281615068,0.65357616659486,0.39826075288529234
+SYR,Syrian Arab Republic,"Middle East, North Africa, Afghanistan & Pakistan",Middle East and North Africa,LIC,rocks_region,0.2,income_group_default:LIC,,4905.15252202552,,0.054485641826331824
+TCA,Turks and Caicos Islands,Latin America & Caribbean,Latin America and Caribbean,HIC,hic_gdp_scaled,0.9,income_group_default:HIC,27484.6414432499,38009.5079479808,0.706237266516218,0.4222034741528512
+TCD,Chad,Sub-Saharan Africa,Sub-Saharan Africa,LIC,rocks_region,0.2,income_group_default:LIC,2377.51137185751,2902.7406157583,0.061091833264000875,0.032243173845212754
+TGO,Togo,Sub-Saharan Africa,Sub-Saharan Africa,LMC,rocks_region,0.4,income_group_default:LMC,2036.94563630408,4079.36376686718,0.052340756243659754,0.045312913733630195
+THA,Thailand,East Asia & Pacific,East Asia and Pacific,UMC,rocks_region,0.65,income_group_default:UMC,15791.1714762207,26250.0723587304,0.40576529992149246,0.2915815632706307
+TJK,Tajikistan,Europe & Central Asia,Europe and Central Asia,LMC,rocks_region,0.4,income_group_default:LMC,2975.47097476092,5923.47183321348,0.07645682743041897,0.06579696823363236
+TKM,Turkmenistan,Europe & Central Asia,Europe and Central Asia,UMC,rocks_region,0.65,income_group_default:UMC,12714.8137240363,22601.5518373128,0.32671611551736857,0.25105438670815916
+TLS,Timor-Leste,East Asia & Pacific,East Asia and Pacific,LMC,rocks_region,0.4,income_group_default:LMC,3107.57190164098,4809.49016945191,0.07985125401213976,0.053423039867435414
+TON,Tonga,East Asia & Pacific,East Asia and Pacific,UMC,rocks_region,0.65,income_group_default:UMC,5471.79686968515,8674.68048447494,0.14060168374972615,0.09635694949599637
+TTO,Trinidad and Tobago,Latin America & Caribbean,Latin America and Caribbean,HIC,hic_gdp_scaled,0.9,income_group_default:HIC,29825.4628753017,37121.2050020847,0.7663863258731795,0.41233634852810425
+TUN,Tunisia,"Middle East, North Africa, Afghanistan & Pakistan",Middle East and North Africa,LMC,rocks_region,0.4,income_group_default:LMC,10782.5438382441,15233.4885842318,0.2770650765860007,0.16921113034487825
+TUR,Turkiye,Europe & Central Asia,Europe and Central Asia,UMC,rocks_region,0.65,income_group_default:UMC,25896.983315375,45288.4750285273,0.6654412700063926,0.503057064624396
+TUV,Tuvalu,East Asia & Pacific,East Asia and Pacific,UMC,rocks_region,0.65,income_group_default:UMC,3778.07098101223,6759.27941373717,0.09708020124052316,0.07508098382003085
+TWN,Taiwan,East Asia & Pacific,East Asia and Pacific,HIC,national,0.9,income_group_default:HIC,,,,
+TZA,Tanzania,Sub-Saharan Africa,Sub-Saharan Africa,LMC,rocks_region,0.4,income_group_default:LMC,2317.27978515625,4470.9541015625,0.05954414011917073,0.049662635913125676
+UGA,Uganda,Sub-Saharan Africa,Sub-Saharan Africa,LIC,rocks_region,0.2,income_group_default:LIC,2189.96485919003,3487.69797525182,0.056272693209930426,0.03874078569926367
+UKR,Ukraine,Europe & Central Asia,Europe and Central Asia,UMC,rocks_region,0.65,income_group_default:UMC,9921.833984375,18904.98046875,0.2549485292148006,0.20999346909783045
+URY,Uruguay,Latin America & Caribbean,Latin America and Caribbean,HIC,hic_gdp_scaled,0.9,income_group_default:HIC,22168.6114189676,38314.8861221656,0.5696381218332033,0.4255955655802838
+USA,United States,North America,North America,HIC,national,0.9,income_group_default:HIC,56849.4697923159,90026.5163005744,1.460787263021834,1.0
+UZB,Uzbekistan,Europe & Central Asia,Europe and Central Asia,LMC,rocks_region,0.4,income_group_default:LMC,7696.35949962497,13601.2917473678,0.19776339110569657,0.1510809515493939
+VCT,St. Vincent and the Grenadines,Latin America & Caribbean,Latin America and Caribbean,UMC,rocks_region,0.65,income_group_default:UMC,12378.842727428,22799.4005332261,0.3180831035581877,0.2532520580614829
+VEN,"Venezuela, RB",Latin America & Caribbean,Latin America and Caribbean,LMC,rocks_region,0.4,income_group_default:LMC,,,,
+VGB,British Virgin Islands,Latin America & Caribbean,Latin America and Caribbean,HIC,hic_gdp_scaled,0.9,income_group_default:HIC,,,,
+VIR,Virgin Islands (U.S.),Latin America & Caribbean,Latin America and Caribbean,HIC,hic_gdp_scaled,0.9,income_group_default:HIC,32573.7166819858,49785.1412220186,0.8370046477506166,0.5530053063010832
+VNM,Viet Nam,East Asia & Pacific,East Asia and Pacific,UMC,rocks_region,0.65,income_group_default:UMC,7671.5819778084,18088.491587163,0.19712671518926111,0.20092404249843876
+VUT,Vanuatu,East Asia & Pacific,East Asia and Pacific,LMC,rocks_region,0.4,income_group_default:LMC,3378.95151983524,4525.23645747645,0.08682454490034232,0.05026559555373551
+WSM,Samoa,East Asia & Pacific,East Asia and Pacific,UMC,rocks_region,0.65,income_group_default:UMC,5681.77812766143,9318.95775945515,0.14599730042382414,0.10351347738861348
+XKX,Kosovo,Europe & Central Asia,Europe and Central Asia,UMC,rocks_region,0.65,income_group_default:UMC,8714.91966356132,19263.3268800963,0.22393601363912194,0.21397392314705613
+YEM,"Yemen, Rep.","Middle East, North Africa, Afghanistan & Pakistan",Middle East and North Africa,LIC,rocks_region,0.2,income_group_default:LIC,,,,
+ZAF,South Africa,Sub-Saharan Africa,Sub-Saharan Africa,UMC,rocks_region,0.65,income_group_default:UMC,13397.5234813346,15905.6794419658,0.34425882473603725,0.17667771780550745
+ZMB,Zambia,Sub-Saharan Africa,Sub-Saharan Africa,LMC,rocks_region,0.4,income_group_default:LMC,3337.47306887696,4379.26131013191,0.08575872681846601,0.04864412719815494
+ZWE,Zimbabwe,Sub-Saharan Africa,Sub-Saharan Africa,LMC,rocks_region,0.4,income_group_default:LMC,4045.89864738798,6470.41613223905,0.10396222221900975,0.07187233715271249

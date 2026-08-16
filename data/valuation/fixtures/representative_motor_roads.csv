@@ -1,0 +1,7 @@
+way_id,highway,length_km,iso3,lanes,surface,bridge,tunnel,lon,lat
+US-I10,motorway,2.0,USA,4,asphalt,,, -90.07,29.95
+PH-N1,primary,3.2,PHL,,asphalt,,,120.98,14.60
+CN-G15,motorway,10.0,CHN,4,asphalt,,,113.26,23.13
+JP-bridge,primary,0.4,JPN,2,asphalt,yes,,139.77,35.62
+US-street,residential,5.0,USA,1,asphalt,,,-90.08,29.94
+FOOT,footway,1.0,USA,1,,,,-90.06,29.96
