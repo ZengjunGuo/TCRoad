@@ -104,9 +104,7 @@ on each OSM way. The 0.1° density cube is a map, not a dollar grid.
 - Main totals always include local motor roads **and** a no-local
   sensitivity. Unclassified share > 60% flags a country (GIRI rule).
 
-Code: `code/road_replacement_value.py`, `code/build_road_unit_cost_book.py`,
-`code/apply_road_replacement_value.py`, `code/assign_road_countries.py`
-(Natural Earth 50m via GDAL). Tests:
+Code: one script, `code/road_replacement_value.py`. Tests:
 `code/tests/test_road_replacement_value_contract.py`.
 
 A full 113-million-way dollar layer still needs a server extract of
@@ -162,8 +160,8 @@ publish flood-dollar losses until depth exists.
 
 ```bash
 python3 -m unittest tests.test_road_replacement_value_contract
-python3 build_road_unit_cost_book.py
-python3 apply_road_replacement_value.py \
+python3 road_replacement_value.py write-book
+python3 road_replacement_value.py value \
   ../data/valuation/fixtures/representative_motor_roads.csv \
   --output ../data/valuation/fixtures/representative_motor_roads.valued.csv
 ```

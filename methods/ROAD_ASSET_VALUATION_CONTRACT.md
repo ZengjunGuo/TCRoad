@@ -220,10 +220,9 @@ type after outlier removal, and write `n` and `fill_rule` in the book.
 6. Add slope / terrain when the DEM pass is ready.
 7. Only then overlay 0.05° wind and rain on the valued ways.
 
-Code and numbers live in:
+Code and numbers live in one script and its tables:
 
 - `code/road_replacement_value.py`
-- `code/build_road_unit_cost_book.py`
 - `data/valuation/`
 
 ---

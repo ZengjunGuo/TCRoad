@@ -11,18 +11,20 @@ CODE_DIR = Path(__file__).resolve().parents[1]
 REPO = CODE_DIR.parent
 sys.path.insert(0, str(CODE_DIR))
 
-from apply_road_replacement_value import apply_rows, qa_replacement_totals  # noqa: E402
-from assign_road_countries import CountryIndex  # noqa: E402
-from build_road_unit_cost_book import assemble_book  # noqa: E402
-from extract_osm_motor_roads import haversine_km, way_length_and_mid  # noqa: E402
 from road_replacement_value import (  # noqa: E402
     PRICE_BOOK_EUROPE,
     PRICE_BOOK_NATIONAL,
     PRICE_BOOK_ROCKS,
     WORK_TYPE_2L,
+    CountryIndex,
+    apply_rows,
+    assemble_book,
     classify_highway,
+    haversine_km,
     parse_lanes,
+    qa_replacement_totals,
     replacement_cost,
+    way_length_and_mid,
 )
 
 
