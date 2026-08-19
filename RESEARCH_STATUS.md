@@ -1,8 +1,9 @@
-# TC–road risk: what this study is, and where it stands (16 August 2026)
+# TC–road risk: what this study is, and where it stands (18 August 2026)
 
 This is the public status note for the tropical-cyclone / urban-road work.
-It is **not** a results paper. Numbers below for live jobs were read from the
-production host `tc-road-risk` (`3090-2`) at **2026-08-16 15:58 UTC**.
+It is **not** a results paper. Hazard file counts below are the live
+host inventory on `3090-2`. Crowther is hashed
+locally and the GeoTIFF+manifest are on the host (1 157 937 187 bytes).
 
 Large files (planet PBF, event NetCDFs, Lin tracks) stay on the server
 `/mnt/sdb_test/tang/zengjun/TC_Road_Risk`. This GitHub tree holds methods,
@@ -31,26 +32,19 @@ been started.
 
 ### 2.1 Historical wind + rain (`lin_road_domain_300km_v1`)
 
-| Item | 16 Aug 2026 15:58 UTC |
+Live host inventory **2026-08-19 02:53 UTC** on `3090-2` (EasyConnect `status=4`, SSH OK):
+
+| Item | 2026-08-19 02:53 UTC |
 |---|---|
-| Domain | 99,242 historical tracks that come within 300 km of a motor road (of 100,000) |
-| Compact hazard footprints | **83,536** |
-| Road-overlap files | **83,536** |
-| Event-side files | **83,687** |
-| Locks held | ~83,869 |
-| Workers still running | ~386 `run_lin_event_worker.py` processes |
-| Remaining (approx.) | ~15,700 events |
-| Progress | **~84%** of the road-domain sample |
-| Audit queue | **3** events, all `METHOD_DOMAIN_PENDING` (`C15_FIXED_R0_BELOW_302KM_NUMERICAL_DOMAIN`): 12357 (r0=297.2 km), 68925 (278.4 km), 72126 (279.3 km). Not resampled. |
-| Other live fail tally | Full 83k-attempt scan not finished in this session; successful attempts use `status=completed`. Antimeridian leftovers stay a post-batch audit. |
-| In-flight worker change | **none** — do not touch the 192-way launcher |
+| Domain | 99,242 historical tracks within 300 km of a motor road (of 100,000) |
+| Compact + road-overlap | **99,234** / 99,242 (`compact_nc=99234` `overlap_nc=99234`) |
+| Closed leftover | **14472** compact+overlap present (mtime 02:39 UTC). `eq14472` session at shell prompt. |
+| Leftover event ids | **8**: 11902, 11944, 12357, 50194, 62311, 68925, 72126, 86977 (all `METHOD_DOMAIN_PENDING`; no compact/overlap) |
+| Frozen, not resampled | 12357, 68925, 72126 |
+| In-flight hazard | **none**. Historical C15–TCR closed: 99,234 + 8 pending = 99,242. |
+| Wind-asset ledger | **in-flight** tmux `windasset` / `score-historical` since 03:30 UTC. Inputs: 99,234 compact files (pending eight have no compact), 114 valued shards + extract lon/lat, Crowther sha256 `1812e5cbb1…`. Totals pending until `historical_wind_asset.summary.json` exists. Record: [`methods/HISTORICAL_WIND_ASSET_LEDGER.md`](methods/HISTORICAL_WIND_ASSET_LEDGER.md). |
 
-Compact files are still being written (timestamps 15:57 UTC). This batch is
-the current-climate 1995–2014, 5,000 accepted tracks/year, stream 0.
-
-Antimeridian / method-domain failures remain a post-batch audit (the three
-audit-queue IDs plus any lock-without-footprint remainder). They are **not**
-being re-sampled mid-flight.
+This is the current-climate 1995–2014, 5,000 accepted tracks/year, stream 0.
 
 ### 2.2 Future Lin windows (same GCM, four SSPs × two 20-year slices)
 
@@ -59,7 +53,10 @@ All **eight** future environment files are published (plus historical):
 - ssp126 / 245 / 370 / 585 × 2041–2060 and 2081–2100
 - each `env_wnd_*.nc` is 495,477,475 bytes
 
-Tracks (5,000/year, stream 0), sequential in tmux `lin_future_windows`:
+Tracks (5,000/year, stream 0). Last host-answered pipeline log
+(**2026-08-17 19:08 UTC**): **all eight future windows published**.
+Not re-listed tonight (SSH down). No future C15–TCR production has been
+started; that wait is method, not a missing env file.
 
 | Window | Tracks | Notes |
 |---|---|---|
@@ -68,10 +65,10 @@ Tracks (5,000/year, stream 0), sequential in tmux `lin_future_windows`:
 | ssp126 2081–2100 | published 15 Aug 09:55 UTC | |
 | ssp245 2041–2060 | published 15 Aug 21:20 UTC | |
 | ssp245 2081–2100 | published 16 Aug 08:43 UTC | |
-| **ssp370 2041–2060** | **running** (started 16 Aug 08:43 UTC) | directory exists; no final nc yet |
-| ssp370 2081–2100 | not started | env ready |
-| ssp585 2041–2060 | not started | env ready |
-| ssp585 2081–2100 | not started | env ready |
+| ssp370 2041–2060 | published 16 Aug 20:47 UTC | |
+| ssp370 2081–2100 | published 17 Aug 05:14 UTC | |
+| ssp585 2041–2060 | published 17 Aug 12:30 UTC | |
+| ssp585 2081–2100 | published 17 Aug 19:08 UTC | |
 
 Dead pane: `lin_s0_spatial_2500_5000` (historical tracks already published
 10 Aug). Do not confuse it with live work.
@@ -107,9 +104,11 @@ on each OSM way. The 0.1° density cube is a map, not a dollar grid.
 Code: one script, `code/road_replacement_value.py`. Tests:
 `code/tests/test_road_replacement_value_contract.py`.
 
-A full 113-million-way dollar layer still needs a server extract of
-`roads.osm.pbf`. That extract is **pending**; it is not required to freeze
-the method, and it must not interrupt the wind+rain workers.
+Object-level 2025 USD layer is **done** on the host extract of
+`planet-260803` (`data/valuation/global/global_replacement_value.summary.json`):
+**110,822,264** accepted ways; **52.250 million km**;
+**$49.230 T** all-motor / **$35.805 T** no-local. Eleven countries trip the
+GIRI unclassified-share flag. This is not a 0.1° dollar grid.
 
 ---
 
@@ -145,18 +144,45 @@ publish flood-dollar losses until depth exists.
 
 ---
 
-## 6. What is deliberately not being done tonight
+## 6. Wind asset loss (method frozen 2026-08-18)
 
-- No change to the in-flight historical hazard launcher.
+Contract: [`methods/WIND_ASSET_IMPACT_CONTRACT.md`](methods/WIND_ASSET_IMPACT_CONTRACT.md)
+
+**Following Koks et al. (2019).** Operational rules are the public
+`gmtra` implementation. Pavement is not rebuilt by wind.
+
+- Cleanup on ways: Escobedo 2009 moderate volume × 2005 USD/m³, inflated
+  to 2025, times Crowther density factor \(P=\min(N,10^{4})/10^{4}\),
+  if converted gust ≥ 151 km/h (C15 cut = 91.0 km/h using Harper
+  In-Land \(G_{3s/10min}=1.66\)).
+- Bridges in the main text: full GIRI 2025 replacement if gust exceeds
+  the `gmtra` class threshold **and** the event is rarer than the
+  `gmtra` design return period.
+- Kernel coded: `code/road_wind_asset_impact.py`. Object join:
+  `code/road_wind_object_join.py` samples compact event-max C15 at the
+  extract lon/lat (periodic, 0.05° cell) and Crowther \(N\), then calls
+  the kernel. Pending eight IDs contribute no wind. Written record:
+  [`methods/HISTORICAL_WIND_ASSET_LEDGER.md`](methods/HISTORICAL_WIND_ASSET_LEDGER.md).
+- Crowther biome WGS84 GeoTIFF sha256
+  `1812e5cbb17f91f3a1dfc3033e9cc402bc557ad6ed3827c84ce1fc3f8f05c338`
+  (`data/impact/crowther.manifest.json`). Not a 0.1° dollar grid. Not
+  Koks SI 5k–50k bands. Historical object-level apply is the live
+  production step after the 99,234-event compact set closed.
+
+---
+
+## 7. What is deliberately not being done tonight
+
 - No re-extract of `planet-260803`.
 - No global traffic assignment, no MRIO.
 - No SFINCS production.
 - No Koks Supplementary Table 8 unit costs.
 - No observed AADT as the flow layer.
+- No future-window C15–TCR.
 
 ---
 
-## 7. How to reproduce the dollar kernel locally
+## 8. How to reproduce the dollar kernel locally
 
 ```bash
 python3 -m unittest tests.test_road_replacement_value_contract

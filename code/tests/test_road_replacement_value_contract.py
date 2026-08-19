@@ -252,6 +252,8 @@ class RoadReplacementValueTests(unittest.TestCase):
                 "surface": "asphalt",
                 "bridge": "",
                 "tunnel": "",
+                "lon": "-90.07",
+                "lat": "29.95",
             },
             {
                 "way_id": "2",
@@ -280,6 +282,8 @@ class RoadReplacementValueTests(unittest.TestCase):
         self.assertAlmostEqual(totals["replacement_usd"], 2.0 * 12_000_000.0 + 10.0 * 600_000.0)
         self.assertAlmostEqual(totals["replacement_usd_no_local"], 2.0 * 12_000_000.0)
         self.assertEqual(sum(int(row["accepted"]) for row in valued), 2)
+        self.assertEqual(valued[0]["lon"], "-90.07")
+        self.assertEqual(valued[0]["lat"], "29.95")
 
     def test_country_index_uses_natural_earth_not_a_stub(self) -> None:
         index = CountryIndex()
@@ -322,6 +326,56 @@ class RoadReplacementValueTests(unittest.TestCase):
         self.assertIn("ZZZ", qa["countries_flagged_unclassified"])
         self.assertNotIn("USA", qa["countries_flagged_unclassified"])
         self.assertGreater(qa["by_country"]["ZZZ"]["unclassified_share"], 0.60)
+
+    def test_value_global_matches_apply_rows_on_shards(self) -> None:
+        import tempfile
+
+        from road_replacement_value import value_global
+
+        rows = [
+            {
+                "way_id": "1",
+                "highway": "motorway",
+                "length_km": "2.0",
+                "iso3": "USA",
+                "lanes": "4",
+                "surface": "asphalt",
+                "bridge": "",
+                "tunnel": "",
+            },
+            {
+                "way_id": "2",
+                "highway": "residential",
+                "length_km": "10.0",
+                "iso3": "USA",
+                "lanes": "1",
+                "surface": "asphalt",
+                "bridge": "",
+                "tunnel": "",
+            },
+        ]
+        direct, direct_totals = apply_rows(rows, REPO)
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            ways = root / "ways"
+            out = root / "valued"
+            ways.mkdir()
+            fields = list(rows[0].keys())
+            with (ways / "ways-0000.csv").open("w", newline="", encoding="utf-8") as handle:
+                writer = __import__("csv").DictWriter(handle, fieldnames=fields)
+                writer.writeheader()
+                writer.writerow(rows[0])
+            with (ways / "ways-0001.csv").open("w", newline="", encoding="utf-8") as handle:
+                writer = __import__("csv").DictWriter(handle, fieldnames=fields)
+                writer.writeheader()
+                writer.writerow(rows[1])
+            totals = value_global(ways, out, REPO)
+        self.assertAlmostEqual(totals["replacement_usd"], direct_totals["replacement_usd"])
+        self.assertAlmostEqual(
+            totals["replacement_usd_no_local"], direct_totals["replacement_usd_no_local"]
+        )
+        self.assertLess(totals["replacement_usd_no_local"], totals["replacement_usd"])
+        self.assertEqual(totals["accepted_ways"], 2)
 
 
 if __name__ == "__main__":

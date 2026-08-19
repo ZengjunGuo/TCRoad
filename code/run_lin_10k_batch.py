@@ -288,6 +288,24 @@ def select_shard(
     ]
 
 
+def select_event_positions(
+    events: Sequence[dict[str, Any]], positions: Sequence[int]
+) -> list[dict[str, Any]]:
+    """Select exact sample positions. Missing IDs are an error, not a skip."""
+
+    wanted = {int(position) for position in positions}
+    selected = [
+        event for event in events if int(event["event_position"]) in wanted
+    ]
+    found = {int(event["event_position"]) for event in selected}
+    missing = sorted(wanted - found)
+    if missing:
+        raise ValueError(
+            "requested event positions are not in the sample: " f"{missing}"
+        )
+    return selected
+
+
 def representative_qa_positions(
     events: Sequence[dict[str, Any]],
     *,
@@ -778,6 +796,13 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--track-native-last-index", type=int, required=True)
     parser.add_argument("--shard-index", type=int, required=True)
     parser.add_argument("--shard-count", type=int, required=True)
+    parser.add_argument(
+        "--only-event-position",
+        action="append",
+        type=int,
+        default=[],
+        help="run only these sample positions (repeatable); ignores shard split",
+    )
     parser.add_argument("--worker-arg", action="append", default=[])
     parser.add_argument(
         "--retain-qa-event-position", action="append", type=int, default=[]
@@ -814,7 +839,10 @@ def main() -> None:
     qa_coverage_positions = representative_qa_positions(
         events, require_frozen_10k_identities=not args.allow_non_10k_sample
     )
-    selected = select_shard(events, args.shard_index, args.shard_count)
+    if args.only_event_position:
+        selected = select_event_positions(events, args.only_event_position)
+    else:
+        selected = select_shard(events, args.shard_index, args.shard_count)
     selected_positions = {int(event["event_position"]) for event in selected}
     retain = set(args.retain_qa_event_position)
     unknown_qa = retain - selected_positions

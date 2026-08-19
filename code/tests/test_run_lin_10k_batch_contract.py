@@ -24,6 +24,7 @@ from run_lin_10k_batch import (  # noqa: E402
     load_sample_events,
     run_one_event,
     representative_qa_positions,
+    select_event_positions,
     select_shard,
     sha256,
     validate_fixed_r0_catalogue,
@@ -90,6 +91,13 @@ class LinTenThousandBatchContractTest(unittest.TestCase):
         self.assertTrue(
             all(event["right_censored_at_15_day_limit"] for event in shard)
         )
+
+    def test_select_event_positions_requires_every_requested_id(self):
+        events = [{"event_position": 10}, {"event_position": 11}, {"event_position": 12}]
+        selected = select_event_positions(events, [12, 10])
+        self.assertEqual([int(item["event_position"]) for item in selected], [10, 12])
+        with self.assertRaises(ValueError):
+            select_event_positions(events, [10, 99])
 
     def test_sharding_is_order_independent_and_exhaustive(self):
         events = [{"event_position": position} for position in range(37)]

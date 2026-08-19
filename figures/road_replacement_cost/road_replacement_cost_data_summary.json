@@ -1,0 +1,74 @@
+{
+  "figure_contract": {
+    "core_conclusion": "National unit costs, not just network length, set the geography of motor-road replacement stock.",
+    "archetype": "asymmetric_mixed",
+    "layout": "one Robinson hero, one centered external legend strip, three equal local insets",
+    "target": "Nature-family double column",
+    "canvas_mm": [
+      183.0,
+      150.0
+    ],
+    "projection": "Robinson(central_longitude=0)",
+    "inset_boxes": [
+      [
+        -96.0,
+        -89.5,
+        26.5,
+        31.9
+      ],
+      [
+        112.6,
+        115.0,
+        21.8,
+        23.8
+      ],
+      [
+        88.5,
+        92.8,
+        20.8,
+        24.4
+      ]
+    ]
+  },
+  "data": {
+    "accepted_ways": 110822264,
+    "n_countries_with_unit_cost": 215,
+    "unit_cost_range_usd_per_km": [
+      177916.11459620725,
+      4597834.3231371185
+    ],
+    "countries_flagged_unclassified": [
+      "BFA",
+      "GIN",
+      "MDG",
+      "MLI",
+      "MOZ",
+      "MRT",
+      "NER",
+      "SLB",
+      "SLE",
+      "SOM",
+      "TCD"
+    ],
+    "inset_ways": [
+      508920,
+      358021,
+      324562
+    ]
+  },
+  "reproducibility": {
+    "unit_cost_definition": "usd_per_km = replacement_usd / length_km on object-level country totals",
+    "inset_definition": "same INSET_SPECS as the TC-road plate; segment color is unit-cost class, width is road class",
+    "statistics": "descriptive; no inferential test"
+  },
+  "outputs": {
+    "figures/road_replacement_cost/road_replacement_cost.pdf": {
+      "sha256": "524c7a3e7c4de8818fbfc2563aea32277819e103ba02faefde24ee67e2ed1ac0",
+      "bytes": 2649260
+    },
+    "figures/road_replacement_cost/road_replacement_cost.png": {
+      "sha256": "f73a376eb9efcd4f65268d55aeb68c2a8912922deec3c3cb495c73ddfc6f2807",
+      "bytes": 2120753
+    }
+  }
+}

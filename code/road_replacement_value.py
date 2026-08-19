@@ -605,11 +605,22 @@ class CountryIndex:
                 f"DBF/SHP length mismatch: {len(records)} vs {len(geometries)}"
             )
         self._features: list[tuple[tuple[float, float, float, float], list[list[tuple[float, float]]], str]] = []
+        self._bins: dict[tuple[int, int], list[int]] = defaultdict(list)
         for iso, geom in zip(records, geometries):
             if not iso or geom is None:
                 continue
             box, rings = geom
+            idx = len(self._features)
             self._features.append((box, rings, iso))
+            minx, maxx, miny, maxy = box
+            for ilat in range(int(math.floor(miny)), int(math.floor(maxy)) + 1):
+                lon0 = int(math.floor(minx))
+                lon1 = int(math.floor(maxx))
+                if lon1 - lon0 >= 300:
+                    # Antimeridian-spanning envelopes: probe every 1° of longitude.
+                    lon0, lon1 = -180, 179
+                for ilon in range(lon0, lon1 + 1):
+                    self._bins[(ilat, ilon)].append(idx)
 
     def iso3(self, lon: float, lat: float) -> str:
         if not _finite(lon) or not _finite(lat):
@@ -618,7 +629,8 @@ class CountryIndex:
             return ""
         lon = ((float(lon) + 180.0) % 360.0) - 180.0
         lat = float(lat)
-        for (minx, maxx, miny, maxy), rings, iso in self._features:
+        for i in self._bins.get((int(math.floor(lat)), int(math.floor(lon))), ()):
+            (minx, maxx, miny, maxy), rings, iso = self._features[i]
             if lon < minx or lon > maxx or lat < miny or lat > maxy:
                 continue
             if _point_in_rings(lon, lat, rings):
@@ -786,6 +798,7 @@ CSV_FIELDS = [
     "length_km",
     "lon",
     "lat",
+    "iso3",
 ]
 
 
@@ -822,9 +835,40 @@ def way_length_and_mid(coords: list[tuple[float, float]]) -> tuple[float, float,
 
 
 class MotorRoadHandler:
-    def __init__(self, writer: Any, stats: dict[str, int]) -> None:
+    def __init__(
+        self,
+        writer: Any,
+        stats: dict[str, Any],
+        *,
+        countries: Optional[CountryIndex] = None,
+        shard_dir: Optional[Path] = None,
+        shard_size: int = 0,
+    ) -> None:
         self.writer = writer
         self.stats = stats
+        self.countries = countries
+        self.shard_dir = shard_dir
+        self.shard_size = shard_size
+        self._shard_index = 0
+        self._shard_count = 0
+        self._shard_handle: Optional[TextIO] = None
+
+    def _open_shard(self) -> None:
+        if self.shard_dir is None:
+            return
+        if self._shard_handle is not None:
+            self._shard_handle.close()
+        path = self.shard_dir / f"ways-{self._shard_index:04d}.csv"
+        self._shard_handle = path.open("w", newline="", encoding="utf-8")
+        self.writer = csv.DictWriter(self._shard_handle, fieldnames=CSV_FIELDS)
+        self.writer.writeheader()
+        self._shard_count = 0
+        self.stats["shards"] = self._shard_index + 1
+
+    def close(self) -> None:
+        if self._shard_handle is not None:
+            self._shard_handle.close()
+            self._shard_handle = None
 
     def way(self, way) -> None:  # pyosmium callback
         highway = way.tags.get("highway")
@@ -845,6 +889,13 @@ class MotorRoadHandler:
         if length_km <= 0.0:
             self.stats["ways_zero_length"] += 1
             return
+        iso3 = self.countries.iso3(lon, lat) if self.countries is not None else ""
+        if self.shard_dir is not None and (
+            self._shard_handle is None or self._shard_count >= self.shard_size
+        ):
+            if self._shard_handle is not None:
+                self._shard_index += 1
+            self._open_shard()
         self.writer.writerow(
             {
                 "way_id": int(way.id),
@@ -858,32 +909,54 @@ class MotorRoadHandler:
                 "length_km": f"{length_km:.6f}",
                 "lon": f"{lon:.6f}",
                 "lat": f"{lat:.6f}",
+                "iso3": iso3,
             }
         )
+        self._shard_count += 1
         self.stats["ways_written"] += 1
         self.stats["length_km_total"] += length_km
 
 
-def extract_with_pyosmium(pbf: Path, dest: TextIO) -> dict[str, int]:
+def extract_with_pyosmium(
+    pbf: Path,
+    dest: Optional[TextIO] = None,
+    *,
+    shard_dir: Optional[Path] = None,
+    shard_size: int = 1_000_000,
+    assign_country: bool = True,
+) -> dict[str, Any]:
     import osmium  # type: ignore
 
-    writer = csv.DictWriter(dest, fieldnames=CSV_FIELDS)
-    writer.writeheader()
-    stats = {
+    stats: dict[str, Any] = {
         "ways_seen": 0,
         "ways_written": 0,
         "ways_missing_nodes": 0,
         "ways_too_short": 0,
         "ways_zero_length": 0,
         "length_km_total": 0.0,
+        "shards": 0,
     }
+    writer = None
+    if dest is not None:
+        writer = csv.DictWriter(dest, fieldnames=CSV_FIELDS)
+        writer.writeheader()
+    countries = CountryIndex() if assign_country else None
 
     class Handler(osmium.SimpleHandler, MotorRoadHandler):
         def __init__(self) -> None:
             osmium.SimpleHandler.__init__(self)
-            MotorRoadHandler.__init__(self, writer, stats)
+            MotorRoadHandler.__init__(
+                self,
+                writer,
+                stats,
+                countries=countries,
+                shard_dir=shard_dir,
+                shard_size=shard_size,
+            )
 
-    Handler().apply_file(str(pbf), locations=True)
+    handler = Handler()
+    handler.apply_file(str(pbf), locations=True)
+    handler.close()
     return stats
 
 # --- 2025 unit-cost book ---
@@ -1495,6 +1568,8 @@ def apply_rows(rows: list[dict[str, str]], repo: Path) -> tuple[list[dict[str, A
             "way_id": row.get("way_id", ""),
             "iso3": row.get("iso3", ""),
             "highway": row.get("highway", ""),
+            "lon": row.get("lon", ""),
+            "lat": row.get("lat", ""),
             "accepted": int(result.accepted),
             "reason": result.reason,
             "road_class": result.road_class,
@@ -1538,6 +1613,226 @@ def apply_rows(rows: list[dict[str, str]], repo: Path) -> tuple[list[dict[str, A
     return valued, totals
 
 
+VALUED_FIELDS = [
+    "way_id",
+    "iso3",
+    "highway",
+    "accepted",
+    "reason",
+    "road_class",
+    "is_link",
+    "is_bridge",
+    "is_tunnel",
+    "surface",
+    "lanes_used",
+    "lanes_source",
+    "terrain_class",
+    "work_type",
+    "price_book",
+    "length_km",
+    "usd_per_km",
+    "replacement_usd",
+    "replacement_usd_low",
+    "replacement_usd_high",
+]
+
+
+def _empty_running_totals() -> dict[str, Any]:
+    return {
+        "accepted_ways": 0,
+        "rejected_ways": 0,
+        "length_km": 0.0,
+        "length_km_no_local": 0.0,
+        "replacement_usd": 0.0,
+        "replacement_usd_low": 0.0,
+        "replacement_usd_high": 0.0,
+        "replacement_usd_no_local": 0.0,
+        "by_class_usd": defaultdict(float),
+        "by_book_usd": defaultdict(float),
+        "by_class_km": defaultdict(float),
+        "by_country": defaultdict(
+            lambda: {
+                "length_km": 0.0,
+                "unclassified_km": 0.0,
+                "local_km": 0.0,
+                "replacement_usd": 0.0,
+                "ways": 0.0,
+            }
+        ),
+    }
+
+
+def _add_valued_row(record: dict[str, Any], totals: dict[str, Any]) -> None:
+    if not int(record.get("accepted") or 0):
+        totals["rejected_ways"] += 1
+        return
+    totals["accepted_ways"] += 1
+    length = float(record["length_km"])
+    usd = float(record["replacement_usd"])
+    totals["length_km"] += length
+    totals["replacement_usd"] += usd
+    totals["replacement_usd_low"] += float(record["replacement_usd_low"])
+    totals["replacement_usd_high"] += float(record["replacement_usd_high"])
+    road_class = record.get("road_class") or ""
+    totals["by_class_usd"][road_class] += usd
+    totals["by_class_km"][road_class] += length
+    totals["by_book_usd"][record.get("price_book") or ""] += usd
+    if road_class != "local":
+        totals["length_km_no_local"] += length
+        totals["replacement_usd_no_local"] += usd
+    iso = record.get("iso3") or "UNK"
+    bucket = totals["by_country"][iso]
+    bucket["length_km"] += length
+    bucket["replacement_usd"] += usd
+    bucket["ways"] += 1.0
+    if road_class == "local":
+        bucket["local_km"] += length
+    highway = str(record.get("highway") or "")
+    if highway == "unclassified":
+        bucket["unclassified_km"] += length
+
+
+def _finalize_running_totals(totals: dict[str, Any], meta: dict[str, Any]) -> dict[str, Any]:
+    flags = []
+    country_table = {}
+    for iso, bucket in sorted(totals["by_country"].items()):
+        share = (
+            bucket["unclassified_km"] / bucket["length_km"]
+            if bucket["length_km"] > 0.0
+            else 0.0
+        )
+        flagged = share > UNCLASSIFIED_SHARE_FLAG
+        country_table[iso] = {
+            "length_km": bucket["length_km"],
+            "unclassified_km": bucket["unclassified_km"],
+            "unclassified_share": share,
+            "local_km": bucket["local_km"],
+            "replacement_usd": bucket["replacement_usd"],
+            "ways": int(bucket["ways"]),
+            "unclassified_share_flag": flagged,
+        }
+        if flagged:
+            flags.append(iso)
+    totals["by_class_usd"] = dict(totals["by_class_usd"])
+    totals["by_class_km"] = dict(totals["by_class_km"])
+    totals["by_book_usd"] = dict(totals["by_book_usd"])
+    totals["by_country"] = country_table
+    totals["unclassified_flag_threshold"] = UNCLASSIFIED_SHARE_FLAG
+    totals["countries_flagged_unclassified"] = flags
+    totals["unit_cost_meta"] = meta
+    return totals
+
+
+def iter_way_csvs(ways_dir: Path) -> list[Path]:
+    return sorted(ways_dir.glob("ways-*.csv")) + sorted(
+        p for p in ways_dir.glob("*.csv") if not p.name.startswith("ways-") and "valued" not in p.name
+    )
+
+
+def _value_batch(
+    rows: list[dict[str, str]], book: UnitCostBook
+) -> list[dict[str, Any]]:
+    valued = []
+    for row in rows:
+        result = replacement_cost(
+            book,
+            length_km=float(row["length_km"]),
+            highway=row.get("highway", ""),
+            iso3=row.get("iso3", ""),
+            lanes=row.get("lanes") or None,
+            surface=row.get("surface") or None,
+            bridge=row.get("bridge") or None,
+            tunnel=row.get("tunnel") or None,
+            slope_deg=row.get("slope_deg") or None,
+        )
+        valued.append(
+            {
+                "way_id": row.get("way_id", ""),
+                "iso3": row.get("iso3", ""),
+                "highway": row.get("highway", ""),
+                "accepted": int(result.accepted),
+                "reason": result.reason,
+                "road_class": result.road_class,
+                "is_link": int(result.is_link),
+                "is_bridge": int(result.is_bridge),
+                "is_tunnel": int(result.is_tunnel),
+                "surface": result.surface,
+                "lanes_used": result.lanes_used if result.lanes_used is not None else "",
+                "lanes_source": result.lanes_source,
+                "terrain_class": result.terrain_class,
+                "work_type": result.work_type,
+                "price_book": result.price_book,
+                "length_km": result.length_km,
+                "usd_per_km": result.usd_per_km,
+                "replacement_usd": result.replacement_usd,
+                "replacement_usd_low": result.replacement_usd_low,
+                "replacement_usd_high": result.replacement_usd_high,
+            }
+        )
+    return valued
+
+
+def value_global(ways_dir: Path, output_dir: Path, repo: Path) -> dict[str, Any]:
+    """Two-pass stream over extracted shards. Does not load the planet into RAM."""
+
+    seen = set()
+    paths = []
+    for path in iter_way_csvs(ways_dir):
+        if path.is_file() and path.resolve() not in seen:
+            seen.add(path.resolve())
+            paths.append(path)
+    if not paths:
+        raise FileNotFoundError(f"no way CSVs in {ways_dir}")
+    book, meta = assemble_book(repo)
+    lane_buckets: dict[str, dict[str, list[float]]] = defaultdict(lambda: defaultdict(list))
+    n_paths = len(paths)
+    for i, path in enumerate(paths, 1):
+        print(f"[value-global] lane-median pass {i}/{n_paths} {path.name}", flush=True)
+        with path.open(newline="", encoding="utf-8") as handle:
+            for row in csv.DictReader(handle):
+                iso = row.get("iso3", "")
+                road_class, is_link, _ = classify_highway(row.get("highway", ""))
+                if road_class is None or is_link or not iso:
+                    continue
+                lanes = parse_lanes(row.get("lanes") or None)
+                if lanes is None:
+                    continue
+                lane_buckets[iso][road_class].append(lanes)
+    medians = {
+        iso: {cls: statistics.median(vals) for cls, vals in classes.items() if vals}
+        for iso, classes in lane_buckets.items()
+    }
+    del lane_buckets
+    for iso, table in medians.items():
+        if iso in book.countries:
+            book.countries[iso].lane_median_by_class = table
+
+    output_dir.mkdir(parents=True, exist_ok=True)
+    totals = _empty_running_totals()
+    for i, path in enumerate(paths, 1):
+        print(f"[value-global] price pass {i}/{n_paths} {path.name}", flush=True)
+        out_path = output_dir / (path.stem + ".valued.csv")
+        with path.open(newline="", encoding="utf-8") as handle, out_path.open(
+            "w", newline="", encoding="utf-8"
+        ) as dest:
+            writer = csv.DictWriter(dest, fieldnames=VALUED_FIELDS)
+            writer.writeheader()
+            batch: list[dict[str, str]] = []
+            for row in csv.DictReader(handle):
+                batch.append(row)
+                if len(batch) >= 50_000:
+                    for record in _value_batch(batch, book):
+                        writer.writerow(record)
+                        _add_valued_row(record, totals)
+                    batch = []
+            if batch:
+                for record in _value_batch(batch, book):
+                    writer.writerow(record)
+                    _add_valued_row(record, totals)
+    totals["countries_with_lane_median"] = medians
+    return _finalize_running_totals(totals, meta)
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     sub = parser.add_subparsers(dest="cmd", required=True)
@@ -1553,7 +1848,15 @@ def main() -> int:
 
     p_ex = sub.add_parser("extract", help="Extract motor roads from an OSM PBF")
     p_ex.add_argument("pbf", type=Path)
-    p_ex.add_argument("--output", type=Path, required=True)
+    p_ex.add_argument("--output", type=Path, default=None)
+    p_ex.add_argument("--output-dir", type=Path, default=None)
+    p_ex.add_argument("--shard-size", type=int, default=1_000_000)
+    p_ex.add_argument("--no-country", action="store_true")
+
+    p_glob = sub.add_parser("value-global", help="Price extracted way shards")
+    p_glob.add_argument("--ways-dir", type=Path, required=True)
+    p_glob.add_argument("--output-dir", type=Path, required=True)
+    p_glob.add_argument("--repo", type=Path, default=ROOT)
 
     args = parser.parse_args()
     if args.cmd == "write-book":
@@ -1588,13 +1891,32 @@ def main() -> int:
     if args.cmd == "extract":
         if not args.pbf.is_file():
             raise FileNotFoundError(args.pbf)
-        args.output.parent.mkdir(parents=True, exist_ok=True)
-        with args.output.open("w", newline="", encoding="utf-8") as handle:
-            stats = extract_with_pyosmium(args.pbf, handle)
-        manifest = args.output.with_suffix(args.output.suffix + ".manifest.json")
+        if args.output_dir is not None:
+            args.output_dir.mkdir(parents=True, exist_ok=True)
+            stats = extract_with_pyosmium(
+                args.pbf,
+                None,
+                shard_dir=args.output_dir,
+                shard_size=args.shard_size,
+                assign_country=not args.no_country,
+            )
+            manifest = args.output_dir / "extract.manifest.json"
+            output_label = str(args.output_dir)
+        elif args.output is not None:
+            args.output.parent.mkdir(parents=True, exist_ok=True)
+            with args.output.open("w", newline="", encoding="utf-8") as handle:
+                stats = extract_with_pyosmium(
+                    args.pbf,
+                    handle,
+                    assign_country=not args.no_country,
+                )
+            manifest = args.output.with_suffix(args.output.suffix + ".manifest.json")
+            output_label = str(args.output)
+        else:
+            raise SystemExit("extract needs --output or --output-dir")
         payload = {
             "pbf": str(args.pbf),
-            "output": str(args.output),
+            "output": output_label,
             "osm_snapshot": "planet-260803",
             "osm_snapshot_date": "2026-08-03",
             "accepted_highway": sorted(EXTRACT_HIGHWAY),
@@ -1602,6 +1924,18 @@ def main() -> int:
         }
         manifest.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")
         print(json.dumps(payload, indent=2, sort_keys=True))
+        return 0
+
+    if args.cmd == "value-global":
+        totals = value_global(args.ways_dir, args.output_dir, args.repo)
+        summary = args.output_dir / "global_replacement_value.summary.json"
+        printable = {
+            k: totals[k]
+            for k in totals
+            if k not in {"countries_with_lane_median"}
+        }
+        summary.write_text(json.dumps(printable, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+        print(json.dumps(printable, indent=2))
         return 0
 
     raise SystemExit("unknown command")

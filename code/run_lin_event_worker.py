@@ -75,6 +75,10 @@ from run_lin_event0_c15_windfield import compute_wind_field
 
 SCRIPT_VERSION = "2.0.0"
 
+# Official C15 r0-input solver failures. IndexError is the empty V_ER11
+# profile from ER11_radprof_raw; RuntimeError is the wrapped solver path.
+OFFICIAL_R0INPUT_SOLVER_FAILURE_TYPES = (RuntimeError, IndexError)
+
 
 def utc_now() -> str:
     return datetime.now(timezone.utc).isoformat()
@@ -275,12 +279,15 @@ def _prepare_event(
             outer_radius_m,
             provider=provider,
         )
-    except RuntimeError as error:
+    except OFFICIAL_R0INPUT_SOLVER_FAILURE_TYPES as error:
+        # Official ER11/C15 adapter can raise IndexError when V_ER11 is empty.
+        # That is the same frozen case as RuntimeError: METHOD_DOMAIN_PENDING,
+        # no resampling, no clip, no replacement solver.
         publish_method_domain_audit(
             args,
             identity,
             audit_code="C15_R0INPUT_SOLVER_FAILURE",
-            detail=str(error),
+            detail=f"{type(error).__name__}: {error}",
             outer_radius_m=outer_radius_m,
         )
         raise SystemExit(20) from error

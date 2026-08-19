@@ -6,8 +6,10 @@ moving 0.05-degree / 300-km union grid.  At each native one-hour node it:
 
 1. evaluates the official C15 ``r0input`` near-surface azimuthal profile with
    the event-fixed outer radius by linear interpolation at great-circle radii;
-2. maps that profile to the cyclonic tangential vector (counter-clockwise in
-   the Northern Hemisphere, clockwise in the Southern Hemisphere); and
+2. maps that profile to the cyclonic tangential vector using one
+   CLIMADA 6.1 majority-hemisphere sign for the whole track
+   (counter-clockwise if northern nodes win or tie, clockwise if
+   southern nodes strictly outnumber northern nodes); and
 3. adds the spatially uniform Lin--Chavas (2012) surface-background vector,
    ``0.55 * translation``, rotated 20 degrees cyclonically.
 
@@ -56,7 +58,10 @@ from run_lin_event0_c15_climada import (
 )
 
 
-SCRIPT_VERSION = "2.0.0"
+SCRIPT_VERSION = "2.1.0"
+CLIMADA_MAJORITY_HEMISPHERE_RULE = (
+    "climada_6.1.0_tctrack_to_si_majority_node_count"
+)
 LIN_CHAVAS_2012_DOI = "10.1029/2011JD017126"
 EARTH_ANGULAR_VELOCITY_S = 7.2921159e-5
 BACKGROUND_REDUCTION_FACTOR = 0.55
@@ -138,6 +143,35 @@ def spherical_distance_and_outward_bearing(
     coincident = central_angle <= np.finfo(float).eps
     bearing_rad[coincident] = 0.0
     return distance_m, bearing_rad
+
+
+def climada_majority_hemisphere_sign(
+    lat_deg: np.ndarray,
+) -> tuple[float, int, int]:
+    """Return CLIMADA 6.1 ``tctrack_to_si`` majority-hemisphere ``latsign``.
+
+    Frozen official rule (CLIMADA core ``v6.1.0``)::
+
+        hemisphere = "N"
+        if count(lat < 0) > count(lat > 0):
+            hemisphere = "S"
+        latsign = +1.0 if hemisphere == "N" else -1.0
+
+    Equator nodes (``lat == 0``) count in neither side. A tie, including an
+    all-equator track, stays Northern Hemisphere. The whole track uses one
+    constant sign; Coriolis remains per-timestep ``sin(lat)``. Tracks are not
+    split, dropped, or reweighted.
+    """
+
+    lat = np.asarray(lat_deg, dtype=float)
+    if lat.ndim != 1 or lat.size == 0:
+        raise ValueError("track latitudes must be a non-empty 1-D array")
+    if not np.all(np.isfinite(lat)):
+        raise ValueError("track latitudes must be finite")
+    northern = int(np.count_nonzero(lat > 0.0))
+    southern = int(np.count_nonzero(lat < 0.0))
+    hemisphere_sign = -1.0 if southern > northern else 1.0
+    return hemisphere_sign, northern, southern
 
 
 def lin_chavas_background_wind(
@@ -255,11 +289,9 @@ def compute_wind_field(
 
     center_lat = np.asarray(prepared["lat"].values, dtype=float)
     center_lon = np.asarray(prepared["lon"].values, dtype=float)
-    hemisphere_sign = float(np.sign(center_lat[0]))
-    if hemisphere_sign == 0.0 or np.any(np.sign(center_lat) != hemisphere_sign):
-        raise ValueError(
-            "event hemisphere must be non-equatorial and constant for cyclonic rotation"
-        )
+    hemisphere_sign, northern_nodes, southern_nodes = (
+        climada_majority_hemisphere_sign(center_lat)
+    )
     circular_wind = np.asarray(prepared["circular_wind"].values, dtype=float)
     prepared_rmw_m = (
         np.asarray(prepared["radius_max_wind"].values, dtype=float) * 1000.0
@@ -457,6 +489,9 @@ def compute_wind_field(
             float(np.max(background_v)),
         ],
         "hemisphere_sign": hemisphere_sign,
+        "hemisphere_rule": CLIMADA_MAJORITY_HEMISPHERE_RULE,
+        "hemisphere_northern_node_count": northern_nodes,
+        "hemisphere_southern_node_count": southern_nodes,
         "cyclonic_background_rotation_degrees": (
             BACKGROUND_CCW_ROTATION_DEG * hemisphere_sign
         ),
@@ -526,7 +561,8 @@ def main() -> None:
             "method_contract": {
                 "axisymmetric_vortex": (
                     "official C15 r0input with one event-fixed outer radius, "
-                    "evaluated by linear interpolation; cyclonic hemisphere sign"
+                    "evaluated by linear interpolation; cyclonic sign is the "
+                    "CLIMADA 6.1 majority-hemisphere latsign"
                 ),
                 "c15_amplitude": "frozen Lin v_trks in m s-1",
                 "c15_radius_max_wind": (
@@ -535,7 +571,8 @@ def main() -> None:
                 "c15_outer_radius_m": float(prepared.attrs["outer_radius_m"]),
                 "surface_background": (
                     "0.55 times prepared translation vector, rotated 20 degrees "
-                    "counter-clockwise, spatially uniform"
+                    "cyclonically by the CLIMADA 6.1 majority-hemisphere latsign, "
+                    "spatially uniform"
                 ),
                 "lin_chavas_2012_doi": LIN_CHAVAS_2012_DOI,
                 "moving_domain": "spherical distance <=300 km at each native hour",

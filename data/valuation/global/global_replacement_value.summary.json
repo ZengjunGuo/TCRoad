@@ -1,0 +1,2015 @@
+{
+  "accepted_ways": 110822264,
+  "by_book_usd": {
+    "europe_gdp_scaled": 7072294979900.463,
+    "giri_structure": 4567096007188.437,
+    "hic_gdp_scaled": 2462488882440.4575,
+    "national": 25198063056612.527,
+    "rocks_region": 9930483804395.205
+  },
+  "by_class_km": {
+    "local": 34941614.29106616,
+    "motorway": 1234934.2264430316,
+    "primary": 2474299.107491915,
+    "secondary": 3726092.9192524697,
+    "tertiary": 7884980.339913339,
+    "trunk": 1987621.7863050404
+  },
+  "by_class_usd": {
+    "local": 13425185186884.268,
+    "motorway": 9216013693692.668,
+    "primary": 6524967938016.73,
+    "secondary": 6313855633146.575,
+    "tertiary": 6025575064148.781,
+    "trunk": 7724829214641.38
+  },
+  "by_country": {
+    "ABW": {
+      "length_km": 860.0627329999991,
+      "local_km": 618.9303020000008,
+      "replacement_usd": 620350769.7655452,
+      "unclassified_km": 30.836735000000004,
+      "unclassified_share": 0.03585405321823198,
+      "unclassified_share_flag": false,
+      "ways": 4358
+    },
+    "AFG": {
+      "length_km": 207154.13904599904,
+      "local_km": 99644.03812500069,
+      "replacement_usd": 54426950702.53033,
+      "unclassified_km": 51070.951456999486,
+      "unclassified_share": 0.24653599340179763,
+      "unclassified_share_flag": false,
+      "ways": 222774
+    },
+    "AGO": {
+      "length_km": 186962.79690000496,
+      "local_km": 141562.90792400236,
+      "replacement_usd": 55654040455.02231,
+      "unclassified_km": 101209.01993400048,
+      "unclassified_share": 0.5413324020186274,
+      "unclassified_share_flag": false,
+      "ways": 208261
+    },
+    "ALB": {
+      "length_km": 31641.829936999962,
+      "local_km": 23214.279807999832,
+      "replacement_usd": 12465777426.525856,
+      "unclassified_km": 8726.471831999983,
+      "unclassified_share": 0.2757891009898829,
+      "unclassified_share_flag": false,
+      "ways": 74518
+    },
+    "AND": {
+      "length_km": 446.24358900000095,
+      "local_km": 127.33187599999995,
+      "replacement_usd": 1387257688.1156576,
+      "unclassified_km": 19.973918999999995,
+      "unclassified_share": 0.044760125394204715,
+      "unclassified_share_flag": false,
+      "ways": 2631
+    },
+    "ARE": {
+      "length_km": 66323.95848900019,
+      "local_km": 43656.33549799998,
+      "replacement_usd": 119925445500.38245,
+      "unclassified_km": 19796.231400000062,
+      "unclassified_share": 0.2984778329128721,
+      "unclassified_share_flag": false,
+      "ways": 193605
+    },
+    "ARG": {
+      "length_km": 846653.2549369894,
+      "local_km": 603042.9276689899,
+      "replacement_usd": 291143970862.81665,
+      "unclassified_km": 414340.0807360005,
+      "unclassified_share": 0.4893858002906243,
+      "unclassified_share_flag": false,
+      "ways": 949253
+    },
+    "ARM": {
+      "length_km": 17942.89388699999,
+      "local_km": 9976.510271000014,
+      "replacement_usd": 9019626107.753498,
+      "unclassified_km": 3446.0519380000064,
+      "unclassified_share": 0.1920566414594217,
+      "unclassified_share_flag": false,
+      "ways": 34253
+    },
+    "ASM": {
+      "length_km": 233.245111,
+      "local_km": 160.05460000000016,
+      "replacement_usd": 308345622.1886092,
+      "unclassified_km": 3.307667,
+      "unclassified_share": 0.01418107751891957,
+      "unclassified_share_flag": false,
+      "ways": 1077
+    },
+    "ATG": {
+      "length_km": 1080.2837199999974,
+      "local_km": 867.5657529999993,
+      "replacement_usd": 506535399.5262616,
+      "unclassified_km": 58.08861299999995,
+      "unclassified_share": 0.05377162677227061,
+      "unclassified_share_flag": false,
+      "ways": 4169
+    },
+    "AUS": {
+      "length_km": 898078.6710050254,
+      "local_km": 565776.4238110116,
+      "replacement_usd": 1938233823053.045,
+      "unclassified_km": 426951.3969429978,
+      "unclassified_share": 0.47540534112140015,
+      "unclassified_share_flag": false,
+      "ways": 1281082
+    },
+    "AUT": {
+      "length_km": 128398.16026499793,
+      "local_km": 83605.80627000175,
+      "replacement_usd": 187334091557.87607,
+      "unclassified_km": 38487.716681999475,
+      "unclassified_share": 0.2997528671950251,
+      "unclassified_share_flag": false,
+      "ways": 553940
+    },
+    "AZE": {
+      "length_km": 42870.07032100039,
+      "local_km": 19708.174725000004,
+      "replacement_usd": 25756825635.68104,
+      "unclassified_km": 8743.441189999985,
+      "unclassified_share": 0.20395210748504208,
+      "unclassified_share_flag": false,
+      "ways": 53009
+    },
+    "BDI": {
+      "length_km": 37378.52667099991,
+      "local_km": 23944.596411999868,
+      "replacement_usd": 9599727106.323532,
+      "unclassified_km": 19462.819130999862,
+      "unclassified_share": 0.5206951922505835,
+      "unclassified_share_flag": false,
+      "ways": 37860
+    },
+    "BEL": {
+      "length_km": 103307.2668250004,
+      "local_km": 68093.79024900035,
+      "replacement_usd": 151006934743.6317,
+      "unclassified_km": 30069.80487400019,
+      "unclassified_share": 0.291071536380278,
+      "unclassified_share_flag": false,
+      "ways": 533612
+    },
+    "BEN": {
+      "length_km": 55759.192488000175,
+      "local_km": 42167.935361999684,
+      "replacement_usd": 17452121572.436283,
+      "unclassified_km": 24197.7213850001,
+      "unclassified_share": 0.4339682894476573,
+      "unclassified_share_flag": false,
+      "ways": 97686
+    },
+    "BFA": {
+      "length_km": 133137.63938600165,
+      "local_km": 109505.02393000107,
+      "replacement_usd": 35539535285.870995,
+      "unclassified_km": 88409.06307000085,
+      "unclassified_share": 0.6640425913943037,
+      "unclassified_share_flag": true,
+      "ways": 146861
+    },
+    "BGD": {
+      "length_km": 207739.39495600003,
+      "local_km": 168591.04929300136,
+      "replacement_usd": 65409968275.77389,
+      "unclassified_km": 73377.26161699998,
+      "unclassified_share": 0.35321784600625006,
+      "unclassified_share_flag": false,
+      "ways": 387861
+    },
+    "BGR": {
+      "length_km": 96670.38850599993,
+      "local_km": 70620.03277700042,
+      "replacement_usd": 40761438520.62717,
+      "unclassified_km": 21355.8024479997,
+      "unclassified_share": 0.22091358872188907,
+      "unclassified_share_flag": false,
+      "ways": 262770
+    },
+    "BHR": {
+      "length_km": 3952.040812000003,
+      "local_km": 2976.319814000005,
+      "replacement_usd": 4191078847.1729975,
+      "unclassified_km": 655.9214170000009,
+      "unclassified_share": 0.1659703045090923,
+      "unclassified_share_flag": false,
+      "ways": 23254
+    },
+    "BHS": {
+      "length_km": 4455.948844000003,
+      "local_km": 2986.216789000005,
+      "replacement_usd": 2521654191.93139,
+      "unclassified_km": 857.7650059999999,
+      "unclassified_share": 0.192498845033868,
+      "unclassified_share_flag": false,
+      "ways": 9723
+    },
+    "BIH": {
+      "length_km": 66378.13431999902,
+      "local_km": 52894.54487999964,
+      "replacement_usd": 24015850194.798275,
+      "unclassified_km": 19710.551864000056,
+      "unclassified_share": 0.296943444794312,
+      "unclassified_share_flag": false,
+      "ways": 134114
+    },
+    "BLR": {
+      "length_km": 149005.6141939983,
+      "local_km": 72747.50777100022,
+      "replacement_usd": 77954288721.444,
+      "unclassified_km": 29453.354011999825,
+      "unclassified_share": 0.1976660689687366,
+      "unclassified_share_flag": false,
+      "ways": 261308
+    },
+    "BLZ": {
+      "length_km": 8217.964284000005,
+      "local_km": 6103.665173000009,
+      "replacement_usd": 2732154121.3235726,
+      "unclassified_km": 3021.6800939999994,
+      "unclassified_share": 0.3676920450826332,
+      "unclassified_share_flag": false,
+      "ways": 13346
+    },
+    "BMU": {
+      "length_km": 303.77046699999994,
+      "local_km": 213.6105810000002,
+      "replacement_usd": 548934806.6817874,
+      "unclassified_km": 33.147554,
+      "unclassified_share": 0.10912039714512473,
+      "unclassified_share_flag": false,
+      "ways": 1516
+    },
+    "BOL": {
+      "length_km": 219192.64322400064,
+      "local_km": 158861.03543400185,
+      "replacement_usd": 62922358024.124016,
+      "unclassified_km": 113923.13176100001,
+      "unclassified_share": 0.5197397598995965,
+      "unclassified_share_flag": false,
+      "ways": 285247
+    },
+    "BRA": {
+      "length_km": 3501646.3235147563,
+      "local_km": 2774154.3350858763,
+      "replacement_usd": 1195160887581.0532,
+      "unclassified_km": 1928126.6284380343,
+      "unclassified_share": 0.550634316061563,
+      "unclassified_share_flag": false,
+      "ways": 5438957
+    },
+    "BRB": {
+      "length_km": 1835.6835710000169,
+      "local_km": 1351.0636130000082,
+      "replacement_usd": 958867224.2071395,
+      "unclassified_km": 173.35947399999995,
+      "unclassified_share": 0.0944386476725723,
+      "unclassified_share_flag": false,
+      "ways": 9954
+    },
+    "BRN": {
+      "length_km": 3890.1908169999865,
+      "local_km": 2478.862469999984,
+      "replacement_usd": 7552961267.074722,
+      "unclassified_km": 759.6721599999988,
+      "unclassified_share": 0.1952788939504613,
+      "unclassified_share_flag": false,
+      "ways": 13922
+    },
+    "BTN": {
+      "length_km": 15274.684952,
+      "local_km": 9676.899777000033,
+      "replacement_usd": 5823460698.238398,
+      "unclassified_km": 8261.517098000018,
+      "unclassified_share": 0.5408633385213154,
+      "unclassified_share_flag": false,
+      "ways": 13587
+    },
+    "BWA": {
+      "length_km": 63388.32046300084,
+      "local_km": 44619.421929000244,
+      "replacement_usd": 20606624964.497036,
+      "unclassified_km": 20349.35034300004,
+      "unclassified_share": 0.32102681052856985,
+      "unclassified_share_flag": false,
+      "ways": 111253
+    },
+    "CAF": {
+      "length_km": 33306.133755000046,
+      "local_km": 14477.824011999961,
+      "replacement_usd": 13208439226.842358,
+      "unclassified_km": 11631.420510000002,
+      "unclassified_share": 0.3492275805880305,
+      "unclassified_share_flag": false,
+      "ways": 20094
+    },
+    "CAN": {
+      "length_km": 1147668.0168989191,
+      "local_km": 789954.7806560153,
+      "replacement_usd": 1565334477719.5833,
+      "unclassified_km": 560480.6646589874,
+      "unclassified_share": 0.4883648027183385,
+      "unclassified_share_flag": false,
+      "ways": 1660204
+    },
+    "CHE": {
+      "length_km": 73818.2860630003,
+      "local_km": 48227.53032400007,
+      "replacement_usd": 145831261624.5096,
+      "unclassified_km": 20604.229679000127,
+      "unclassified_share": 0.2791209438460197,
+      "unclassified_share_flag": false,
+      "ways": 403388
+    },
+    "CHL": {
+      "length_km": 194038.0173220075,
+      "local_km": 115138.27741600016,
+      "replacement_usd": 128220465448.6933,
+      "unclassified_km": 67313.47684499931,
+      "unclassified_share": 0.3469087026038413,
+      "unclassified_share_flag": false,
+      "ways": 386323
+    },
+    "CHN": {
+      "length_km": 4864862.468203316,
+      "local_km": 1973161.9193659078,
+      "replacement_usd": 9720069670393.006,
+      "unclassified_km": 1296974.0815879374,
+      "unclassified_share": 0.2666003592218577,
+      "unclassified_share_flag": false,
+      "ways": 5792884
+    },
+    "CIV": {
+      "length_km": 130136.43673900243,
+      "local_km": 103702.31296400113,
+      "replacement_usd": 38718529007.96725,
+      "unclassified_km": 71335.06636500004,
+      "unclassified_share": 0.5481559826942812,
+      "unclassified_share_flag": false,
+      "ways": 149981
+    },
+    "CMR": {
+      "length_km": 135011.10062800054,
+      "local_km": 89830.69131599963,
+      "replacement_usd": 44818757487.52098,
+      "unclassified_km": 49381.783931000224,
+      "unclassified_share": 0.3657609167046426,
+      "unclassified_share_flag": false,
+      "ways": 205211
+    },
+    "COD": {
+      "length_km": 316632.04109700106,
+      "local_km": 228202.72255000053,
+      "replacement_usd": 98504333238.47302,
+      "unclassified_km": 168370.30037100086,
+      "unclassified_share": 0.5317538294218941,
+      "unclassified_share_flag": false,
+      "ways": 349433
+    },
+    "COG": {
+      "length_km": 34341.84623499984,
+      "local_km": 22120.98529899993,
+      "replacement_usd": 10872471593.456734,
+      "unclassified_km": 10755.466396000025,
+      "unclassified_share": 0.31318835692178026,
+      "unclassified_share_flag": false,
+      "ways": 42681
+    },
+    "COL": {
+      "length_km": 303934.7213089982,
+      "local_km": 238047.33157799646,
+      "replacement_usd": 109423160135.81413,
+      "unclassified_km": 163399.98998400287,
+      "unclassified_share": 0.5376154105732484,
+      "unclassified_share_flag": false,
+      "ways": 637785
+    },
+    "COM": {
+      "length_km": 1295.2625310000037,
+      "local_km": 769.0731699999966,
+      "replacement_usd": 428799468.95038,
+      "unclassified_km": 180.47106899999997,
+      "unclassified_share": 0.1393316526037913,
+      "unclassified_share_flag": false,
+      "ways": 3307
+    },
+    "CPV": {
+      "length_km": 2417.233129999994,
+      "local_km": 1441.9650710000014,
+      "replacement_usd": 1107111944.6753807,
+      "unclassified_km": 501.6542390000003,
+      "unclassified_share": 0.20753241910100806,
+      "unclassified_share_flag": false,
+      "ways": 8523
+    },
+    "CRI": {
+      "length_km": 48390.03678499987,
+      "local_km": 39537.25106399955,
+      "replacement_usd": 23281257824.43059,
+      "unclassified_km": 19349.512678000017,
+      "unclassified_share": 0.39986563275351866,
+      "unclassified_share_flag": false,
+      "ways": 92555
+    },
+    "CUB": {
+      "length_km": 64229.2947250003,
+      "local_km": 43981.259399000424,
+      "replacement_usd": 32084280241.644264,
+      "unclassified_km": 23805.557863999875,
+      "unclassified_share": 0.3706339601878567,
+      "unclassified_share_flag": false,
+      "ways": 145057
+    },
+    "CUW": {
+      "length_km": 1570.900818,
+      "local_km": 1183.6177129999987,
+      "replacement_usd": 817975924.7512825,
+      "unclassified_km": 195.99236400000024,
+      "unclassified_share": 0.12476431468762544,
+      "unclassified_share_flag": false,
+      "ways": 7339
+    },
+    "CYM": {
+      "length_km": 499.7048979999995,
+      "local_km": 355.9666170000001,
+      "replacement_usd": 693310812.6563146,
+      "unclassified_km": 47.28360399999997,
+      "unclassified_share": 0.09462305490549748,
+      "unclassified_share_flag": false,
+      "ways": 2194
+    },
+    "CYP": {
+      "length_km": 14017.744918999986,
+      "local_km": 9557.822566000028,
+      "replacement_usd": 11931640100.425768,
+      "unclassified_km": 3588.755352999989,
+      "unclassified_share": 0.2560151703242727,
+      "unclassified_share_flag": false,
+      "ways": 58656
+    },
+    "CZE": {
+      "length_km": 115669.31498300299,
+      "local_km": 53955.5036420011,
+      "replacement_usd": 111819936798.26645,
+      "unclassified_km": 11703.789079000117,
+      "unclassified_share": 0.10118317965935848,
+      "unclassified_share_flag": false,
+      "ways": 489265
+    },
+    "DEU": {
+      "length_km": 725563.3804849916,
+      "local_km": 441645.5827810494,
+      "replacement_usd": 1113227294103.2925,
+      "unclassified_km": 140049.89442300092,
+      "unclassified_share": 0.19302227508971959,
+      "unclassified_share_flag": false,
+      "ways": 3879431
+    },
+    "DJI": {
+      "length_km": 2496.2520379999946,
+      "local_km": 1295.085537999999,
+      "replacement_usd": 1094941643.6107767,
+      "unclassified_km": 616.4635430000001,
+      "unclassified_share": 0.2469556493557889,
+      "unclassified_share_flag": false,
+      "ways": 5303
+    },
+    "DMA": {
+      "length_km": 611.0519059999996,
+      "local_km": 403.2223360000003,
+      "replacement_usd": 250747129.77820376,
+      "unclassified_km": 110.56676599999987,
+      "unclassified_share": 0.18094496541837143,
+      "unclassified_share_flag": false,
+      "ways": 1769
+    },
+    "DNK": {
+      "length_km": 88758.31308799918,
+      "local_km": 53836.26685399939,
+      "replacement_usd": 103981735454.17078,
+      "unclassified_km": 29661.24915199992,
+      "unclassified_share": 0.3341799558830321,
+      "unclassified_share_flag": false,
+      "ways": 289927
+    },
+    "DOM": {
+      "length_km": 52842.554325999925,
+      "local_km": 42471.43382800007,
+      "replacement_usd": 21725001099.611774,
+      "unclassified_km": 13900.841328999988,
+      "unclassified_share": 0.26306149478017204,
+      "unclassified_share_flag": false,
+      "ways": 142896
+    },
+    "DZA": {
+      "length_km": 271290.7159039963,
+      "local_km": 161902.45787999567,
+      "replacement_usd": 154605286666.09717,
+      "unclassified_km": 80526.82709399931,
+      "unclassified_share": 0.2968285399139716,
+      "unclassified_share_flag": false,
+      "ways": 523803
+    },
+    "ECU": {
+      "length_km": 160446.68267100403,
+      "local_km": 123113.27628599733,
+      "replacement_usd": 62630344913.2869,
+      "unclassified_km": 71270.7395860003,
+      "unclassified_share": 0.4442020140244406,
+      "unclassified_share_flag": false,
+      "ways": 314589
+    },
+    "EGY": {
+      "length_km": 346099.2078989946,
+      "local_km": 272603.67781899875,
+      "replacement_usd": 174429988139.24722,
+      "unclassified_km": 62036.471563999825,
+      "unclassified_share": 0.1792447660906075,
+      "unclassified_share_flag": false,
+      "ways": 1330991
+    },
+    "ERI": {
+      "length_km": 13604.061764000004,
+      "local_km": 8807.425899000023,
+      "replacement_usd": 4407076897.5784,
+      "unclassified_km": 4303.866386,
+      "unclassified_share": 0.3163662780030288,
+      "unclassified_share_flag": false,
+      "ways": 27459
+    },
+    "ESP": {
+      "length_km": 518930.92567598255,
+      "local_km": 285413.1183510059,
+      "replacement_usd": 753787457144.7168,
+      "unclassified_km": 129332.05893800013,
+      "unclassified_share": 0.24922788860487824,
+      "unclassified_share_flag": false,
+      "ways": 2123013
+    },
+    "EST": {
+      "length_km": 43238.53786099937,
+      "local_km": 25457.08962799963,
+      "replacement_usd": 25971312634.24519,
+      "unclassified_km": 19480.736233000058,
+      "unclassified_share": 0.4505410496447763,
+      "unclassified_share_flag": false,
+      "ways": 76935
+    },
+    "ETH": {
+      "length_km": 277008.45521600515,
+      "local_km": 196097.91244900096,
+      "replacement_usd": 85345330719.76732,
+      "unclassified_km": 129214.79780199872,
+      "unclassified_share": 0.4664651759500981,
+      "unclassified_share_flag": false,
+      "ways": 333765
+    },
+    "FIN": {
+      "length_km": 242384.10557200323,
+      "local_km": 157348.20373199673,
+      "replacement_usd": 237478188423.38968,
+      "unclassified_km": 108381.77039299867,
+      "unclassified_share": 0.4471488348513121,
+      "unclassified_share_flag": false,
+      "ways": 379267
+    },
+    "FJI": {
+      "length_km": 8836.536641999977,
+      "local_km": 5933.528080999975,
+      "replacement_usd": 4795605820.614368,
+      "unclassified_km": 2183.4976029999975,
+      "unclassified_share": 0.2470988002948863,
+      "unclassified_share_flag": false,
+      "ways": 11444
+    },
+    "FRA": {
+      "length_km": 1169842.9314879284,
+      "local_km": 695023.5555490125,
+      "replacement_usd": 1241925203147.6787,
+      "unclassified_km": 446173.13697898923,
+      "unclassified_share": 0.38139576260165087,
+      "unclassified_share_flag": false,
+      "ways": 4127941
+    },
+    "FRO": {
+      "length_km": 690.048917000001,
+      "local_km": 302.83061699999973,
+      "replacement_usd": 1688709120.1919172,
+      "unclassified_km": 36.30386999999998,
+      "unclassified_share": 0.0526105745630783,
+      "unclassified_share_flag": false,
+      "ways": 2797
+    },
+    "FSM": {
+      "length_km": 315.54729199999974,
+      "local_km": 234.0327239999999,
+      "replacement_usd": 178155349.02972275,
+      "unclassified_km": 32.032217999999986,
+      "unclassified_share": 0.1015132083592719,
+      "unclassified_share_flag": false,
+      "ways": 497
+    },
+    "GAB": {
+      "length_km": 18181.29364599984,
+      "local_km": 10249.614161000067,
+      "replacement_usd": 7929143294.67235,
+      "unclassified_km": 7594.995220999992,
+      "unclassified_share": 0.41773678863995506,
+      "unclassified_share_flag": false,
+      "ways": 14102
+    },
+    "GBR": {
+      "length_km": 440946.66648802115,
+      "local_km": 273512.51904298924,
+      "replacement_usd": 670601468193.7703,
+      "unclassified_km": 128568.8922399988,
+      "unclassified_share": 0.2915747005505291,
+      "unclassified_share_flag": false,
+      "ways": 2250231
+    },
+    "GEO": {
+      "length_km": 53545.845886999545,
+      "local_km": 38215.1257009997,
+      "replacement_usd": 23133215038.611042,
+      "unclassified_km": 11966.058872000043,
+      "unclassified_share": 0.22347315041492874,
+      "unclassified_share_flag": false,
+      "ways": 123362
+    },
+    "GHA": {
+      "length_km": 131295.75982299584,
+      "local_km": 102578.49775399842,
+      "replacement_usd": 39735205963.42191,
+      "unclassified_km": 46853.37901399983,
+      "unclassified_share": 0.3568537101058284,
+      "unclassified_share_flag": false,
+      "ways": 294240
+    },
+    "GIN": {
+      "length_km": 94162.71883599977,
+      "local_km": 73023.08068500076,
+      "replacement_usd": 23597087726.77821,
+      "unclassified_km": 56547.56150500013,
+      "unclassified_share": 0.6005302544788159,
+      "unclassified_share_flag": true,
+      "ways": 94487
+    },
+    "GMB": {
+      "length_km": 15038.691116000004,
+      "local_km": 13169.310797000036,
+      "replacement_usd": 4020250413.266675,
+      "unclassified_km": 7022.279849000008,
+      "unclassified_share": 0.466947541832869,
+      "unclassified_share_flag": false,
+      "ways": 34242
+    },
+    "GNB": {
+      "length_km": 13227.081383999981,
+      "local_km": 11080.203645999984,
+      "replacement_usd": 3477444755.6791544,
+      "unclassified_km": 7071.292140000008,
+      "unclassified_share": 0.5346071393008689,
+      "unclassified_share_flag": false,
+      "ways": 13447
+    },
+    "GNQ": {
+      "length_km": 7077.967996999979,
+      "local_km": 2886.318086999992,
+      "replacement_usd": 5314120114.185943,
+      "unclassified_km": 1671.3178540000017,
+      "unclassified_share": 0.23612961441877042,
+      "unclassified_share_flag": false,
+      "ways": 8011
+    },
+    "GRC": {
+      "length_km": 202582.07351499336,
+      "local_km": 123044.17073700248,
+      "replacement_usd": 136637064815.01402,
+      "unclassified_km": 56709.27144199898,
+      "unclassified_share": 0.27993232795991624,
+      "unclassified_share_flag": false,
+      "ways": 579065
+    },
+    "GRD": {
+      "length_km": 772.6861820000007,
+      "local_km": 591.8741259999983,
+      "replacement_usd": 288433503.14282495,
+      "unclassified_km": 81.38956900000002,
+      "unclassified_share": 0.10533327875662717,
+      "unclassified_share_flag": false,
+      "ways": 2727
+    },
+    "GRL": {
+      "length_km": 526.120416,
+      "local_km": 353.1750000000001,
+      "replacement_usd": 540638224.1584525,
+      "unclassified_km": 242.60326600000013,
+      "unclassified_share": 0.46111737659691987,
+      "unclassified_share_flag": false,
+      "ways": 849
+    },
+    "GTM": {
+      "length_km": 102434.9548629988,
+      "local_km": 81840.98463199918,
+      "replacement_usd": 34718747684.349594,
+      "unclassified_km": 37779.58065299973,
+      "unclassified_share": 0.36881531996111944,
+      "unclassified_share_flag": false,
+      "ways": 229978
+    },
+    "GUM": {
+      "length_km": 1397.1719049999983,
+      "local_km": 1088.4329120000002,
+      "replacement_usd": 1678301330.0272691,
+      "unclassified_km": 91.90111199999997,
+      "unclassified_share": 0.06577652447141075,
+      "unclassified_share_flag": false,
+      "ways": 4302
+    },
+    "GUY": {
+      "length_km": 10015.965570000044,
+      "local_km": 7383.163376000024,
+      "replacement_usd": 12419925724.902647,
+      "unclassified_km": 3561.798874999995,
+      "unclassified_share": 0.355612132460633,
+      "unclassified_share_flag": false,
+      "ways": 15269
+    },
+    "HKG": {
+      "length_km": 3466.844400000021,
+      "local_km": 1385.230311000002,
+      "replacement_usd": 14199394695.76812,
+      "unclassified_km": 671.7137310000007,
+      "unclassified_share": 0.19375364264978165,
+      "unclassified_share_flag": false,
+      "ways": 32522
+    },
+    "HND": {
+      "length_km": 73195.06494699909,
+      "local_km": 55833.87143999992,
+      "replacement_usd": 22335777387.30023,
+      "unclassified_km": 27523.22486999988,
+      "unclassified_share": 0.3760256909387209,
+      "unclassified_share_flag": false,
+      "ways": 134115
+    },
+    "HRV": {
+      "length_km": 62728.17548600178,
+      "local_km": 33683.876792999785,
+      "replacement_usd": 54132166906.54799,
+      "unclassified_km": 14464.88771900005,
+      "unclassified_share": 0.23059634059064874,
+      "unclassified_share_flag": false,
+      "ways": 159948
+    },
+    "HTI": {
+      "length_km": 24173.202305999916,
+      "local_km": 19689.847177999764,
+      "replacement_usd": 7390007726.647271,
+      "unclassified_km": 11449.715094999961,
+      "unclassified_share": 0.4736532193816159,
+      "unclassified_share_flag": false,
+      "ways": 56459
+    },
+    "HUN": {
+      "length_km": 92253.05922200112,
+      "local_km": 54721.9986179998,
+      "replacement_usd": 81045473912.21442,
+      "unclassified_km": 10748.798518000203,
+      "unclassified_share": 0.11651427723533703,
+      "unclassified_share_flag": false,
+      "ways": 315943
+    },
+    "IDN": {
+      "length_km": 1068488.0369140059,
+      "local_km": 840614.79108004,
+      "replacement_usd": 556563075626.5746,
+      "unclassified_km": 223538.19550600534,
+      "unclassified_share": 0.20920982527013185,
+      "unclassified_share_flag": false,
+      "ways": 3643134
+    },
+    "IMN": {
+      "length_km": 940.4109209999993,
+      "local_km": 437.06580499999984,
+      "replacement_usd": 2231460056.474349,
+      "unclassified_km": 271.62840100000005,
+      "unclassified_share": 0.2888401175851511,
+      "unclassified_share_flag": false,
+      "ways": 4418
+    },
+    "IND": {
+      "length_km": 3672194.493776356,
+      "local_km": 2425934.7058392726,
+      "replacement_usd": 1534649272323.8003,
+      "unclassified_km": 1102937.6801200006,
+      "unclassified_share": 0.3003483835045399,
+      "unclassified_share_flag": false,
+      "ways": 8686362
+    },
+    "IRL": {
+      "length_km": 106301.45635500073,
+      "local_km": 66651.29427299999,
+      "replacement_usd": 183421807006.4036,
+      "unclassified_km": 55435.70142900045,
+      "unclassified_share": 0.5214952205722306,
+      "unclassified_share_flag": false,
+      "ways": 289914
+    },
+    "IRN": {
+      "length_km": 572684.0603050091,
+      "local_km": 313555.4640620132,
+      "replacement_usd": 335216874910.65643,
+      "unclassified_km": 108952.33809299937,
+      "unclassified_share": 0.19024859542095832,
+      "unclassified_share_flag": false,
+      "ways": 1570556
+    },
+    "IRQ": {
+      "length_km": 189766.6696219893,
+      "local_km": 127987.16531399953,
+      "replacement_usd": 104644052561.11821,
+      "unclassified_km": 41817.36258499991,
+      "unclassified_share": 0.22036199859700917,
+      "unclassified_share_flag": false,
+      "ways": 483651
+    },
+    "ISL": {
+      "length_km": 15992.585917,
+      "local_km": 5090.454632000011,
+      "replacement_usd": 35340034001.62067,
+      "unclassified_km": 3475.046625000007,
+      "unclassified_share": 0.2172911024542978,
+      "unclassified_share_flag": false,
+      "ways": 25063
+    },
+    "ISR": {
+      "length_km": 31798.059930000032,
+      "local_km": 17560.33524999975,
+      "replacement_usd": 42161940676.76511,
+      "unclassified_km": 3995.044206000002,
+      "unclassified_share": 0.12563798592727535,
+      "unclassified_share_flag": false,
+      "ways": 151246
+    },
+    "ITA": {
+      "length_km": 622446.2897049574,
+      "local_km": 392288.6110720411,
+      "replacement_usd": 692416931582.339,
+      "unclassified_km": 219087.0927729943,
+      "unclassified_share": 0.3519775061665845,
+      "unclassified_share_flag": false,
+      "ways": 2564589
+    },
+    "JAM": {
+      "length_km": 18732.978826000108,
+      "local_km": 15034.40961499998,
+      "replacement_usd": 7490251825.976807,
+      "unclassified_km": 3795.958179999989,
+      "unclassified_share": 0.20263505421419983,
+      "unclassified_share_flag": false,
+      "ways": 39927
+    },
+    "JOR": {
+      "length_km": 48015.51341300048,
+      "local_km": 36879.41525500043,
+      "replacement_usd": 19358012028.71949,
+      "unclassified_km": 12363.879684000012,
+      "unclassified_share": 0.2574976045273822,
+      "unclassified_share_flag": false,
+      "ways": 129892
+    },
+    "JPN": {
+      "length_km": 1221635.7457902182,
+      "local_km": 869518.0513640016,
+      "replacement_usd": 2216678272206.848,
+      "unclassified_km": 425175.7926349772,
+      "unclassified_share": 0.34803810718550243,
+      "unclassified_share_flag": false,
+      "ways": 6000119
+    },
+    "KAZ": {
+      "length_km": 243281.22088000225,
+      "local_km": 138630.36246299968,
+      "replacement_usd": 128319543179.55057,
+      "unclassified_km": 63522.07265499983,
+      "unclassified_share": 0.2611055322117604,
+      "unclassified_share_flag": false,
+      "ways": 256728
+    },
+    "KEN": {
+      "length_km": 320195.7033710045,
+      "local_km": 273149.98941299453,
+      "replacement_usd": 85946107673.06746,
+      "unclassified_km": 166954.51588499927,
+      "unclassified_share": 0.5214139794110615,
+      "unclassified_share_flag": false,
+      "ways": 427528
+    },
+    "KGZ": {
+      "length_km": 48170.46306400068,
+      "local_km": 33293.009605999774,
+      "replacement_usd": 18555060194.33001,
+      "unclassified_km": 9486.213897999993,
+      "unclassified_share": 0.19693009563550037,
+      "unclassified_share_flag": false,
+      "ways": 68588
+    },
+    "KHM": {
+      "length_km": 98054.06870300132,
+      "local_km": 75502.9463750004,
+      "replacement_usd": 46586529521.13653,
+      "unclassified_km": 29700.775953000008,
+      "unclassified_share": 0.3029020248304179,
+      "unclassified_share_flag": false,
+      "ways": 139060
+    },
+    "KIR": {
+      "length_km": 57.014963,
+      "local_km": 36.228148000000004,
+      "replacement_usd": 38456835.16268757,
+      "unclassified_km": 13.446873999999998,
+      "unclassified_share": 0.2358481579651292,
+      "unclassified_share_flag": false,
+      "ways": 160
+    },
+    "KNA": {
+      "length_km": 573.5393799999998,
+      "local_km": 452.0162379999994,
+      "replacement_usd": 268968980.8350699,
+      "unclassified_km": 11.450296999999997,
+      "unclassified_share": 0.019964273420946265,
+      "unclassified_share_flag": false,
+      "ways": 2661
+    },
+    "KOR": {
+      "length_km": 210998.87638300663,
+      "local_km": 105043.27416300058,
+      "replacement_usd": 559898063296.5514,
+      "unclassified_km": 34582.01422199947,
+      "unclassified_share": 0.16389667478240952,
+      "unclassified_share_flag": false,
+      "ways": 684722
+    },
+    "KWT": {
+      "length_km": 18388.843017000017,
+      "local_km": 11496.629218999906,
+      "replacement_usd": 24604013233.060078,
+      "unclassified_km": 4242.88027200001,
+      "unclassified_share": 0.23073122480177657,
+      "unclassified_share_flag": false,
+      "ways": 53144
+    },
+    "LAO": {
+      "length_km": 61701.44538000056,
+      "local_km": 43790.237414000054,
+      "replacement_usd": 32068012174.93722,
+      "unclassified_km": 31249.510713000036,
+      "unclassified_share": 0.5064631877023908,
+      "unclassified_share_flag": false,
+      "ways": 67218
+    },
+    "LBN": {
+      "length_km": 35550.071473000506,
+      "local_km": 27344.087970000157,
+      "replacement_usd": 13835989944.176458,
+      "unclassified_km": 7574.922111000038,
+      "unclassified_share": 0.2130775494151404,
+      "unclassified_share_flag": false,
+      "ways": 109658
+    },
+    "LBR": {
+      "length_km": 23794.753691999926,
+      "local_km": 17044.371468999874,
+      "replacement_usd": 6480953446.440266,
+      "unclassified_km": 13445.28209199999,
+      "unclassified_share": 0.5650523752435584,
+      "unclassified_share_flag": false,
+      "ways": 24716
+    },
+    "LBY": {
+      "length_km": 122820.29050600006,
+      "local_km": 89834.4430869989,
+      "replacement_usd": 45976901352.226166,
+      "unclassified_km": 33560.49344499994,
+      "unclassified_share": 0.2732487710844523,
+      "unclassified_share_flag": false,
+      "ways": 250456
+    },
+    "LCA": {
+      "length_km": 1113.8847189999963,
+      "local_km": 871.7477950000017,
+      "replacement_usd": 404813640.631565,
+      "unclassified_km": 264.49018700000016,
+      "unclassified_share": 0.23744843832443405,
+      "unclassified_share_flag": false,
+      "ways": 3150
+    },
+    "LIE": {
+      "length_km": 428.0853700000002,
+      "local_km": 288.5538759999992,
+      "replacement_usd": 701347244.761728,
+      "unclassified_km": 73.39104800000004,
+      "unclassified_share": 0.17144021530098075,
+      "unclassified_share_flag": false,
+      "ways": 2650
+    },
+    "LKA": {
+      "length_km": 103616.73862600187,
+      "local_km": 77509.05812500099,
+      "replacement_usd": 38706042077.59038,
+      "unclassified_km": 21757.62573199998,
+      "unclassified_share": 0.20998176569263358,
+      "unclassified_share_flag": false,
+      "ways": 204049
+    },
+    "LSO": {
+      "length_km": 16428.933798999995,
+      "local_km": 10340.578799999954,
+      "replacement_usd": 5146969494.096668,
+      "unclassified_km": 2892.2069769999866,
+      "unclassified_share": 0.1760434981590851,
+      "unclassified_share_flag": false,
+      "ways": 31379
+    },
+    "LTU": {
+      "length_km": 72235.62455800173,
+      "local_km": 48708.17205500041,
+      "replacement_usd": 52325045193.177376,
+      "unclassified_km": 30920.7230899997,
+      "unclassified_share": 0.42805365467798856,
+      "unclassified_share_flag": false,
+      "ways": 121404
+    },
+    "LUX": {
+      "length_km": 6141.729820999964,
+      "local_km": 2607.400000999985,
+      "replacement_usd": 28238656174.428425,
+      "unclassified_km": 780.6380639999994,
+      "unclassified_share": 0.1271039408687144,
+      "unclassified_share_flag": false,
+      "ways": 33559
+    },
+    "LVA": {
+      "length_km": 69403.51373900037,
+      "local_km": 45184.77547999991,
+      "replacement_usd": 40999459055.79538,
+      "unclassified_km": 38301.86794399999,
+      "unclassified_share": 0.5518721730435497,
+      "unclassified_share_flag": false,
+      "ways": 94739
+    },
+    "MAC": {
+      "length_km": 173.81907699999974,
+      "local_km": 35.883781,
+      "replacement_usd": 771267092.1992347,
+      "unclassified_km": 1.559708,
+      "unclassified_share": 0.008973169268411215,
+      "unclassified_share_flag": false,
+      "ways": 841
+    },
+    "MAF": {
+      "length_km": 110.46906300000002,
+      "local_km": 82.9227,
+      "replacement_usd": 121598862.64208099,
+      "unclassified_km": 4.6460159999999995,
+      "unclassified_share": 0.042057168530523326,
+      "unclassified_share_flag": false,
+      "ways": 677
+    },
+    "MAR": {
+      "length_km": 198351.42182599753,
+      "local_km": 129844.51112799966,
+      "replacement_usd": 101568553315.75775,
+      "unclassified_km": 78280.21958000043,
+      "unclassified_share": 0.3946541893139099,
+      "unclassified_share_flag": false,
+      "ways": 402585
+    },
+    "MCO": {
+      "length_km": 72.636776,
+      "local_km": 25.105703999999996,
+      "replacement_usd": 303802975.3744406,
+      "unclassified_km": 7.349696000000001,
+      "unclassified_share": 0.10118422656864617,
+      "unclassified_share_flag": false,
+      "ways": 293
+    },
+    "MDA": {
+      "length_km": 34912.88515100028,
+      "local_km": 23526.065941999863,
+      "replacement_usd": 14851358365.8372,
+      "unclassified_km": 1459.8095110000022,
+      "unclassified_share": 0.041812915337310005,
+      "unclassified_share_flag": false,
+      "ways": 92711
+    },
+    "MDG": {
+      "length_km": 134457.90678399877,
+      "local_km": 111626.34872200068,
+      "replacement_usd": 30661891044.628143,
+      "unclassified_km": 101769.77457400078,
+      "unclassified_share": 0.7568894757337687,
+      "unclassified_share_flag": true,
+      "ways": 162919
+    },
+    "MDV": {
+      "length_km": 50.01311599999999,
+      "local_km": 38.37100299999999,
+      "replacement_usd": 16610607.75084345,
+      "unclassified_km": 0.0,
+      "unclassified_share": 0.0,
+      "unclassified_share_flag": false,
+      "ways": 360
+    },
+    "MEX": {
+      "length_km": 1301580.1132979672,
+      "local_km": 973688.4635699398,
+      "replacement_usd": 562918143809.4226,
+      "unclassified_km": 429894.51813599025,
+      "unclassified_share": 0.33028663679158077,
+      "unclassified_share_flag": false,
+      "ways": 3518157
+    },
+    "MHL": {
+      "length_km": 12.242337000000001,
+      "local_km": 11.464268,
+      "replacement_usd": 3738698.395205714,
+      "unclassified_km": 0.0,
+      "unclassified_share": 0.0,
+      "unclassified_share_flag": false,
+      "ways": 20
+    },
+    "MKD": {
+      "length_km": 18435.419171999973,
+      "local_km": 12120.811218000055,
+      "replacement_usd": 9166394055.04285,
+      "unclassified_km": 4942.710513999996,
+      "unclassified_share": 0.2681094727429398,
+      "unclassified_share_flag": false,
+      "ways": 51506
+    },
+    "MLI": {
+      "length_km": 300544.898476999,
+      "local_km": 261283.63660300084,
+      "replacement_usd": 74967221121.57188,
+      "unclassified_km": 231279.52941599995,
+      "unclassified_share": 0.769534038301768,
+      "unclassified_share_flag": true,
+      "ways": 245964
+    },
+    "MLT": {
+      "length_km": 2074.2188749999973,
+      "local_km": 1403.5020899999922,
+      "replacement_usd": 2269909562.1462965,
+      "unclassified_km": 401.373512000001,
+      "unclassified_share": 0.19350586229719927,
+      "unclassified_share_flag": false,
+      "ways": 16310
+    },
+    "MMR": {
+      "length_km": 328683.1274050089,
+      "local_km": 253180.2492510012,
+      "replacement_usd": 158682920981.8235,
+      "unclassified_km": 159222.90386399938,
+      "unclassified_share": 0.48442676422450565,
+      "unclassified_share_flag": false,
+      "ways": 509100
+    },
+    "MNE": {
+      "length_km": 15500.87643799994,
+      "local_km": 12504.953127999956,
+      "replacement_usd": 7100683664.058303,
+      "unclassified_km": 5633.544124000008,
+      "unclassified_share": 0.3634339094652443,
+      "unclassified_share_flag": false,
+      "ways": 33652
+    },
+    "MNG": {
+      "length_km": 114882.05769899934,
+      "local_km": 74106.84886600003,
+      "replacement_usd": 51555769545.16502,
+      "unclassified_km": 60838.44346100004,
+      "unclassified_share": 0.5295730654511941,
+      "unclassified_share_flag": false,
+      "ways": 60326
+    },
+    "MNP": {
+      "length_km": 642.3430920000015,
+      "local_km": 405.8738160000002,
+      "replacement_usd": 735608166.3853128,
+      "unclassified_km": 74.42380299999999,
+      "unclassified_share": 0.1158630083002431,
+      "unclassified_share_flag": false,
+      "ways": 1611
+    },
+    "MOZ": {
+      "length_km": 205939.54070699643,
+      "local_km": 169448.557264998,
+      "replacement_usd": 55808834140.341385,
+      "unclassified_km": 126153.47231899995,
+      "unclassified_share": 0.6125752824635396,
+      "unclassified_share_flag": true,
+      "ways": 285320
+    },
+    "MRT": {
+      "length_km": 42683.67994699987,
+      "local_km": 35204.599872000006,
+      "replacement_usd": 12811591669.619421,
+      "unclassified_km": 26075.26992100006,
+      "unclassified_share": 0.6108955449337452,
+      "unclassified_share_flag": true,
+      "ways": 53212
+    },
+    "MUS": {
+      "length_km": 5883.54874299996,
+      "local_km": 4340.631468999991,
+      "replacement_usd": 2283267169.942593,
+      "unclassified_km": 585.6065680000006,
+      "unclassified_share": 0.09953288288751491,
+      "unclassified_share_flag": false,
+      "ways": 25805
+    },
+    "MWI": {
+      "length_km": 130595.33926000046,
+      "local_km": 115128.09365400072,
+      "replacement_usd": 33159495415.654644,
+      "unclassified_km": 47848.176484000425,
+      "unclassified_share": 0.3663850238080867,
+      "unclassified_share_flag": false,
+      "ways": 182801
+    },
+    "MYS": {
+      "length_km": 221429.40693199314,
+      "local_km": 161372.78890600163,
+      "replacement_usd": 163406566825.1165,
+      "unclassified_km": 66922.82040600032,
+      "unclassified_share": 0.3022309517658334,
+      "unclassified_share_flag": false,
+      "ways": 796374
+    },
+    "NAM": {
+      "length_km": 62357.41956400013,
+      "local_km": 16934.579981999843,
+      "replacement_usd": 33986741982.446007,
+      "unclassified_km": 11345.834556000018,
+      "unclassified_share": 0.1819484294784728,
+      "unclassified_share_flag": false,
+      "ways": 25558
+    },
+    "NCL": {
+      "length_km": 5347.611548000001,
+      "local_km": 2910.0610420000007,
+      "replacement_usd": 8165733772.168676,
+      "unclassified_km": 1442.6292560000013,
+      "unclassified_share": 0.26977076458359106,
+      "unclassified_share_flag": false,
+      "ways": 8519
+    },
+    "NER": {
+      "length_km": 194234.1934239994,
+      "local_km": 176218.4536969989,
+      "replacement_usd": 48895040884.38994,
+      "unclassified_km": 160958.72595299996,
+      "unclassified_share": 0.8286837817563798,
+      "unclassified_share_flag": true,
+      "ways": 123776
+    },
+    "NGA": {
+      "length_km": 758807.341379987,
+      "local_km": 638545.7461189906,
+      "replacement_usd": 215078873859.379,
+      "unclassified_km": 398329.94853499846,
+      "unclassified_share": 0.524942138554676,
+      "unclassified_share_flag": false,
+      "ways": 1484863
+    },
+    "NIC": {
+      "length_km": 42474.2991810002,
+      "local_km": 32908.993242000244,
+      "replacement_usd": 12741802783.631289,
+      "unclassified_km": 23574.695314000237,
+      "unclassified_share": 0.5550343565067174,
+      "unclassified_share_flag": false,
+      "ways": 70121
+    },
+    "NLD": {
+      "length_km": 132541.5916980004,
+      "local_km": 88786.41628999791,
+      "replacement_usd": 207866854127.58633,
+      "unclassified_km": 45577.163589998774,
+      "unclassified_share": 0.3438706522692708,
+      "unclassified_share_flag": false,
+      "ways": 842006
+    },
+    "NOR": {
+      "length_km": 131779.67039699515,
+      "local_km": 74847.7731829998,
+      "replacement_usd": 322190713505.95184,
+      "unclassified_km": 49683.90389399976,
+      "unclassified_share": 0.3770225236132679,
+      "unclassified_share_flag": false,
+      "ways": 315402
+    },
+    "NPL": {
+      "length_km": 130003.02772600116,
+      "local_km": 102647.53943000185,
+      "replacement_usd": 40271046653.94838,
+      "unclassified_km": 74781.74673299967,
+      "unclassified_share": 0.5752308083978801,
+      "unclassified_share_flag": false,
+      "ways": 220105
+    },
+    "NRU": {
+      "length_km": 54.084226,
+      "local_km": 23.002045000000003,
+      "replacement_usd": 39516376.87999996,
+      "unclassified_km": 9.502449999999998,
+      "unclassified_share": 0.17569725413099185,
+      "unclassified_share_flag": false,
+      "ways": 142
+    },
+    "NZL": {
+      "length_km": 103155.18575999865,
+      "local_km": 72562.86778999964,
+      "replacement_usd": 190061520149.53622,
+      "unclassified_km": 56188.13129700029,
+      "unclassified_share": 0.5446951685757017,
+      "unclassified_share_flag": false,
+      "ways": 190327
+    },
+    "OMN": {
+      "length_km": 63179.126452000055,
+      "local_km": 39358.524777000166,
+      "replacement_usd": 58701825242.42256,
+      "unclassified_km": 20222.253238,
+      "unclassified_share": 0.32007807599814997,
+      "unclassified_share_flag": false,
+      "ways": 110360
+    },
+    "PAK": {
+      "length_km": 535742.0190339902,
+      "local_km": 373737.0701789919,
+      "replacement_usd": 213173404489.75497,
+      "unclassified_km": 189693.43188700153,
+      "unclassified_share": 0.3540760760730369,
+      "unclassified_share_flag": false,
+      "ways": 1027259
+    },
+    "PAN": {
+      "length_km": 32966.66529600017,
+      "local_km": 24213.23550300007,
+      "replacement_usd": 22174443352.53118,
+      "unclassified_km": 12366.940902000075,
+      "unclassified_share": 0.37513472445454016,
+      "unclassified_share_flag": false,
+      "ways": 73510
+    },
+    "PER": {
+      "length_km": 357277.8647159989,
+      "local_km": 212997.4618370003,
+      "replacement_usd": 151509365401.6884,
+      "unclassified_km": 123869.14741000057,
+      "unclassified_share": 0.34670255183165205,
+      "unclassified_share_flag": false,
+      "ways": 556476
+    },
+    "PHL": {
+      "length_km": 313459.2548989953,
+      "local_km": 217688.29665399034,
+      "replacement_usd": 230416944573.8767,
+      "unclassified_km": 86261.45935499964,
+      "unclassified_share": 0.27519193645373563,
+      "unclassified_share_flag": false,
+      "ways": 897875
+    },
+    "PLW": {
+      "length_km": 163.06373999999994,
+      "local_km": 43.627333,
+      "replacement_usd": 114860397.92819148,
+      "unclassified_km": 10.878620999999999,
+      "unclassified_share": 0.06671391812796643,
+      "unclassified_share_flag": false,
+      "ways": 125
+    },
+    "PNG": {
+      "length_km": 46600.9640589999,
+      "local_km": 29090.84080200014,
+      "replacement_usd": 21587855008.50363,
+      "unclassified_km": 22299.658055000105,
+      "unclassified_share": 0.4785235349802477,
+      "unclassified_share_flag": false,
+      "ways": 37109
+    },
+    "POL": {
+      "length_km": 421344.4489480199,
+      "local_km": 264900.50422399805,
+      "replacement_usd": 273835278378.85416,
+      "unclassified_km": 103040.36152500144,
+      "unclassified_share": 0.24455136832172494,
+      "unclassified_share_flag": false,
+      "ways": 1202272
+    },
+    "PRI": {
+      "length_km": 32381.384002999683,
+      "local_km": 22662.34588999984,
+      "replacement_usd": 25635620920.91833,
+      "unclassified_km": 1320.3858470000048,
+      "unclassified_share": 0.04077607822067424,
+      "unclassified_share_flag": false,
+      "ways": 114529
+    },
+    "PRK": {
+      "length_km": 87970.45478000061,
+      "local_km": 55332.03866200005,
+      "replacement_usd": 56812634699.369644,
+      "unclassified_km": 40046.978508999935,
+      "unclassified_share": 0.4552321413950937,
+      "unclassified_share_flag": false,
+      "ways": 151681
+    },
+    "PRT": {
+      "length_km": 163739.0861930057,
+      "local_km": 95268.31534299927,
+      "replacement_usd": 165549197992.85617,
+      "unclassified_km": 30098.16275900004,
+      "unclassified_share": 0.18381782541232794,
+      "unclassified_share_flag": false,
+      "ways": 654008
+    },
+    "PRY": {
+      "length_km": 106167.2132799993,
+      "local_km": 82525.03250200003,
+      "replacement_usd": 34074999302.89791,
+      "unclassified_km": 52243.74751000033,
+      "unclassified_share": 0.4920892796933049,
+      "unclassified_share_flag": false,
+      "ways": 123170
+    },
+    "PSE": {
+      "length_km": 18868.29624400006,
+      "local_km": 13075.947866999968,
+      "replacement_usd": 7854555988.649873,
+      "unclassified_km": 1592.0438200000017,
+      "unclassified_share": 0.08437666016115561,
+      "unclassified_share_flag": false,
+      "ways": 70565
+    },
+    "PYF": {
+      "length_km": 1977.5988869999871,
+      "local_km": 1334.221475999998,
+      "replacement_usd": 2974279663.1583796,
+      "unclassified_km": 197.30897999999996,
+      "unclassified_share": 0.09977199183162831,
+      "unclassified_share_flag": false,
+      "ways": 10162
+    },
+    "QAT": {
+      "length_km": 17090.287272999965,
+      "local_km": 10638.812446000062,
+      "replacement_usd": 51188144648.104485,
+      "unclassified_km": 4663.945739999989,
+      "unclassified_share": 0.27290037115808513,
+      "unclassified_share_flag": false,
+      "ways": 70943
+    },
+    "ROU": {
+      "length_km": 184912.51959300667,
+      "local_km": 109134.61898900197,
+      "replacement_usd": 121263495890.04298,
+      "unclassified_km": 18891.88334800007,
+      "unclassified_share": 0.10216659958763849,
+      "unclassified_share_flag": false,
+      "ways": 466022
+    },
+    "RUS": {
+      "length_km": 1777088.9518591105,
+      "local_km": 1127008.8171280886,
+      "replacement_usd": 1379064595648.1758,
+      "unclassified_km": 533446.9344639779,
+      "unclassified_share": 0.30018020983469046,
+      "unclassified_share_flag": false,
+      "ways": 2539452
+    },
+    "RWA": {
+      "length_km": 51643.27743699975,
+      "local_km": 43717.66898399943,
+      "replacement_usd": 13078452255.31064,
+      "unclassified_km": 20562.975662000008,
+      "unclassified_share": 0.39817332831141533,
+      "unclassified_share_flag": false,
+      "ways": 75737
+    },
+    "SAU": {
+      "length_km": 337679.0874840044,
+      "local_km": 164778.01581899924,
+      "replacement_usd": 599190285713.6918,
+      "unclassified_km": 40155.3030030001,
+      "unclassified_share": 0.11891557544232653,
+      "unclassified_share_flag": false,
+      "ways": 575334
+    },
+    "SDN": {
+      "length_km": 342965.2149230036,
+      "local_km": 284609.17386899557,
+      "replacement_usd": 73073756075.16429,
+      "unclassified_km": 176394.34155399853,
+      "unclassified_share": 0.5143213768591647,
+      "unclassified_share_flag": false,
+      "ways": 419043
+    },
+    "SEN": {
+      "length_km": 113754.0747219992,
+      "local_km": 94196.14310099909,
+      "replacement_usd": 33141485299.864693,
+      "unclassified_km": 58365.15705800015,
+      "unclassified_share": 0.5130819023462441,
+      "unclassified_share_flag": false,
+      "ways": 224590
+    },
+    "SGP": {
+      "length_km": 3929.604880999989,
+      "local_km": 1574.4056690000025,
+      "replacement_usd": 17184265543.408066,
+      "unclassified_km": 161.9313700000004,
+      "unclassified_share": 0.04120805396566812,
+      "unclassified_share_flag": false,
+      "ways": 66683
+    },
+    "SLB": {
+      "length_km": 2980.553304999998,
+      "local_km": 2470.832913999996,
+      "replacement_usd": 921236390.0984231,
+      "unclassified_km": 2087.204719000002,
+      "unclassified_share": 0.700274246227582,
+      "unclassified_share_flag": true,
+      "ways": 1805
+    },
+    "SLE": {
+      "length_km": 34309.545189999866,
+      "local_km": 27143.01978500001,
+      "replacement_usd": 9670178768.771181,
+      "unclassified_km": 23157.932170000062,
+      "unclassified_share": 0.6749705378417508,
+      "unclassified_share_flag": true,
+      "ways": 33790
+    },
+    "SLV": {
+      "length_km": 32785.02335699978,
+      "local_km": 24226.68483399984,
+      "replacement_usd": 12758244199.046984,
+      "unclassified_km": 10074.895841000009,
+      "unclassified_share": 0.3073017740842623,
+      "unclassified_share_flag": false,
+      "ways": 84456
+    },
+    "SMR": {
+      "length_km": 310.9418500000005,
+      "local_km": 210.3472190000001,
+      "replacement_usd": 275125028.02766067,
+      "unclassified_km": 92.02805399999997,
+      "unclassified_share": 0.2959654803623244,
+      "unclassified_share_flag": false,
+      "ways": 1803
+    },
+    "SOM": {
+      "length_km": 105699.53860000026,
+      "local_km": 90551.27063000052,
+      "replacement_usd": 22356932262.922863,
+      "unclassified_km": 80236.82259300064,
+      "unclassified_share": 0.7591028651188497,
+      "unclassified_share_flag": true,
+      "ways": 79389
+    },
+    "SRB": {
+      "length_km": 102530.88961699717,
+      "local_km": 79144.81196699916,
+      "replacement_usd": 42110959416.03437,
+      "unclassified_km": 35819.88076099998,
+      "unclassified_share": 0.3493569683712361,
+      "unclassified_share_flag": false,
+      "ways": 269966
+    },
+    "SSD": {
+      "length_km": 52673.65049400015,
+      "local_km": 35949.17851300001,
+      "replacement_usd": 14531458611.94139,
+      "unclassified_km": 25188.42092999988,
+      "unclassified_share": 0.4781977458135163,
+      "unclassified_share_flag": false,
+      "ways": 52702
+    },
+    "STP": {
+      "length_km": 712.9068369999997,
+      "local_km": 439.72848299999964,
+      "replacement_usd": 249761704.1251699,
+      "unclassified_km": 161.39158500000005,
+      "unclassified_share": 0.2263852394502988,
+      "unclassified_share_flag": false,
+      "ways": 1479
+    },
+    "SUR": {
+      "length_km": 6489.192078000001,
+      "local_km": 4606.463784000019,
+      "replacement_usd": 2474595321.9504614,
+      "unclassified_km": 1629.5164959999997,
+      "unclassified_share": 0.2511123844714771,
+      "unclassified_share_flag": false,
+      "ways": 8857
+    },
+    "SVK": {
+      "length_km": 42842.004729000495,
+      "local_km": 22672.532770999744,
+      "replacement_usd": 42144851419.52529,
+      "unclassified_km": 3551.880575000004,
+      "unclassified_share": 0.08290649789774367,
+      "unclassified_share_flag": false,
+      "ways": 187608
+    },
+    "SVN": {
+      "length_km": 42002.873619999446,
+      "local_km": 31621.156351000205,
+      "replacement_usd": 30452502885.569557,
+      "unclassified_km": 22872.1197410001,
+      "unclassified_share": 0.5445370225838468,
+      "unclassified_share_flag": false,
+      "ways": 128952
+    },
+    "SWE": {
+      "length_km": 311516.91314100684,
+      "local_km": 198543.13972400237,
+      "replacement_usd": 355731064624.8314,
+      "unclassified_km": 155719.672610003,
+      "unclassified_share": 0.49987549966353556,
+      "unclassified_share_flag": false,
+      "ways": 590982
+    },
+    "SWZ": {
+      "length_km": 20115.687105000023,
+      "local_km": 15655.705903000135,
+      "replacement_usd": 5720929155.392457,
+      "unclassified_km": 8187.1103349999885,
+      "unclassified_share": 0.4070012767779119,
+      "unclassified_share_flag": false,
+      "ways": 32312
+    },
+    "SXM": {
+      "length_km": 221.3369070000003,
+      "local_km": 177.21288200000038,
+      "replacement_usd": 161679350.5071236,
+      "unclassified_km": 4.937276999999999,
+      "unclassified_share": 0.022306614233115637,
+      "unclassified_share_flag": false,
+      "ways": 1564
+    },
+    "SYC": {
+      "length_km": 374.62991599999884,
+      "local_km": 266.6551349999999,
+      "replacement_usd": 208305396.96097204,
+      "unclassified_km": 2.000737,
+      "unclassified_share": 0.005340569224589117,
+      "unclassified_share_flag": false,
+      "ways": 1608
+    },
+    "SYR": {
+      "length_km": 133509.8321059988,
+      "local_km": 87767.99528000144,
+      "replacement_usd": 53195519672.98607,
+      "unclassified_km": 48490.11031799998,
+      "unclassified_share": 0.36319505127908286,
+      "unclassified_share_flag": false,
+      "ways": 231397
+    },
+    "TCA": {
+      "length_km": 326.669773,
+      "local_km": 211.9367040000004,
+      "replacement_usd": 170811788.67503396,
+      "unclassified_km": 59.45288300000001,
+      "unclassified_share": 0.18199689078670894,
+      "unclassified_share_flag": false,
+      "ways": 995
+    },
+    "TCD": {
+      "length_km": 112333.96194599982,
+      "local_km": 86282.992596,
+      "replacement_usd": 27829738545.93492,
+      "unclassified_km": 69207.46480900003,
+      "unclassified_share": 0.6160867435822198,
+      "unclassified_share_flag": true,
+      "ways": 76123
+    },
+    "TGO": {
+      "length_km": 41961.541935999754,
+      "local_km": 32918.38749699987,
+      "replacement_usd": 12215065745.794003,
+      "unclassified_km": 20622.37928899992,
+      "unclassified_share": 0.49145904410408514,
+      "unclassified_share_flag": false,
+      "ways": 70388
+    },
+    "THA": {
+      "length_km": 657596.086481981,
+      "local_km": 502240.8199510197,
+      "replacement_usd": 404561259561.5713,
+      "unclassified_km": 153348.4713680002,
+      "unclassified_share": 0.23319553525384637,
+      "unclassified_share_flag": false,
+      "ways": 1594694
+    },
+    "TJK": {
+      "length_km": 40241.10855000037,
+      "local_km": 27780.457314999912,
+      "replacement_usd": 15507407654.283474,
+      "unclassified_km": 8789.117798999985,
+      "unclassified_share": 0.21841142343480258,
+      "unclassified_share_flag": false,
+      "ways": 70769
+    },
+    "TKM": {
+      "length_km": 53339.2298599999,
+      "local_km": 33854.71464000015,
+      "replacement_usd": 25394247926.33194,
+      "unclassified_km": 10349.757394999991,
+      "unclassified_share": 0.19403649850523003,
+      "unclassified_share_flag": false,
+      "ways": 56637
+    },
+    "TLS": {
+      "length_km": 9194.597235000047,
+      "local_km": 6698.529498999994,
+      "replacement_usd": 4810304960.250688,
+      "unclassified_km": 5317.923596999978,
+      "unclassified_share": 0.5783748282912091,
+      "unclassified_share_flag": false,
+      "ways": 12386
+    },
+    "TON": {
+      "length_km": 876.8407569999995,
+      "local_km": 639.8985179999994,
+      "replacement_usd": 482487597.01775604,
+      "unclassified_km": 246.27331699999982,
+      "unclassified_share": 0.2808643588176638,
+      "unclassified_share_flag": false,
+      "ways": 2494
+    },
+    "TTO": {
+      "length_km": 9939.94712600002,
+      "local_km": 7652.338743000032,
+      "replacement_usd": 5371266703.728491,
+      "unclassified_km": 1276.5163729999988,
+      "unclassified_share": 0.12842285344365686,
+      "unclassified_share_flag": false,
+      "ways": 32316
+    },
+    "TUN": {
+      "length_km": 125746.01686600207,
+      "local_km": 99081.59130900161,
+      "replacement_usd": 48685232194.74798,
+      "unclassified_km": 36328.59336900012,
+      "unclassified_share": 0.288904525760945,
+      "unclassified_share_flag": false,
+      "ways": 282433
+    },
+    "TUR": {
+      "length_km": 728439.8567349932,
+      "local_km": 374306.3100200025,
+      "replacement_usd": 404913427938.7933,
+      "unclassified_km": 110605.15467600273,
+      "unclassified_share": 0.15183841693088596,
+      "unclassified_share_flag": false,
+      "ways": 1580518
+    },
+    "TUV": {
+      "length_km": 1.5596449999999997,
+      "local_km": 1.5596449999999997,
+      "replacement_usd": 277485.9785494016,
+      "unclassified_km": 0.0,
+      "unclassified_share": 0.0,
+      "unclassified_share_flag": false,
+      "ways": 9
+    },
+    "TWN": {
+      "length_km": 72331.22041700062,
+      "local_km": 38881.434746000545,
+      "replacement_usd": 140012570658.90277,
+      "unclassified_km": 17638.6511800001,
+      "unclassified_share": 0.24385944379633803,
+      "unclassified_share_flag": false,
+      "ways": 214556
+    },
+    "TZA": {
+      "length_km": 495889.84727999725,
+      "local_km": 427808.8311899969,
+      "replacement_usd": 126325672607.59633,
+      "unclassified_km": 260597.2777040015,
+      "unclassified_share": 0.5255144446562119,
+      "unclassified_share_flag": false,
+      "ways": 841240
+    },
+    "UGA": {
+      "length_km": 200508.63834499675,
+      "local_km": 162775.40352999695,
+      "replacement_usd": 46658081916.9613,
+      "unclassified_km": 115286.75445100079,
+      "unclassified_share": 0.5749715094700184,
+      "unclassified_share_flag": false,
+      "ways": 283578
+    },
+    "UKR": {
+      "length_km": 467994.37826098746,
+      "local_km": 323789.4523259917,
+      "replacement_usd": 181481175863.19452,
+      "unclassified_km": 102930.75020599886,
+      "unclassified_share": 0.21994014241896992,
+      "unclassified_share_flag": false,
+      "ways": 813483
+    },
+    "URY": {
+      "length_km": 58746.66184400045,
+      "local_km": 45214.21041700025,
+      "replacement_usd": 30334098700.869923,
+      "unclassified_km": 30315.30553199998,
+      "unclassified_share": 0.5160345214592981,
+      "unclassified_share_flag": false,
+      "ways": 73419
+    },
+    "USA": {
+      "length_km": 7963886.2422246225,
+      "local_km": 5560993.546666239,
+      "replacement_usd": 11973517902611.303,
+      "unclassified_km": 1182062.1203129636,
+      "unclassified_share": 0.14842780074452291,
+      "unclassified_share_flag": false,
+      "ways": 14029452
+    },
+    "UZB": {
+      "length_km": 159123.8449950009,
+      "local_km": 109951.75820299874,
+      "replacement_usd": 61237544233.85042,
+      "unclassified_km": 31032.47034799988,
+      "unclassified_share": 0.1950208678590868,
+      "unclassified_share_flag": false,
+      "ways": 271131
+    },
+    "VCT": {
+      "length_km": 457.6794859999998,
+      "local_km": 397.29584599999976,
+      "replacement_usd": 126272545.30241743,
+      "unclassified_km": 59.54751700000002,
+      "unclassified_share": 0.13010746345751673,
+      "unclassified_share_flag": false,
+      "ways": 1483
+    },
+    "VEN": {
+      "length_km": 183444.49248300437,
+      "local_km": 143526.94072299925,
+      "replacement_usd": 69270613888.02257,
+      "unclassified_km": 71412.34749900039,
+      "unclassified_share": 0.3892858626192691,
+      "unclassified_share_flag": false,
+      "ways": 317884
+    },
+    "VGB": {
+      "length_km": 268.47971799999993,
+      "local_km": 173.55462699999995,
+      "replacement_usd": 363597236.19040364,
+      "unclassified_km": 16.033432,
+      "unclassified_share": 0.05971934163011899,
+      "unclassified_share_flag": false,
+      "ways": 794
+    },
+    "VIR": {
+      "length_km": 1248.5792689999976,
+      "local_km": 869.7206030000002,
+      "replacement_usd": 964385803.3117262,
+      "unclassified_km": 41.999730999999976,
+      "unclassified_share": 0.0336380172591189,
+      "unclassified_share_flag": false,
+      "ways": 4186
+    },
+    "VNM": {
+      "length_km": 562614.4876149959,
+      "local_km": 433613.96115100227,
+      "replacement_usd": 365061515311.9037,
+      "unclassified_km": 72866.22876900065,
+      "unclassified_share": 0.12951360189441818,
+      "unclassified_share_flag": false,
+      "ways": 1846095
+    },
+    "VUT": {
+      "length_km": 1981.9929080000004,
+      "local_km": 1447.3112600000027,
+      "replacement_usd": 779693090.6606455,
+      "unclassified_km": 982.2691909999993,
+      "unclassified_share": 0.49559672339654964,
+      "unclassified_share_flag": false,
+      "ways": 2290
+    },
+    "WSM": {
+      "length_km": 1259.4878059999999,
+      "local_km": 784.3900289999993,
+      "replacement_usd": 921559864.4324455,
+      "unclassified_km": 130.470514,
+      "unclassified_share": 0.10359013670355458,
+      "unclassified_share_flag": false,
+      "ways": 1529
+    },
+    "YEM": {
+      "length_km": 73744.43003599958,
+      "local_km": 51575.33086200047,
+      "replacement_usd": 26396619060.192627,
+      "unclassified_km": 34360.76943399978,
+      "unclassified_share": 0.4659439284733233,
+      "unclassified_share_flag": false,
+      "ways": 98659
+    },
+    "ZAF": {
+      "length_km": 610748.7004959814,
+      "local_km": 410169.2666969951,
+      "replacement_usd": 213602148387.16617,
+      "unclassified_km": 89203.77886999997,
+      "unclassified_share": 0.1460564366286145,
+      "unclassified_share_flag": false,
+      "ways": 1224782
+    },
+    "ZMB": {
+      "length_km": 111900.00047499819,
+      "local_km": 79992.80098999952,
+      "replacement_usd": 31135589100.57055,
+      "unclassified_km": 59653.58121199976,
+      "unclassified_share": 0.5330972382375293,
+      "unclassified_share_flag": false,
+      "ways": 122554
+    },
+    "ZWE": {
+      "length_km": 111700.0683399994,
+      "local_km": 76388.90045399967,
+      "replacement_usd": 36573070397.398186,
+      "unclassified_km": 60839.86209399935,
+      "unclassified_share": 0.5446716640209325,
+      "unclassified_share_flag": false,
+      "ways": 78242
+    }
+  },
+  "countries_flagged_unclassified": [
+    "BFA",
+    "GIN",
+    "MDG",
+    "MLI",
+    "MOZ",
+    "MRT",
+    "NER",
+    "SLB",
+    "SLE",
+    "SOM",
+    "TCD"
+  ],
+  "length_km": 52249542.670469426,
+  "length_km_no_local": 17307928.379408304,
+  "rejected_ways": 2376243,
+  "replacement_usd": 49230426730519.38,
+  "replacement_usd_high": 98564480496256.11,
+  "replacement_usd_low": 23031390463521.582,
+  "replacement_usd_no_local": 35805241543652.42,
+  "unclassified_flag_threshold": 0.6,
+  "unit_cost_meta": {
+    "construction_premium_2018_2025": 1.0,
+    "eu28_2015_ppp_mean": 38917.00813074941,
+    "n_countries": 218,
+    "n_rocks_new_build_rows": 37,
+    "named_national": [
+      "AUS",
+      "CAN",
+      "CHN",
+      "HKG",
+      "JPN",
+      "KOR",
+      "NZL",
+      "SGP",
+      "TWN",
+      "USA"
+    ],
+    "price_year": 2025,
+    "rocks_regions": [
+      "East Asia and Pacific",
+      "Europe and Central Asia",
+      "Latin America and Caribbean",
+      "Middle East and North Africa",
+      "South Asia",
+      "Sub-Saharan Africa"
+    ],
+    "script_version": "1.1.0",
+    "usa_deflator_2018": 97.0709841824513,
+    "usa_deflator_2025": 122.361624831936,
+    "usa_deflator_factor_2018_2025": 1.260537593828752
+  }
+}

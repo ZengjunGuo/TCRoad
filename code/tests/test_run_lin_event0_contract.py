@@ -20,6 +20,13 @@ from run_lin_event0_c15_climada import (  # noqa: E402
     build_climada_track,
     build_rainfall_output,
 )
+from run_irene_c15_climada import (  # noqa: E402
+    MAX_DISTANCE_EYE_KM,
+    build_moving_union_grid,
+    shortest_lon_delta_deg,
+    unwrap_longitude_deg,
+    wrap_lon_deg,
+)
 
 
 class LinEventRunnerContractTest(unittest.TestCase):
@@ -104,6 +111,51 @@ class LinEventRunnerContractTest(unittest.TestCase):
         self.assertEqual(float(output["maximum_24h_rainfall"][0]), 28.0)
         self.assertEqual(output.attrs["maximum_24h_window_hours_used"], 7)
         self.assertEqual(output.attrs["event_shorter_than_24h"], 1)
+
+
+class MovingUnionGridPeriodicLongitudeTest(unittest.TestCase):
+    def _track(self, lat, lon):
+        return xr.Dataset(
+            data_vars={
+                "lat": ("time", np.asarray(lat, dtype=float)),
+                "lon": ("time", np.asarray(lon, dtype=float)),
+            },
+            coords={"time": np.arange(len(lat))},
+        )
+
+    def test_unwrap_crosses_the_date_line_by_the_short_arc(self):
+        unwrapped = unwrap_longitude_deg(np.asarray([179.0, -179.0, -178.0]))
+        self.assertAlmostEqual(unwrapped[0], 179.0)
+        self.assertAlmostEqual(unwrapped[1], 181.0)
+        self.assertAlmostEqual(unwrapped[2], 182.0)
+        self.assertAlmostEqual(float(shortest_lon_delta_deg(-179.0, 179.0)), 2.0)
+        self.assertAlmostEqual(float(wrap_lon_deg(181.0)), -179.0)
+
+    def test_non_crossing_track_still_builds_a_300km_disk(self):
+        grid = build_moving_union_grid(self._track([20.0, 20.1], [140.0, 140.2]))
+        self.assertGreater(grid["centroid"].size, 0)
+        self.assertLessEqual(float(grid["lon"].max()), 180.0)
+        self.assertGreaterEqual(float(grid["lon"].min()), -180.0)
+
+    def test_antimeridian_track_is_kept_and_covers_both_sides(self):
+        grid = build_moving_union_grid(self._track([10.0, 10.0], [179.5, -179.5]))
+        lon = np.asarray(grid["lon"].values, dtype=float)
+        self.assertGreater(lon.size, 0)
+        self.assertTrue(np.any(lon > 170.0))
+        self.assertTrue(np.any(lon < -170.0))
+        # Every centroid is within 300 km of at least one hourly eye.
+        d0 = 2.0 * 6371.0 * np.arcsin(np.sqrt(np.clip(
+            np.cos(np.radians(10.0)) ** 2
+            * np.sin(np.radians(shortest_lon_delta_deg(lon, 179.5)) / 2.0) ** 2,
+            0.0, 1.0,
+        )))
+        d1 = 2.0 * 6371.0 * np.arcsin(np.sqrt(np.clip(
+            np.cos(np.radians(10.0)) ** 2
+            * np.sin(np.radians(shortest_lon_delta_deg(lon, -179.5)) / 2.0) ** 2,
+            0.0, 1.0,
+        )))
+        nearest = np.minimum(d0, d1)
+        self.assertTrue(np.all(nearest <= MAX_DISTANCE_EYE_KM + 1.0))
 
 
 if __name__ == "__main__":

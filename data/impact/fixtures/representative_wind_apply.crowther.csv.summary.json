@@ -1,0 +1,8 @@
+{
+  "contract": "WIND_ASSET_IMPACT_CONTRACT.md",
+  "sampled_finite": 5,
+  "sampled_nodata_or_outside": 1,
+  "script_version": "1.0.0",
+  "trees": "/Users/edw1970/04_Projects/TCRoad/data/impact/raw/crowther_extract/Crowther_Nature_Biome_Revision_01_WGS84_GeoTiff.tif",
+  "ways": 6
+}

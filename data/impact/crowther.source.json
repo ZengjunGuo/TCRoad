@@ -1,0 +1,8 @@
+{
+  "status": "file_not_in_repo",
+  "dataset": "Crowther et al. 2015 Nature 525:201-205 biome tree density",
+  "doi": "10.1038/nature14967",
+  "preferred_file": "Crowther_Nature_Files_Revision_01_WGS84_GeoTiff",
+  "elischolar": "https://elischolar.library.yale.edu/yale_fes_data/1/",
+  "note": "Global GeoTIFF is ~1 GB and is gitignored. Hash it on the production host with: python3 code/road_wind_asset_impact.py hash-trees PATH --output data/impact/crowther.manifest.json"
+}

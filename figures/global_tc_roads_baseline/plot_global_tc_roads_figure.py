@@ -59,6 +59,7 @@ import argparse
 import hashlib
 import json
 import math
+import sys
 from pathlib import Path
 
 import cartopy
@@ -75,47 +76,33 @@ from matplotlib.patches import Patch, Rectangle
 import numpy as np
 import xarray as xr
 
-
-MM_TO_IN = 1.0 / 25.4
-FIG_W_MM = 183.0
-FIG_H_MM = 150.0
-PANEL_FONT = 8.0
-LABEL_FONT = 6.2
-ROAD_NAMES = ["Highways", "Primary roads", "Secondary roads", "Tertiary roads", "Local roads"]
-ROAD_COLORS = ["#A80000", "#FF0000", "#FFAA00", "#A8A800", "#FFFF00"]
-ROAD_WIDTHS = [0.88, 0.68, 0.50, 0.34, 0.20]
-ROAD_ALPHAS = [0.96, 0.90, 0.80, 0.68, 0.54]
+CODE_DIR = Path(__file__).resolve().parents[2] / "code"
+sys.path.insert(0, str(CODE_DIR))
+from paper_map_style import (  # noqa: E402
+    FIG_H_MM,
+    FIG_W_MM,
+    INSET_SPECS,
+    INSET_TITLE_FONT,
+    LEGEND_TITLE_FONT,
+    MM_TO_IN,
+    PANEL_FONT,
+    ROAD_ALPHAS,
+    ROAD_COLORS,
+    ROAD_NAMES,
+    ROAD_WIDTHS,
+    TITLE_FONT,
+    add_numbered_locator,
+    configure_runtime_assets,
+    draw_discrete_ramp,
+    draw_line_keys,
+    draw_scale_bar,
+    label_hero,
+    label_inset_row,
+    prepare_legend_ax,
+    style_inset,
+)
 TC_BOUNDS = np.array([0.0, 0.003, 0.01, 0.03, 0.10, 0.30, np.inf])
 TC_COLORS = ["#F4F8FB", "#E1EEF6", "#BFD8EA", "#78B1D5", "#2D78B7", "#08306B"]
-INSET_SPECS = [
-    ("Gulf Coast", (-96.0, -89.5, 26.5, 31.9), 200),
-    ("Pearl River Delta", (112.6, 115.0, 21.8, 23.8), 50),
-    ("Bengal Delta", (88.5, 92.8, 20.8, 24.4), 100),
-]
-
-
-def configure_runtime_assets(font_dir, cartopy_data):
-    """Register the frozen sans-serif font and offline Cartopy data bundle."""
-    if font_dir is None or cartopy_data is None:
-        raise ValueError("Production rendering requires --font-dir and --cartopy-data")
-    font_dir = Path(font_dir).resolve()
-    cartopy_data = Path(cartopy_data).resolve()
-    font_files = sorted(font_dir.rglob("LiberationSans*.ttf"))
-    if not font_files:
-        raise FileNotFoundError(f"No Liberation Sans TTF files found under {font_dir}")
-    for font_path in font_files:
-        font_manager.fontManager.addfont(font_path)
-    resolved = Path(font_manager.findfont(
-        font_manager.FontProperties(family="Liberation Sans"),
-        fallback_to_default=False,
-    )).resolve()
-    if font_dir not in resolved.parents:
-        raise RuntimeError(f"Liberation Sans resolved outside frozen font bundle: {resolved}")
-    if not cartopy_data.is_dir():
-        raise FileNotFoundError(f"Cartopy data directory not found: {cartopy_data}")
-    cartopy.config["data_dir"] = str(cartopy_data)
-    mpl.rcParams["font.sans-serif"] = ["Liberation Sans", "Arial", "Helvetica"]
-    return resolved
 
 
 def _sha256(path):
@@ -394,39 +381,26 @@ def draw_global_panel(fig, ax, tc_data, road_data):
     return ax
 
 
-def draw_legend_strip(road_ax, tc_ax):
-    """Place both keys outside the mapped data region to prevent occlusion."""
-    road_handles, tc_handles = _legend_handles()
-    for ax in (road_ax, tc_ax):
-        ax.set_axis_off()
-        ax.set_xlim(0, 1)
-        ax.set_ylim(0, 1)
-
-    road_ax.text(0.0, 0.86, "Road class", transform=road_ax.transAxes,
-                 fontsize=5.9, fontweight="bold", ha="left", va="top")
-    road_ax.legend(
-        handles=road_handles, loc="lower left", bbox_to_anchor=(0.0, 0.05),
-        ncol=5, frameon=False, fontsize=5.3, handlelength=1.45,
-        columnspacing=0.85, handletextpad=0.35, borderaxespad=0.0, labelspacing=0.20,
+def draw_legend_strip(ax):
+    """Centered keys, same type sizes as the replacement-cost SI plate."""
+    prepare_legend_ax(ax)
+    ax.text(
+        0.50, 0.97, "Road class", transform=ax.transAxes,
+        fontsize=LEGEND_TITLE_FONT, fontweight="bold", ha="center", va="top",
     )
-
-    tc_ax.text(0.0, 0.86, "TC passage frequency (storms/year)",
-               transform=tc_ax.transAxes, fontsize=5.9, fontweight="bold",
-               ha="left", va="top")
-    tc_ax.legend(
-        handles=tc_handles, loc="lower left", bbox_to_anchor=(0.0, 0.05),
-        ncol=6, frameon=False, fontsize=5.15, handlelength=1.05,
-        columnspacing=0.62, handletextpad=0.28, borderaxespad=0.0, labelspacing=0.20,
+    draw_line_keys(ax, ROAD_COLORS, ROAD_NAMES, ROAD_WIDTHS, cx=0.50, y=0.78, item_w=0.172)
+    ax.text(
+        0.50, 0.54, "TC passage frequency (storms/year)", transform=ax.transAxes,
+        fontsize=LEGEND_TITLE_FONT, fontweight="bold", ha="center", va="bottom",
     )
+    tc_labels = ["<0.003", "0.003–0.01", "0.01–0.03", "0.03–0.10", "0.10–0.30", "≥0.30"]
+    draw_discrete_ramp(ax, TC_COLORS, tc_labels, cx=0.50, y=0.20, chip_w=0.072, chip_h=0.20)
 
 
-def draw_inset(ax, label, title, bbox, scale_km, inset_data, tc_data):
+def draw_inset(ax, title, bbox, scale_km, inset_data):
     coords, offsets, road_class, _ = inset_data
     ax.set_extent(bbox, crs=ccrs.PlateCarree())
-    ax.set_facecolor("#EDF4F8")
-    ax.add_feature(cfeature.LAND.with_scale("110m"), facecolor="#F8F7F2", edgecolor="none", zorder=1)
-    ax.coastlines(resolution="110m", color="#6F6F6F", linewidth=0.35, zorder=3)
-    ax.add_feature(cfeature.BORDERS.with_scale("110m"), edgecolor="#AAAAAA", linewidth=0.2, zorder=3)
+    style_inset(ax)
     for cls in (4, 3, 2, 1, 0):
         segments = []
         for i in np.flatnonzero(road_class == cls):
@@ -441,57 +415,36 @@ def draw_inset(ax, label, title, bbox, scale_km, inset_data, tc_data):
             )
             ax.add_collection(collection)
     scale_x = 0.68 if "Pearl River" in title else 0.08
-    _draw_scale_bar(ax, bbox, scale_km, x_fraction=scale_x)
-    ax.set_title(title, fontsize=6.2, pad=3.0, fontweight="bold")
-    ax.text(-0.042, 1.066, label, transform=ax.transAxes,
-            fontsize=PANEL_FONT, fontweight="bold", va="top")
-    ax.spines["geo"].set_edgecolor(BLACK)
-    ax.spines["geo"].set_linewidth(0.75)
+    draw_scale_bar(ax, bbox, scale_km, x_fraction=scale_x)
     return ax
-
-
-def add_numbered_locator(global_ax, bbox, locator_number):
-    """Draw a numbered locator only; leaders are intentionally omitted."""
-    xmin, xmax, ymin, ymax = bbox
-    halo = Rectangle((xmin, ymin), xmax - xmin, ymax - ymin, transform=ccrs.PlateCarree(),
-                     fill=False, edgecolor="white", linewidth=1.55, zorder=14)
-    global_ax.add_patch(halo)
-    rect = Rectangle((xmin, ymin), xmax - xmin, ymax - ymin, transform=ccrs.PlateCarree(),
-                     fill=False, edgecolor=LOCATOR_BLUE, linewidth=0.72, zorder=15)
-    global_ax.add_patch(rect)
-    global_ax.text(
-        xmax, ymax, str(locator_number), transform=ccrs.PlateCarree(),
-        ha="left", va="bottom", fontsize=5.2, fontweight="bold", color=LOCATOR_BLUE,
-        bbox={"boxstyle": "circle,pad=0.10", "facecolor": "white",
-              "edgecolor": LOCATOR_BLUE, "linewidth": 0.55},
-        zorder=16, clip_on=False,
-    )
 
 
 def compose(tc_data, road_data, insets, output_stem):
     fig = plt.figure(figsize=(FIG_W_MM * MM_TO_IN, FIG_H_MM * MM_TO_IN), facecolor="white")
     gs = fig.add_gridspec(
-        3, 6, height_ratios=[1.95, 0.23, 1.0], width_ratios=[1, 1, 1, 1, 1, 1],
+        3, 6, height_ratios=[1.82, 0.58, 1.0], width_ratios=[1, 1, 1, 1, 1, 1],
         left=0.045, right=0.985, bottom=0.050, top=0.940, hspace=0.12, wspace=0.08,
-    )
-    fig.text(0.045, 0.970, "a", fontsize=PANEL_FONT, fontweight="bold", ha="left", va="top")
-    fig.text(
-        0.066, 0.970,
-        "Synthetic TC activity and global road hierarchy (MPI-ESM1-2-LR, 1995–2014)",
-        fontsize=7.0, fontweight="bold", ha="left", va="top",
     )
     global_ax = fig.add_subplot(gs[0, :], projection=ccrs.Robinson(central_longitude=0))
     draw_global_panel(fig, global_ax, tc_data, road_data)
-    road_legend_ax = fig.add_subplot(gs[1, :3])
-    tc_legend_ax = fig.add_subplot(gs[1, 3:])
-    draw_legend_strip(road_legend_ax, tc_legend_ax)
+    legend_ax = fig.add_subplot(gs[1, :])
+    draw_legend_strip(legend_ax)
     inset_axes = []
+    inset_letters = ["b", "c", "d"]
+    inset_titles = []
     for j, ((title, bbox, scale_km), inset_data) in enumerate(zip(INSET_SPECS, insets)):
         ax = fig.add_subplot(gs[2, 2 * j:2 * j + 2], projection=ccrs.PlateCarree())
-        draw_inset(ax, chr(ord("b") + j), f"{j + 1}  {title}", bbox, scale_km, inset_data, tc_data)
+        draw_inset(ax, title, bbox, scale_km, inset_data)
         inset_axes.append(ax)
-    for locator_number, (_, bbox, _) in enumerate(INSET_SPECS, start=1):
-        add_numbered_locator(global_ax, bbox, locator_number)
+        inset_titles.append(title)
+    x_shared, _y = label_inset_row(fig, inset_axes, inset_letters, inset_titles)
+    label_hero(
+        fig, "a",
+        "Tropical-cyclone activity and global road hierarchy (MPI-ESM1-2-LR, 1995–2014)",
+        x=x_shared,
+    )
+    for letter, (_, bbox, _) in zip(inset_letters, INSET_SPECS):
+        add_numbered_locator(global_ax, bbox, letter)
 
     output_stem = Path(output_stem)
     output_stem.parent.mkdir(parents=True, exist_ok=True)
@@ -600,19 +553,35 @@ def parse_args():
     return p.parse_args()
 
 
+def _default_production_paths(repo):
+    return {
+        "tc": repo / "data/hazard/figures_baseline/tc_track_passage_1deg.nc",
+        "roads": repo / "data/osm/derived/planet-260803/motor_road_length_density_0p1deg.nc",
+        "insets": [
+            repo / "data/osm/insets/derived/gulf_coast_roads.npz",
+            repo / "data/osm/insets/derived/pearl_river_delta_roads.npz",
+            repo / "data/osm/insets/derived/bengal_delta_chattogram_roads.npz",
+        ],
+        "font_dir": repo / "figures/_assets/fonts",
+    }
+
+
 def main():
     args = parse_args()
+    repo = Path(__file__).resolve().parents[2]
+    defaults = _default_production_paths(repo)
+    if args.font_dir is not None or defaults["font_dir"].is_dir():
+        configure_runtime_assets(args.font_dir or defaults["font_dir"], args.cartopy_data)
     if args.fixture:
-        tc_path, road_path, inset_paths = create_fixture(args.output.parent / "fixture_inputs")
+        tc_path, road_path, fixture_insets = create_fixture(args.output.parent / "fixture_inputs")
+        inset_paths = defaults["insets"] if all(p.is_file() for p in defaults["insets"]) else fixture_insets
     else:
-        if args.tc is None or args.roads is None or args.insets is None or args.font_dir is None or args.cartopy_data is None:
-            raise SystemExit(
-                "Production mode requires --tc, --roads, exactly three --insets, "
-                "--font-dir, and --cartopy-data"
-            )
-        resolved_font = configure_runtime_assets(args.font_dir, args.cartopy_data)
-        print(f"font\t{resolved_font}")
-        tc_path, road_path, inset_paths = args.tc, args.roads, args.insets
+        tc_path = args.tc or defaults["tc"]
+        road_path = args.roads or defaults["roads"]
+        inset_paths = list(args.insets) if args.insets is not None else defaults["insets"]
+        missing = [p for p in (tc_path, road_path, *inset_paths) if not Path(p).is_file()]
+        if missing:
+            raise SystemExit("Missing production inputs:\n" + "\n".join(str(p) for p in missing))
     tc_data = load_tc(tc_path)
     road_data = load_roads(road_path)
     insets = [load_inset(p) for p in inset_paths]

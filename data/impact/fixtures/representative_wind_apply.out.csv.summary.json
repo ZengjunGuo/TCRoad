@@ -1,0 +1,14 @@
+{
+  "bridge_usd": 4146699.67,
+  "cleanup_usd": 16181.388181143264,
+  "cleanup_usd_per_km": 4978.888671121004,
+  "cleanup_ways": 2,
+  "collapsed_bridges": 1,
+  "contract": "WIND_ASSET_IMPACT_CONTRACT.md",
+  "escobedo_band": "central",
+  "gust_factor": 1.66,
+  "script_version": "1.0.0",
+  "tree_break_c15_ms": 25.267737617135207,
+  "ways": 6,
+  "wind_asset_usd": 4162881.0581811434
+}

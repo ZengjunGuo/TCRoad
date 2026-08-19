@@ -1,0 +1,13 @@
+{
+  "bytes": 1157937187,
+  "contract": "WIND_ASSET_IMPACT_CONTRACT.md",
+  "figshare_article": "3179986",
+  "figshare_file_id": "5332990",
+  "path": "/Users/edw1970/04_Projects/TCRoad/data/impact/raw/crowther_extract/Crowther_Nature_Biome_Revision_01_WGS84_GeoTiff.tif",
+  "script_version": "1.0.0",
+  "sha256": "1812e5cbb17f91f3a1dfc3033e9cc402bc557ad6ed3827c84ce1fc3f8f05c338",
+  "source": "Crowther et al. (2015) Nature 525:201-205; Yale EliScholar yale_fes_data/1 biome WGS84 GeoTIFF Revision_01",
+  "zip_bytes": 1267371573,
+  "zip_md5": "5b423525b9a849e1a61fbc11726a390f",
+  "zip_name": "Crowther_Nature_Files_Revision_01_WGS84_GeoTiff.zip"
+}

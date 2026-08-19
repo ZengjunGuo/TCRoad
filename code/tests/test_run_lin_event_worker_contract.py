@@ -13,7 +13,10 @@ import xarray as xr
 CODE_DIR = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(CODE_DIR))
 
-from run_lin_event_worker import build_compact_hazard_footprint  # noqa: E402
+from run_lin_event_worker import (  # noqa: E402
+    OFFICIAL_R0INPUT_SOLVER_FAILURE_TYPES,
+    build_compact_hazard_footprint,
+)
 
 
 class GenericEventWorkerContractTest(unittest.TestCase):
@@ -88,6 +91,11 @@ class GenericEventWorkerContractTest(unittest.TestCase):
             compact.attrs["fixed_r0_distribution_contract_sha256"],
             "distribution-sha",
         )
+
+    def test_official_c15_empty_profile_is_solver_failure_not_a_crash(self) -> None:
+        self.assertTrue(issubclass(IndexError, OFFICIAL_R0INPUT_SOLVER_FAILURE_TYPES))
+        self.assertTrue(issubclass(RuntimeError, OFFICIAL_R0INPUT_SOLVER_FAILURE_TYPES))
+        self.assertFalse(issubclass(ValueError, OFFICIAL_R0INPUT_SOLVER_FAILURE_TYPES))
 
 
 if __name__ == "__main__":

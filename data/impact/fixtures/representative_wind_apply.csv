@@ -1,0 +1,7 @@
+way_id,iso3,highway,accepted,is_bridge,is_tunnel,length_km,replacement_usd,tree_dens_km2,v_c15_ms,lon,lat,bridge_hist_peaks_ms
+US-I10,USA,motorway,1,0,0,2.0,24000000,10000,30.267737617135207,-90.07,29.95,
+PH-sparse,PHL,primary,1,0,0,3.2,4890469,0,30.267737617135207,120.98,14.60,
+CN-below,CHN,motorway,1,0,0,10.0,110000000,8000,24.267737617135207,113.26,23.13,
+JP-bridge,JPN,primary,1,1,0,0.4,4146699.67,8000,62.65930388219545,139.77,35.62,
+US-street,USA,residential,1,0,0,5.0,3000000,2500,30.267737617135207,-90.08,29.94,
+FOOT,USA,footway,0,0,0,1.0,0,10000,40,-90.06,29.96,

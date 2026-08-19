@@ -1,0 +1,44 @@
+{
+  "contracts": {
+    "genesis": "G_c=sum_e w_e I(genesis e in c)",
+    "sampling": "all 100000 events and all consecutive exact-six-hour segments; no event or fix subsampling",
+    "track_passage": "F_c=sum_e w_e I(track e intersects c); event e counted once per cell",
+    "weight": "w_e=event_weight_climate_fixed_effect_primary_yr=alpha_region/(20*S_task_year)"
+  },
+  "generated_at_utc": "2026-08-11T08:59:26.773165+00:00",
+  "input": {
+    "event_count": 100000,
+    "observation_count": 2139277,
+    "path": "/mnt/sdb_test/tang/zengjun/TC_Road_Risk/data/lin/catalogs/MPI-ESM1-2-LR/historical/r1i1p1f1/1995-2014/GLx5000peryear_stream0/events_weighted_6h.nc",
+    "sha256": "3d8fee5a599a716457061b32333c1f331510efa48b18f3620def25174b0856cc"
+  },
+  "integrity": {
+    "event_intersected_cell_count_max": 165,
+    "event_intersected_cell_count_median": 30.0,
+    "event_intersected_cell_count_min": 1,
+    "expected_weight_sum_yr": 84.9,
+    "genesis_event_count_max": 136,
+    "genesis_event_count_sum": 100000,
+    "genesis_frequency_max_yr": 0.1034339747223978,
+    "genesis_frequency_nonzero_min_yr": 8.080957083606242e-05,
+    "genesis_frequency_sum_yr": 84.9,
+    "genesis_nonzero_cell_count": 7996,
+    "six_hour_segment_count": 2039277,
+    "track_nonzero_cell_count": 28897,
+    "track_passage_frequency_max_yr": 1.2136282006656967,
+    "track_passage_frequency_nonzero_min_yr": 8.080957083606242e-05,
+    "track_passing_event_count_max": 1547,
+    "weight_sum_yr": 84.90000000000002
+  },
+  "output": {
+    "path": "/mnt/sdb_test/tang/zengjun/TC_Road_Risk/runs/figures/global_tc_roads_baseline/tc_track_passage_1deg.nc",
+    "sha256": "d2930aed48f4bb4d8f314167d33b3275670b2105522200167bb8038de9e02111",
+    "size_bytes": 362228
+  },
+  "script": {
+    "path": "/mnt/sdb_test/tang/zengjun/TC_Road_Risk/code/build_global_tc_map_data.py",
+    "sha256": "315e9bdfd18f370980e6250ddb26f90fef2b9e8d9d6d788a30ceb2bac08f4fa2",
+    "version": "1.0.0"
+  },
+  "status": "pass"
+}

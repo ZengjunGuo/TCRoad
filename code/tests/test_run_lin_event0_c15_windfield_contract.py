@@ -17,6 +17,8 @@ sys.path.insert(0, str(CODE_DIR))
 from run_lin_event0_c15_windfield import (  # noqa: E402
     BACKGROUND_CCW_ROTATION_DEG,
     BACKGROUND_REDUCTION_FACTOR,
+    CLIMADA_MAJORITY_HEMISPHERE_RULE,
+    climada_majority_hemisphere_sign,
     compute_wind_field,
     lin_chavas_background_wind,
     spherical_distance_and_outward_bearing,
@@ -58,8 +60,33 @@ def _prepared(*, translation_u: float = 0.0, translation_v: float = 0.0) -> xr.D
     )
 
 
-def _track() -> xr.Dataset:
-    return xr.Dataset(coords={"time": [np.datetime64("1995-09-17T08:00:00")]})
+def _track(ntime: int = 1) -> xr.Dataset:
+    times = np.asarray(
+        [
+            np.datetime64("1995-09-17T08:00:00") + np.timedelta64(hour, "h")
+            for hour in range(ntime)
+        ]
+    )
+    return xr.Dataset(coords={"time": times})
+
+
+def _prepared_lats(lats: list[float], *, translation_u: float = 0.0) -> xr.Dataset:
+    ntime = len(lats)
+    return xr.Dataset(
+        data_vars={
+            "lat": ("time", np.asarray(lats, dtype=float)),
+            "lon": ("time", np.zeros(ntime, dtype=float)),
+            "circular_wind": ("time", np.full(ntime, 30.0)),
+            "radius_max_wind": ("time", np.full(ntime, 50.0)),
+            "translation_u": ("time", np.full(ntime, translation_u)),
+            "translation_v": ("time", np.zeros(ntime)),
+        },
+        coords={"time": np.arange(ntime)},
+        attrs={
+            "outer_radius_m": 400_000.0,
+            "outer_radius_fixed_for_event_lifetime": 1,
+        },
+    )
 
 
 class LinEventWindfieldContractTest(unittest.TestCase):
@@ -217,6 +244,60 @@ class LinEventWindfieldContractTest(unittest.TestCase):
             places=6,
         )
         self.assertTrue(metadata["linear_profile_interpolation"])
+
+    def test_majority_hemisphere_sign_matches_climada_61(self):
+        sign, north, south = climada_majority_hemisphere_sign(np.asarray([20.0]))
+        self.assertEqual((sign, north, south), (1.0, 1, 0))
+        sign, north, south = climada_majority_hemisphere_sign(np.asarray([-20.0]))
+        self.assertEqual((sign, north, south), (-1.0, 0, 1))
+
+        # Event 14472 analog: 22 N then 227 S, first node is northern.
+        crossing = np.concatenate(
+            [np.full(22, 3.80), np.full(227, -7.37)]
+        )
+        sign, north, south = climada_majority_hemisphere_sign(crossing)
+        self.assertEqual((sign, north, south), (-1.0, 22, 227))
+
+        # Tie, equator nodes ignored, all-equator: CLIMADA defaults to N.
+        self.assertEqual(
+            climada_majority_hemisphere_sign(np.asarray([1.0, -1.0])),
+            (1.0, 1, 1),
+        )
+        self.assertEqual(
+            climada_majority_hemisphere_sign(np.asarray([1.0, 0.0, -1.0, -2.0])),
+            (-1.0, 1, 2),
+        )
+        self.assertEqual(
+            climada_majority_hemisphere_sign(np.asarray([0.0, 0.0])),
+            (1.0, 0, 0),
+        )
+
+    def test_equator_crossing_majority_south_produces_sh_wind_field(self):
+        # Cheap 14472-shaped analog: first node NH, southern nodes win.
+        lats = [3.80, 2.00] + [-7.00] * 5
+        prepared = _prepared_lats(lats)
+        grid = xr.Dataset(
+            data_vars={
+                "lat": ("centroid", [3.80, -6.00]),
+                "lon": ("centroid", [0.0, 0.0]),
+            },
+            coords={"centroid": [0, 1]},
+        )
+        output, metadata = compute_wind_field(
+            prepared, _track(ntime=len(lats)), grid, provider=_LinearProfileProvider()
+        )
+        self.assertEqual(metadata["hemisphere_sign"], -1.0)
+        self.assertEqual(metadata["hemisphere_northern_node_count"], 2)
+        self.assertEqual(metadata["hemisphere_southern_node_count"], 5)
+        self.assertEqual(
+            metadata["hemisphere_rule"], CLIMADA_MAJORITY_HEMISPHERE_RULE
+        )
+        self.assertEqual(metadata["cyclonic_background_rotation_degrees"], -20.0)
+        self.assertTrue(np.all(np.isfinite(output["event_maximum_near_surface_wind_speed"])))
+        # Point due north of an SH center: clockwise cyclonic flow is east.
+        sh_hour = 2
+        self.assertGreater(float(output["near_surface_wind_u"][sh_hour, 1]), 0.0)
+        self.assertAlmostEqual(float(output["near_surface_wind_v"][sh_hour, 1]), 0.0, places=5)
 
 
 if __name__ == "__main__":

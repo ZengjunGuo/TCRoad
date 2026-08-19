@@ -602,14 +602,44 @@ def _saffir_simpson_category(maximum_wind_kt: float) -> int:
     return 5
 
 
+def wrap_lon_deg(lon: np.ndarray | float) -> np.ndarray:
+    """Map longitude to [-180, 180)."""
+
+    return np.mod(np.asarray(lon, dtype=float) + 180.0, 360.0) - 180.0
+
+
+def shortest_lon_delta_deg(lon: np.ndarray | float, center_lon: float) -> np.ndarray:
+    """East-positive shortest longitude difference onto ``center_lon``."""
+
+    return np.mod(np.asarray(lon, dtype=float) - float(center_lon) + 180.0, 360.0) - 180.0
+
+
+def unwrap_longitude_deg(lon: np.ndarray) -> np.ndarray:
+    """Make a track longitude series continuous across the date line."""
+
+    wrapped = wrap_lon_deg(lon)
+    if wrapped.size == 0:
+        return wrapped
+    out = np.empty_like(wrapped)
+    out[0] = wrapped[0]
+    for i in range(1, wrapped.size):
+        out[i] = out[i - 1] + shortest_lon_delta_deg(wrapped[i], out[i - 1])
+    return out
+
+
 def build_moving_union_grid(track: xr.Dataset) -> xr.Dataset:
-    """Create global-anchored 0.05-degree points within 300 km of any track node."""
+    """Create global-anchored 0.05-degree points within 300 km of any track node.
+
+    Longitude is periodic. Tracks that cross the antimeridian are kept; the
+    300 km / 0.05° union and great-circle test are unchanged.
+    """
 
     resolution = GRID_RESOLUTION_DEG
     track_lat = np.asarray(track["lat"].values, dtype=float)
-    track_lon = np.asarray(track["lon"].values, dtype=float)
-    if np.ptp(track_lon) >= 180:
-        raise ValueError("this Irene grid builder does not accept an antimeridian crossing")
+    track_lon = wrap_lon_deg(np.asarray(track["lon"].values, dtype=float))
+    if track_lat.size == 0:
+        raise ValueError("moving 300-km grid is empty")
+    unwrapped_lon = unwrap_longitude_deg(track_lon)
 
     latitude_buffer = MAX_DISTANCE_EYE_KM / 110.0
     max_abs_buffered_lat = min(89.0, np.max(np.abs(track_lat)) + latitude_buffer)
@@ -618,10 +648,11 @@ def build_moving_union_grid(track: xr.Dataset) -> xr.Dataset:
     )
     lat_index_min = math.floor((np.min(track_lat) - latitude_buffer) / resolution)
     lat_index_max = math.ceil((np.max(track_lat) + latitude_buffer) / resolution)
-    lon_index_min = math.floor((np.min(track_lon) - longitude_buffer) / resolution)
-    lon_index_max = math.ceil((np.max(track_lon) + longitude_buffer) / resolution)
+    lon_index_min = math.floor((np.min(unwrapped_lon) - longitude_buffer) / resolution)
+    lon_index_max = math.ceil((np.max(unwrapped_lon) + longitude_buffer) / resolution)
     latitude = np.arange(lat_index_min, lat_index_max + 1, dtype=int) * resolution
-    longitude = np.arange(lon_index_min, lon_index_max + 1, dtype=int) * resolution
+    longitude_unwrapped = np.arange(lon_index_min, lon_index_max + 1, dtype=int) * resolution
+    longitude = wrap_lon_deg(longitude_unwrapped)
     union = np.zeros((latitude.size, longitude.size), dtype=bool)
 
     for center_lat, center_lon in zip(track_lat, track_lon, strict=True):
@@ -631,7 +662,9 @@ def build_moving_union_grid(track: xr.Dataset) -> xr.Dataset:
             * max(math.cos(math.radians(abs(center_lat) + local_lat_buffer)), 0.05)
         )
         lat_slice = np.flatnonzero(np.abs(latitude - center_lat) <= local_lat_buffer)
-        lon_slice = np.flatnonzero(np.abs(longitude - center_lon) <= local_lon_buffer)
+        lon_slice = np.flatnonzero(
+            np.abs(shortest_lon_delta_deg(longitude, center_lon)) <= local_lon_buffer
+        )
         if lat_slice.size == 0 or lon_slice.size == 0:
             continue
         distance = _great_circle_grid_km(
@@ -647,27 +680,30 @@ def build_moving_union_grid(track: xr.Dataset) -> xr.Dataset:
     if row.size == 0:
         raise ValueError("moving 300-km grid is empty")
     centroid_lat = latitude[row]
-    centroid_lon = longitude[column]
+    centroid_lon = wrap_lon_deg(longitude_unwrapped[column])
+    lat_idx = np.rint(centroid_lat / resolution).astype(np.int32)
+    lon_idx = np.rint(centroid_lon / resolution).astype(np.int32)
+    _, unique = np.unique(np.stack([lat_idx, lon_idx], axis=1), axis=0, return_index=True)
+    unique = np.sort(unique)
+    centroid_lat = centroid_lat[unique]
+    centroid_lon = centroid_lon[unique]
+    lat_idx = lat_idx[unique]
+    lon_idx = lon_idx[unique]
     grid = xr.Dataset(
         data_vars={
             "lat": ("centroid", centroid_lat),
             "lon": ("centroid", centroid_lon),
-            "global_latitude_index": (
-                "centroid",
-                np.rint(centroid_lat / resolution).astype(np.int32),
-            ),
-            "global_longitude_index": (
-                "centroid",
-                np.rint(centroid_lon / resolution).astype(np.int32),
-            ),
+            "global_latitude_index": ("centroid", lat_idx),
+            "global_longitude_index": ("centroid", lon_idx),
         },
-        coords={"centroid": np.arange(row.size, dtype=np.int32)},
+        coords={"centroid": np.arange(centroid_lat.size, dtype=np.int32)},
         attrs={
             "grid_resolution_degrees": resolution,
             "maximum_distance_to_hourly_eye_km": MAX_DISTANCE_EYE_KM,
             "construction": (
                 "union of global-anchored 0.05-degree points within 300 km "
-                "great-circle distance of any one-hourly track center"
+                "great-circle distance of any one-hourly track center; "
+                "longitude is periodic across the antimeridian"
             ),
         },
     )

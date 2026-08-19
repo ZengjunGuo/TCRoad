@@ -1,0 +1,44 @@
+============================================================
+Academic Figure Skill QA Report
+============================================================
+Figure: Country-mean 2025 USD/km with three segment insets
+Target: Nature-family, double column, 183 × 150 mm
+Backend: Python / Matplotlib / Cartopy
+
+Pass 0 — Anti-Pattern Scan:
+  [PASS] AP-0 Required typography, color, and export baseline blocks copied verbatim
+  [PASS] AP-1 Custom semantic colors; no default qualitative palette
+  [PASS] AP-2 No jet/rainbow/hsv colormap
+  [PASS] AP-3 Map boundary only; no default four-sided Cartesian frame
+  [PASS] AP-4 Legend occupies a dedicated strip outside the mapped data region
+  [PASS] AP-5 Vector PDF plus 450 dpi PNG
+  [N/A]  AP-6 No bar/box plot
+  [PASS] AP-7 Arial/Helvetica/Liberation Sans fallback declared
+
+Pass 1 — Code Compliance:
+  [PASS] CL-1 Legend and inset type ≥ 6.3 pt
+  [PASS] CL-2 Exact 183 × 150 mm canvas, shared with the TC-road plate
+  [PASS] CL-3 PDF TrueType embedding requested (pdf.fonttype=42)
+  [PASS] CL-4 Unit-cost classes identical on the globe, legend, and insets
+  [PASS] CL-5 Inset boxes are the shared INSET_SPECS
+  [PASS] CL-6 usd_per_km = replacement_usd / length_km; no 0.1° dollar grid
+  [PASS] CL-7 Input summary, shapefile, and insets are explicit arguments
+
+Pass 2 — Visual Logic:
+  [PASS] VI-1 Hero map makes unit-cost geography the three-second conclusion
+  [PASS] VI-2 Insets use cost color plus redundant class line width
+  [PASS] VI-3 Globe and local segments are non-redundant
+  [PASS] VI-4 Robinson(0); numbered locators; incomplete OSM is hatched
+  [PASS] VI-5 Three insets are equal width with shared scale bars
+  [PASS] VI-6 Centered legend strip sits under the globe
+
+Pass 3 — Rendered Output Verification:
+  [PASS] VV-1 No legend, label, scale-bar, or locator occlusion; titles sit above ramps
+  [PASS] VV-2 Shared 183×150 mm canvas; inset row shares globe left/right; letters a–d regular
+  [PASS] VV-3 Legend 7.0 / 6.5 pt; inset titles 7.2 pt; readable at 183 mm print width
+  [PASS] VV-4 Sahel hatch and No-data grey are distinct from the unit-cost ramp
+  [PASS] VV-5 Production Gulf / PRD / Bengal networks visible; 10 m coast; class width + unit-cost color
+
+Summary: 25 pass, 0 fail, 1 N/A
+Verdict: READY after rendered-output inspection; unit cost is replacement_usd / length_km.
+============================================================
