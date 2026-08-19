@@ -32,17 +32,15 @@ been started.
 
 ### 2.1 Historical wind + rain (`lin_road_domain_300km_v1`)
 
-Live host inventory **2026-08-19 02:53 UTC** on `3090-2` (EasyConnect `status=4`, SSH OK):
+Live host inventory **2026-08-19 16:46 UTC** on `3090-2`:
 
-| Item | 2026-08-19 02:53 UTC |
+| Item | 2026-08-19 16:46 UTC |
 |---|---|
 | Domain | 99,242 historical tracks within 300 km of a motor road (of 100,000) |
-| Compact + road-overlap | **99,234** / 99,242 (`compact_nc=99234` `overlap_nc=99234`) |
-| Closed leftover | **14472** compact+overlap present (mtime 02:39 UTC). `eq14472` session at shell prompt. |
-| Leftover event ids | **8**: 11902, 11944, 12357, 50194, 62311, 68925, 72126, 86977 (all `METHOD_DOMAIN_PENDING`; no compact/overlap) |
-| Frozen, not resampled | 12357, 68925, 72126 |
-| In-flight hazard | **none**. Historical C15–TCR closed: 99,234 + 8 pending = 99,242. |
-| Wind-asset ledger | **in-flight** tmux `windasset` / `score-historical` since 03:30 UTC. Inputs: 99,234 compact files (pending eight have no compact), 114 valued shards + extract lon/lat, Crowther sha256 `1812e5cbb1…`. Totals pending until `historical_wind_asset.summary.json` exists. Record: [`methods/HISTORICAL_WIND_ASSET_LEDGER.md`](methods/HISTORICAL_WIND_ASSET_LEDGER.md). |
+| Compact + road-overlap | **99,234** / 99,242 |
+| Frozen `METHOD_DOMAIN_PENDING` | **8**, no compact, no wind dollars: 11902, 11944, 12357, 50194, 62311, 68925, 72126, 86977 |
+| Historical C15–TCR | **closed**. 99,234 + 8 pending = 99,242. |
+| Wind-asset ledger | **scored**. 99,234 compact events; pending eight skipped. Object table `way_wind_asset.csv` (11 GB). Summary: [`data/impact/historical_wind_asset.summary.json`](data/impact/historical_wind_asset.summary.json). Record: [`methods/HISTORICAL_WIND_ASSET_LEDGER.md`](methods/HISTORICAL_WIND_ASSET_LEDGER.md). |
 
 This is the current-climate 1995–2014, 5,000 accepted tracks/year, stream 0.
 
@@ -166,8 +164,17 @@ Contract: [`methods/WIND_ASSET_IMPACT_CONTRACT.md`](methods/WIND_ASSET_IMPACT_CO
 - Crowther biome WGS84 GeoTIFF sha256
   `1812e5cbb17f91f3a1dfc3033e9cc402bc557ad6ed3827c84ce1fc3f8f05c338`
   (`data/impact/crowther.manifest.json`). Not a 0.1° dollar grid. Not
-  Koks SI 5k–50k bands. Historical object-level apply is the live
-  production step after the 99,234-event compact set closed.
+  Koks SI 5k–50k bands.
+- Historical object-level apply **finished 2026-08-19 16:46 UTC**
+  (`runs/impact/historical_wind_asset_v1` on the host). 99,234 events
+  scored; 8 pending IDs contribute $0. 74.3 million ways had a
+  footprint or a loss; 27.1 million ways had nonzero cleanup.
+  Unweighted catalogue sums (every event added): cleanup
+  **$6.730 T**, bridge **$4.319 B**. Weighted with the Lin
+  climate-fixed-effect year weight: cleanup **$5.389 B**, bridge
+  **$5.419 M**. Do not treat the unweighted trillion-scale sum as an
+  annual loss. Pavement replacement cost is not multiplied by a wind
+  MDR.
 
 ---
 

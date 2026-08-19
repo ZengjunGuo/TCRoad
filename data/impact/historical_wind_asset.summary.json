@@ -1,0 +1,57 @@
+{
+  "artifacts": {
+    "event_wind_asset": "/mnt/sdb_test/tang/zengjun/TC_Road_Risk/runs/impact/historical_wind_asset_v1/event_wind_asset.csv",
+    "way_wind_asset": "/mnt/sdb_test/tang/zengjun/TC_Road_Risk/runs/impact/historical_wind_asset_v1/way_wind_asset.csv"
+  },
+  "bridge_event_collapses": 13556,
+  "bridge_usd_sum": 4319104153.897381,
+  "bridge_usd_weighted": 5419187.150504153,
+  "bridges_with_any_footprint": 3090869,
+  "cleanup_usd_sum": 6730225644297.559,
+  "cleanup_usd_weighted": 5389120892.981333,
+  "cleanup_ways": 27146160,
+  "compact_dir": "/mnt/sdb_test/tang/zengjun/TC_Road_Risk/runs/hazard_production/lin_road_domain_300km_v1/compact_hazard_footprint",
+  "compact_events_scored": 99234,
+  "crowther": "/mnt/sdb_test/tang/zengjun/TC_Road_Risk/data/impact/raw/crowther_extract/Crowther_Nature_Biome_Revision_01_WGS84_GeoTiff.tif",
+  "extract_dir": "/mnt/sdb_test/tang/zengjun/TC_Road_Risk/runs/valuation/planet-260803_motor_ways",
+  "grid_step_deg": 0.05,
+  "hazard_run": "lin_road_domain_300km_v1",
+  "historical_window_years": 20.0,
+  "kernel_contract": "WIND_ASSET_IMPACT_CONTRACT.md",
+  "method_domain_pending_contribute_dollars": false,
+  "method_domain_pending_contribute_wind": false,
+  "method_domain_pending_event_positions": [
+    11902,
+    11944,
+    12357,
+    50194,
+    62311,
+    68925,
+    72126,
+    86977
+  ],
+  "notes": {
+    "bridge": "collapse only if gust > gmtra class V* and empirical RP from the 20-year compact peaks at that bridge exceeds design RP; pending-eight peaks are absent",
+    "cleanup": "per-event L_km * 4979 * 1{V_C15 >= 25.3 m/s} * P(N); sum is over scored compact events; weighted uses the Lin climate-fixed-effect year weight on the compact file",
+    "not_a_0p1deg_grid": true,
+    "pavement_replacement_times_mdr": false
+  },
+  "osm_snapshot": "planet-260803",
+  "pending_ids_skipped": [
+    11902,
+    11944,
+    12357,
+    50194,
+    62311,
+    68925,
+    72126,
+    86977
+  ],
+  "schema_version": "1.0",
+  "script_version": "1.0.0",
+  "valued_dir": "/mnt/sdb_test/tang/zengjun/TC_Road_Risk/runs/valuation/planet-260803_valued",
+  "ways_in_valued_extract": 113198507,
+  "ways_with_any_footprint_or_loss": 74346702,
+  "wind_asset_usd_sum": 6734544748451.456,
+  "wind_variable": "event_maximum_near_surface_wind_speed"
+}
